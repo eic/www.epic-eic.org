@@ -11,16 +11,17 @@
     * {{ person.full }} (<{{ person.email }}>)
     {% endfor %}
 
-* __Useful Links__
+
 {%- if group.useful_links %}
+* __Useful Links__
     {% for link in group.useful_links -%}
     {%-  assign info = link | split: ", " -%}
     * [{{ info[0] }}]({{ info[1]}}){:target="_blank"}
     {% endfor %}
 {%- endif %}
 
-* __Get involved__
 {%- if group.get_involved %}
+* __Get involved__
     * {{ group.get_involved }}
 {%- endif %}
 
