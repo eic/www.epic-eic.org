@@ -54,6 +54,8 @@
   wiki:               'https://wiki.bnl.gov/EPIC/index.php?title=BSMEW'
   meetings:           'Wednesdays at 10:00 pm ET (bi-weekly)'
 
+
+###################################################################################################################################################################################################
 # SOFTWARE AND COMPUTING
 - name:               production
   description:        'Production Working Group'
@@ -69,6 +71,7 @@
   description:        'User Learning Working Group'
   mission_statement:  'The User Learning working group is responsible for managing the process of onboarding and continued learning of the ePIC members, in the field of software and computing.'
   conveners:          holly_szumilla, stephen_kay
+  get_involved:       'Please contact the conveners for more information'
   indico:             'https://indico.bnl.gov/category/443/'
 
 - name:               validation

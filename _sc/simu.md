@@ -4,4 +4,4 @@ name: simulation
 layout: default
 ---
 
-{% include layouts/wg_top.md %}
+{% include layouts/scwg_top.md %}
