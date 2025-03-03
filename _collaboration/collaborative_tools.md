@@ -96,6 +96,6 @@ at the url: [https://eic.github.io/epic.github.io/](https://eic.github.io/epic.g
 
 The ePIC Collaboration is leveraging [Zenodo](https://zenodo.org/communities/epic/){:target="_blank"} to systematize and
 index a variety of its research documents in any format. This is the preferred method of publishing materials either in their
-final shape, or approaching the filenal shape, for the collaboraiton. Storage of images, PDF and other files directly in repository
-of this website (www.epic-eic.org) is __strongly discouraged__ due to GitHub limitations and
+final shape, or approaching the final shape, for the collaboraiton. Storage of images, PDF and other files directly in repository
+of this website (www.epic-eic.org) is __strongly discouraged__ due to GitHub features and limitations, and
 other factors. Links to Zenodo, Google Drive, Dropbox or other such cloud media should be used instead.
