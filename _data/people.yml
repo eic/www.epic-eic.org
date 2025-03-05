@@ -40,13 +40,19 @@
   roles: [convener]
   teams: 
 
-# semi_includsive
+# semi_inclusive
 - name: stefan_diehl
   full: Stefan Diehl
   email: stefan.diehl@exp2.physik.uni-giessen.de
   roles: [convener]
   teams: 
 
+- name: charlotte_van_hulse
+  full: Charlotte Van Hulse
+  email: vanhuls@mail.cern.ch
+  roles:
+  teams:
+  
 - name: ralf_seidl
   full: Ralf Seidl
   email: rseidl@ribf.riken.jp
