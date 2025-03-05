@@ -24,7 +24,7 @@
 - name:               semi_inclusive
   description:        'Semi-Inclusive'
   mission_statement:  'The semi-inclusive working group evaluates the performance of the ePIC detector for the future measurements of semi-inclusive processes. For this, it needs to study the reconstruction of the scattered lepton and the typical DIS variables as well as the reconstruction of the produced hadrons, including the quality of their identification.'
-  conveners:          stefan_diehl, charlotte_van_hulse
+  conveners:          stefan_diehl, ralf_seidl
   list:               'eic-projdet-semiincl-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-semiincl-l'
   indico:             'https://indico.bnl.gov/category/418/'
