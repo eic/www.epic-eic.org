@@ -47,9 +47,9 @@
   roles: [convener]
   teams: 
 
-- name: charlotte_van_hulse
-  full: Charlotte Van Hulse
-  email: vanhuls@mail.cern.ch
+- name: ralf_seidl
+  full: Ralf Seidl
+  email: rseidl@ribf.riken.jp
   roles: [convener]
   teams:
 

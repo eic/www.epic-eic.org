@@ -13,7 +13,7 @@ This page summarizes the procedure for submitting an analysis or technical note 
   * Analysis/Technical/Software and Computing Coordination Offices maintain note numbers and list of notes
 * **Step 2**: DSC/WG leadership signs off on note
   * Work with DSC/WG leadership to identify the most appropriate DSC/WG
-  * Review should focus on accuracy of the material in the note
+  * Review should ensure the content of the note follows the standards of the collaboration and the results are accurate
   * DSC/WG leadership sends an email to the Analysis/Technical/Software and Computing Coordinators to confirm
 * **Step 3**: Collaborator submits to Zenodo
   * Use keywords “ana_note” and “tech_note”, along with any other keywords that will make it easy to find the note efficiently. A list of official keywords is available [here.](/documents/keywords)
