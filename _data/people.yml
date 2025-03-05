@@ -50,13 +50,13 @@
 - name: charlotte_van_hulse
   full: Charlotte Van Hulse
   email: vanhuls@mail.cern.ch
-  roles: [convener]
+  roles:
   teams:
   
 - name: ralf_seidl
   full: Ralf Seidl
   email: rseidl@ribf.riken.jp
-  roles: 
+  roles: [convener]
   teams:
 
 # jets_hf
