@@ -5,7 +5,7 @@ layout: default
 ---
 {% include layouts/title.md %}
 
-**DRAFT For Review 24 February 2025**
+**DRAFT For Review 5 March 2025**
 
 This page summarizes the procedure for submitting an analysis or technical note to the ePIC document repository. This is intended to be a simple, lightweight procedure that ensure that everyone relevant is informed when a new analysis or technical note is created.
 
