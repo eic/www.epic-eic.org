@@ -380,6 +380,12 @@
 
 # 2024
 
+- name: ephny2024
+  description: The XXX Cracow Epiphany Conference (2024)
+  category: conference
+  year: 2024
+  url: 'https://epiphany.ifj.edu.pl/epiphany2024/index.html'
+
 - name: aum2024
   description: The RHIC/AGS Users Meeting (2024)
   category:  conference
