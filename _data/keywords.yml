@@ -364,9 +364,11 @@
       title: Hadron Spectroscopy with the EIC
     - name: Sylvester Joosten
       title: ePIC Detector Overview
+    - name: Brian Page
+      title: An Overview of Jet Measurements at the EIC
 
 
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.jlab.org/event/871/'
 
