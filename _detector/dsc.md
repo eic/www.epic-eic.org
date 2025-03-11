@@ -73,7 +73,8 @@ layout: default
 ---
 
 ### Backwards HCAL
-* DSL/DSTC: Leszek Kosarzewski <leszek.kosarzewski@gmail.com>
+* DSL: Leszek Kosarzewski <leszek.kosarzewski@gmail.com>
+* DSTC: Caroline Riedl <criedl@illinois.edu>
 
 ---
 
