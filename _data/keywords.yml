@@ -321,6 +321,13 @@
 
 # 2025
 
+- name: eicLatAm2025
+  description: EIC Latin America 2025
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.ku.edu/event/478/'
+
 - name: hotQuark2025
   description: Hot Quarks 2025
   category: conference
@@ -364,9 +371,11 @@
       title: Hadron Spectroscopy with the EIC
     - name: Sylvester Joosten
       title: ePIC Detector Overview
+    - name: Brian Page
+      title: An Overview of Jet Measurements at the EIC
 
 
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.jlab.org/event/871/'
 
@@ -379,6 +388,12 @@
 
 
 # 2024
+
+- name: ephny2024
+  description: The XXX Cracow Epiphany Conference (2024)
+  category: conference
+  year: 2024
+  url: 'https://epiphany.ifj.edu.pl/epiphany2024/index.html'
 
 - name: aum2024
   description: The RHIC/AGS Users Meeting (2024)
