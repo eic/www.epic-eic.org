@@ -5,8 +5,6 @@ layout: default
 ---
 {% include layouts/title.md %}
 
-**DRAFT For Review 5 March 2025**
-
 This page summarizes the procedure for submitting an analysis or technical note to the ePIC document repository. This is intended to be a simple, lightweight procedure that ensure that everyone relevant is informed when a new analysis or technical note is created.
 
 * **Step 1**: Collaborator contacts the Analysis/Technical/Software and Computing Coordination Office with title to receive note number
@@ -19,4 +17,6 @@ This page summarizes the procedure for submitting an analysis or technical note 
   * Use keywords “ana_note” and “tech_note”, along with any other keywords that will make it easy to find the note efficiently. A list of official keywords is available [here.](/documents/keywords)
 * **Step 4**: Analysis/Technical/Software and Computing Coordinators approve publishing to ePIC
   * Analysis and Technical notes will be made available to ePIC Community members
-  
+
+
+The naming convention for ePIC analysis notes is "epic-[AN/TN]-[TC/SC/AC]-[Year]-[distinct number padded to 3 places]". So the note "epic-TN-SC-2025-003" would be a technical note from Software and Computing first published as the third S&C note in 2025. 
