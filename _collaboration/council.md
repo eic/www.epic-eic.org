@@ -59,7 +59,7 @@ large early career members.
 {{ site.hr }}
 
 ##### Communication Tools
-* Mailing list: [eic-projdet-ib-l@lists.bnl.gov](https://lists.bnl.gov/mailman/listinfo/eic-projdet-ib-l){:target="_blank"} (restricted to CC members)
+* Mailing list: [ePIC-CC-l@lists.bnl.gov](https://lists.bnl.gov/mailman/listinfo/epic-cc-l){:target="_blank"} (restricted to CC members)
 * [Indico](https://indico.bnl.gov/category/437/){:target="_blank"} (includes all CC meetings)
 
 {{ site.hr }}
