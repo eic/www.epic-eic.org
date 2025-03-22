@@ -37,7 +37,7 @@ All members of the Collaboration are accountable for their actions. It is crucia
 
 #### ePIC Code of Conduct
 
-The [Code of Conduct]([url](https://zenodo.org/records/14617833)) adopted by Council December 23, 2024 (restricted to members).
+The [Code of Conduct](https://zenodo.org/records/14617833) adopted by Council December 23, 2024 (restricted to members).
 
 
 
