@@ -107,3 +107,5 @@ layout: default
 ### AC-LGAD TOF
 * DSL: Zhangbu Xu <zxu22@kent.edu>
 * Deputy DSL: Satoshi Yano <syano@hiroshima-u.ac.jp>
+* DSTC (barrel): Simone Mazza <simazza@ucsc.edu>
+* DSTC (forward): Mathieu Benoit <benoitm@ornl.gov>
