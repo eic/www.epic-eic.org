@@ -95,7 +95,7 @@
 - name:               streaming
   description:        'Streaming Computing Model Working Group'
   mission_statement:  'The Streaming Readout working group is responsible for all aspects of Streaming Computing techniques and related software and hardware used in the ePIC experiment.'
-  conveners:          marco_battaglieri, jin_huang, jeff_landgraf
+  conveners:          marco_battaglieri, taku_gunji, jeff_landgraf
   indico:             'https://indico.bnl.gov/category/463/'
 
 #####   DO NOT DELETE -- REFERENCE TEMPLATE
