@@ -177,9 +177,9 @@
   roles: [convener]
   teams: streaming
 
-- name: jin_huang
-  full: Jin Huang
-  email: jhuang@bnl.gov
+- name: taku_gunji
+  full: Taku Gunji
+  email: gunji@cns.s.u-tokyo.ac.jp
   roles: [convener]
   teams: streaming
 

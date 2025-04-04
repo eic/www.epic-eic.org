@@ -18,7 +18,7 @@ layout: default
 <h4>Conveners</h4>
 * Fernando Barbosa <barbosa@jlab.org>
 * Jeff Landgraf <jml@bnl.gov>
-* Jin Huang <jhuang@bnl.gov>
+* Taku Gunji <gunji@cns.s.u-tokyo.ac.jp>
 
 <h4>Info</h4>
 * [Indico: https://indico.bnl.gov/category/409/](https://indico.bnl.gov/category/409/){:target="_blank"}
