@@ -22,6 +22,9 @@
     - name: detector
       full: Our Detector
 
+    - name: conference_talks
+      full: Conference/Talks
+
     - name: press
       full: Media/Press
 
