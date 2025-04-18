@@ -138,8 +138,8 @@
 #    - name: meetings
 #      full: ePIC meetings
 
-  - name: conf
-    full: 'Conferences & Workshops'
+  - name: conferences
+    full: 'Conferences, Meetings, Workshops'
 
   - name: nominations
     full: 'Speaker Nominations'
@@ -166,9 +166,6 @@
     - name: separator
       label: yes
       full: ' '
-
-    - name: conferences
-      full: Conferences
 
     - name: papers
       full: Papers

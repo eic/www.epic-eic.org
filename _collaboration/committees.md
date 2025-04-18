@@ -6,8 +6,9 @@ layout: default
 
 {% include layouts/title.md %}
 
-<br/>
 <a id="talks"></a>
+<br/>
+<br/>
 ##### Conferences and Talks Committee
 * __Mission Statement__: The Conference and Talk Committee (CTC) is responsible for the oversight and management of all oral and poster presentations given at scientific conferences on behalf of the Collaboration. This includes the selection of presenters, with the goal of equitable distribution of presentations across the Collaboration, as well as internal quality assurance, approval and archival of presentations, following effective and efficient procedures as detailed in the EPIC conference policy. The Conference and Talks Committee, in particular their chair(s), will act as the interface between the collaboration and organizing committees of conferences as appropriate.
 * __Mailing List__ for Collaboration-level conference material approval: _epic-talks-l@lists.bnl.gov_
