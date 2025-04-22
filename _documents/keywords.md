@@ -11,7 +11,7 @@ years:
 
 #### Conferences
 
-* Please note that conference keywords (tags) are presented on a dedicated [conference page](/documents/conferences.html) with links to the conferences' websites.
+* Please note that conference keywords (tags) are presented on a dedicated [conference page](/meetings/conferences.html) with links to the conferences' websites.
 * Some of the keywords are posted here before the correponding materials are uploaded to Zenodo, which means not every query will return results.
 
 ---
