@@ -16,6 +16,7 @@ For contact information and more detail, please see [the committee web page](/co
 * The [ePIC Conference and Talks Policy](https://zenodo.org/records/14052729){:target="_blank"} was adopted by Council on November 7, 2024 (restricted to members).
 * If you plan on getting involved in the Collaboration activity at various conferences and workshops, please make a point of subscribing to the dedicated
 mailing list for Collaboration-level conference material approval: __epic-talks-l@lists.bnl.gov__
+* [Speaker nomination form](https://urldefense.com/v3/__https://forms.gle/qQxf1wW5dUSVyTdh7__;!!P4SdNyxKAPE!AskwdefEZuyR_XCi11Etl3Q6H9pAbJA28BZhV5oJpkftch2qIqil8Dn0nKb3L7XtJtn1kznV2RnzTVE$){:target="_blank"}
 
 {{ site.hr }}
 

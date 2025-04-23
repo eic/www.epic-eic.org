@@ -359,9 +359,9 @@
 - name: ghp2025
   description: Workshop of the APS Topical Group on Hadronic Physics (2025)
   category: conference
-  upload: no
+  upload: yes
   year: 2025
-  url: 'https://indico.cern.ch/event/1353482/overview'
+  url: 'https://indico.jlab.org/event/868/'
 
 - name: poetic2025
   description: The 11th international conference on the Physics Opportunities at an Electron-Ion Collider (2025)
@@ -382,7 +382,7 @@
 - name: qm2025
   description: Quark Matter (2025)
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.cern.ch/event/1334113/'
 
