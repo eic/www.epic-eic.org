@@ -35,18 +35,18 @@ Here, you will find the output directories listed in a nested tree structure. Th
 The preferred method to list the files in a directory is to use the xrdfs interface within eic-shell container. For example:
 ```
     xrdfs root://dtn-eic.jlab.org   
-    ls /work/eic2/EPIC/RECO/23.09.1/epic_craterlake/DIS/NC/18x275/minQ2=1000
+    ls /volatile/eic/EPIC/RECO/23.09.1/epic_craterlake/DIS/NC/18x275/minQ2=1000
 ```
 See more details [here](https://eic.github.io/epic-prod/documentation/faq.html){:target="_blank"}.
 
 ---
 
 ##### Q: What input datasets are used in a particular production campaign and where can I find them?
-**A:** The directory structure of the input datasets mimic the directory structure of the output files from `<physics processes>` onwards. Consider, the output files under `root://dtn-eic.jlab.org//work/eic2/EPIC/RECO/23.12.0/epic_craterlake/DIS/NC/10x100/minQ2=1`. The corresponding input datasets can be found in the following manner:
+**A:** The directory structure of the input datasets mimic the directory structure of the output files from `<physics processes>` onwards. Consider, the output files under `root://dtn-eic.jlab.org//volatile/eic/EPIC/RECO/23.12.0/epic_craterlake/DIS/NC/10x100/minQ2=1`. The corresponding input datasets can be found in the following manner:
 
 ```
     xrdfs root://dtn-eic.jlab.org
-    ls /work/eic2/EPIC/EVGEN/DIS/NC/10x100/minQ2=1
+    ls /volatile/eic/EPIC/EVGEN/DIS/NC/10x100/minQ2=1
 ```
 
 ---
@@ -59,7 +59,7 @@ See more details [here](https://eic.github.io/epic-prod/documentation/faq.html){
 ##### Q: How can we load files into ROOT directly from xrootd?
 **A:** Enter the full file path including server address using root TFile::Open. For example:
 ```
-    auto f = TFile::Open("root://dtn-eic.jlab.org//work/eic2/EPIC/RECO/23.12.0/epic_craterlake/DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_1.0000.eicrecon.tree.edm4eic.root")
+    auto f = TFile::Open("root://dtn-eic.jlab.org//volatile/eic/EPIC/RECO/23.12.0/epic_craterlake/DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_1.0000.eicrecon.tree.edm4eic.root")
 ```
 See more details [here](https://eic.github.io/epic-prod/documentation/faq.html){:target="_blank"}.
 
@@ -69,7 +69,7 @@ See more details [here](https://eic.github.io/epic-prod/documentation/faq.html){
 **A:** Use xrdcp with full path and local destination directory. For example:
 
 ```
-xrdcp root://dtn-eic.jlab.org//work/eic2/EPIC/RECO/23.12.1/epic_craterlake/DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_1.0000.eicrecon.tree.edm4eic.root <local destination>
+xrdcp root://dtn-eic.jlab.org//volatile/eic/EPIC/RECO/23.12.1/epic_craterlake/DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_1.0000.eicrecon.tree.edm4eic.root <local destination>
 ```
 
 ---
