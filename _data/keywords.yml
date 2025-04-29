@@ -144,6 +144,23 @@
   description: Related to the Docker containerization platform
   category: software
 
+- name: echelon0
+  description: Related to the DAQ-level processing in ePIC
+  category: software
+
+
+- name: echelon1
+  description: Related to the model of data distribution and processing in ePIC
+  category: software
+
+- name: timeframe
+  description: A temporal unit of streaming data
+  category: software
+
+- name: modeling
+  description: A number of projects aimed at modeling of functionality of the ePIC computing infrastructure
+  category: software
+
 - name: geant4
   description: Geant4 simulation platform
   category: software
