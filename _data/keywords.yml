@@ -128,9 +128,6 @@
 
 
 # Software 
-- name: root
-  description: The ROOT analysis platform
-  category: software
 
 - name: software
   description: Misc software
@@ -144,36 +141,33 @@
   description: Related to the Docker containerization platform
   category: software
 
-- name: geant4
-  description: Geant4 simulation platform
+- name: echelon0
+  description: The DAQ-level data processing in ePIC
+  category: software
+
+
+- name: echelon1
+  description: Related to the model of data distribution and processing in ePIC
+  category: software
+
+- name: echelon2
+  description: Related to the model of data distribution and processing in ePIC
+  category: software
+
+- name: timeframe
+  description: A temporal unit of streaming data
+  category: software
+
+- name: modeling
+  description: A number of projects aimed at modeling of functionality of the ePIC computing infrastructure
   category: software
 
 - name: fastsim
   description: Fast simulations and related techniques
   category: software
 
-- name: gan
-  description: Generative Adversarial Network (a deep learning architechture)
-  category: software
-
 - name: gpu
   description: Graphics processing unit
-  category: software
-
-- name: julia
-  description: A programming language
-  category: software
-
-- name: python
-  description: A programming language
-  category: software
-
-- name: gdml
-  description: The Geometry Description Markup Language
-  category: software
-
-- name: onnx
-  description: Open Neural Network Exchange (an AI ecosystem)
   category: software
 
 - name: container
@@ -204,12 +198,8 @@
   description: Recovery of characteristics of the underlying physical phenomena from the collected data
   category: software
 
-- name: streamingdaq
-  description: Data Acquisition based on Streaming Technology
-  category: software
-
-- name: streamingcomputing
-  description: Computing Techniques applied to Streaming Data
+- name: streaming
+  description: Data Streaming Technology used in ePIC
   category: software
 
 - name: ai
