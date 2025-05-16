@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: aum2025
+  description: The RHIC/AGS Users Meeting (2025)
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.bnl.gov/event/27198/'
+
 - name: eicLatAm2025
   description: EIC Latin America 2025
   category: conference
