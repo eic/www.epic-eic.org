@@ -8,7 +8,7 @@
   indico:             'https://indico.bnl.gov/category/417/'
   mattermost:         'https://chat.epic-eic.org/main/channels/inclusive-physics'
   wiki:               'https://wiki.bnl.gov/EPIC/index.php?title=Inclusive'
-  meetings:           'Mondays at 12pm ET (bi-weekly)'
+  meetings:           'Tuesdays at 11am ET (bi-weekly)'
   
 - name:               exclusive_diffraction
   description:        'Exclusive and Diffraction'
