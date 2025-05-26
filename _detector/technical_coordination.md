@@ -13,6 +13,9 @@ deputies:
     - name:     Prakhar Garg
       email:    prakhar.garg@yale.edu
 
+    - name:     John Haggery
+      email:    haggerty@bnl.gov
+
     - name:     Oskar Hartbrich
       email:    hartbricho@ornl.gov
     
