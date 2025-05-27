@@ -218,9 +218,6 @@
     - name: learning
       full: User Learning
 
-    - name: validation
-      full: Validation
-
     - name: simulation
       full: Simulation
 
