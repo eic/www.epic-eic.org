@@ -199,9 +199,6 @@
     - name: evdisp
       full: Event Display
 
-    - name: tutorials
-      full: Software Tutorials
-
     - name: projects
       full: Common Software Projects
 
