@@ -26,6 +26,15 @@ mailing list for Collaboration-level conference material approval: __epic-talks-
 
 {{ site.hr }}
 
+##### Submission and Review Procedure
+* In accordance with the requirements layed out in the [ePIC Conference and Talks Policy](https://zenodo.org/records/14052729){:target="_blank"}, this section details the steps collaborators should follow when submitting a presentation for review and approval.
+* __NOTE:__  The Collaborative Tools Task Force is actively working on tools to help automate the review workflow. As these services become available the steps enumerated below will necessarily change. We will communicate these changes as widely as we can, but please refer back to this section before you begin submitting a presentation for review to see the latest instructions.
+
+__Procedure for Submitting Presentations for Review and Approval:__
+0. 
+
+{{ site.hr }}
+
 ##### List of Events
 * The table below lists conferences with ePIC participation, or of immediate interest to our Collaboration.
 * The left column in the tables below contains links to the respective conferences' pages (if available).
