@@ -1,6 +1,6 @@
 ---
-title: Diversity Office
-name: diversity
+title: Professional Conduct Office
+name: professional
 layout: default
 ---
 
