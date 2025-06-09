@@ -31,7 +31,10 @@ mailing list for Collaboration-level conference material approval: __epic-talks-
 * __NOTE:__  The Collaborative Tools Task Force is actively working on tools to help automate the review workflow. As these services become available the steps enumerated below will necessarily change. We will communicate these changes as widely as we can, but please refer back to this section before you begin submitting a presentation for review to see the latest instructions.
 
 __Procedure for Submitting Presentations for Review and Approval:__
-0. 
+
+0. Before doing anything else, please sign up for the talks mailing list: __epic-talks-l@lists.bnl.gov__
+1. At your earliest convenience, inform the CTC (epic-ctc-l@lists.bnl.gov) that you plan to present and provide topic and details of the conference/workshop
+2. Provide material (abstract, talk, poster, etc) to the appropriate first-step approval entity (see section III.3.1 of the ePIC Conference and Talks Policy) no later than 8 business days before it is due
 
 {{ site.hr }}
 
