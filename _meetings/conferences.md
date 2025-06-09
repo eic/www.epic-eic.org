@@ -32,9 +32,15 @@ mailing list for Collaboration-level conference material approval: __epic-talks-
 
 __Procedure for Submitting Presentations for Review and Approval:__
 
-0. Before doing anything else, please sign up for the talks mailing list: __epic-talks-l@lists.bnl.gov__
-1. At your earliest convenience, inform the CTC (epic-ctc-l@lists.bnl.gov) that you plan to present and provide topic and details of the conference/workshop
-2. Provide material (abstract, talk, poster, etc) to the appropriate first-step approval entity (see section III.3.1 of the ePIC Conference and Talks Policy) no later than 8 business days before it is due
+0. Presenter: Before submitting material for review and approval, please sign up for the talks mailing list (__epic-talks-l@lists.bnl.gov__) and the ePIC community on Zenodo
+1. Presenter: At your earliest convenience, inform the CTC (epic-ctc-l@lists.bnl.gov) that you plan to present and provide topic and details of the conference/workshop
+2. Presenter: Provide material (abstract text, talk, poster, etc) to the appropriate first-step approval entity email list (see section III.3.1 of the [ePIC Conference and Talks Policy]()(https://zenodo.org/records/14052729){:target="_blank"}) no later than 8 business days before it is due
+  * Material can be provided via email attachement or uploaded to Zenodo and shared via link (Zenodo can handle multiple versions of a record)
+  * Contact CTC if you are confused as to whom should be contacted as the first-step approval entity
+3. Reviewer: Provide feedback and communicate approval/disapproval decision within 4 weekdays of receiving material. If decision is approval, please inform appropriate second-step approval entity that material is ready for review
+  * Feedback and decisions should be communicated directly to the presenter and to the working group / DSC list
+4. Presenter: After first-step approval entity has signed off, upload material to Zenodo (either as new record, or if record already exists, new version) and send link and solicitation for feedback to the talks mailing list
+5. Reviewer: Second-step approval entity should ensure that all comments are incorporated into the presentation material and then communicate the final approval/disapproval decision to the ePIC talks mailing list
 
 {{ site.hr }}
 
