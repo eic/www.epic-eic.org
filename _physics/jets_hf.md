@@ -37,3 +37,37 @@ __Simulations__
 __Analysis macros__
 * Jet reader: https://github.com/eic/snippets/tree/main/JetsAndHF/jetReaderExamples
 * D<sup>0</sup> reconstruction based on Helix swimming: https://github.com/eic/snippets/tree/main/JetsAndHF/HF/D0_helix
+
+
+__EICrecon Jet Reconstruction Documentation__
+
+There are currently four jet collections in the default output of EICrecon:
+* _GeneratedJets_, which are reconstructed from all final-state generator particles (particles from the ```GeneratedParticles``` collection) regardless of charge;
+* _GeneratedChargedJets_, which are reconstructed from all charged final-state generator particles;
+* _ReconstructedJets_, which are reconstructed from ```ReconstructedParticle``` objects (combinations of tracks and EMCal clusters produced by the MatchClusters algorithm);
+* _ReconstructedChargedJets_, which are reconstructed from ```ReconstructedChargedParticle``` objects (i.e. tracks).
+
+In all cases, the jets are formed via [FastJet3](https://fastjet.fr) {:target="_blank"} according the parameters listed in the table below, and are stored as ```edm4eic::ReconstructedParticle``` objects. As this data type was intended to describe particles rather than extended objects like jets, additional information like the jet area currently is not stored.
+
+| Parameter | Name | Value |
+| --- | --- | --- |
+| Jet algorithm | jetALgo | anti-kT |
+| Jet recombination scheme | recomScheme | E-scheme |
+| Jet resolution parameter | rJet | 1 |
+| Exponent for generalized kT algorithms | pJet | -1 |
+| Minimum constituent pT | mimCstPt | 0.2 GeV/c |
+| Maximum constituent pT | maxCstPt | 100 GeV/c |
+| Minimum jet pT | minJetPt | 1 GeV/c |
+| Area type | areaType | active |
+| Maximum ghost rapidity | ghostMaxRap | 3.5 |
+| No. of repeated ghosts | numGhostRepeat | 1 |
+| Area per ghost | ghostArea | 0.001 |
+
+These parameters can be adjusted at runtime by the user, for example:
+```
+eicrecon \
+  -Preco:ReconstructedChargedJets:jetAlgo=ee_genkt_algorithm \
+  -Preco:ReconstructedChargedJets:rJet=0.8 \
+  -Preco:ReconstructedChargedJets:pJet=-1.0 \
+  <input edm4hep file>
+```
