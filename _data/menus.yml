@@ -199,6 +199,10 @@
     - name: evdisp
       full: Event Display
 
+    - name: tutorials
+      full: Software Tutorials
+      link: https://eic.github.io/documentation/tutorials.html
+
     - name: projects
       full: Common Software Projects
 
