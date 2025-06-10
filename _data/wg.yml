@@ -41,7 +41,7 @@
   indico:             'https://indico.bnl.gov/category/420/'
   mattermost:         'https://chat.epic-eic.org/main/channels/phys-jets-hf'
   wiki:               'https://wiki.bnl.gov/EPIC/index.php?title=JetsHF'
-  meetings:           'Wednesdays at 12:00 pm ET (bi-weekly)'
+  meetings:           'Tuesdays at 11:30 am ET (bi-weekly)'
 
 - name:               bsm_ew
   description:        'BSM and EW'
