@@ -6,18 +6,25 @@ layout: default
 {% include layouts/title.md %}
 
 The ePIC Collaboration is leveraging [Zenodo digital repository](https://zenodo.org/){:target="_blank"}
-for its document management capability. Our materials are managed as the
+for its document management capability. Zenodo is an open-source data repository designed for managing
+research materials in diverse areas of science. Our Collaboration is using a public instance
+of this system called **zenodo.org** which is supported by CERN, OpenAire and the European Union.
+For more information, consult the [zenodo.org FAQ](https://help.zenodo.org/faq/){:target="_blank"}.
+
+Materials committed to Zenodo can be assigned to collections specific to, and managed by 
+an organization. Such collections are termed "communities". The ePIC
+materials are managed as the
 ["ePIC Community on Zenodo"](https://zenodo.org/communities/epic/){:target="_blank"}.
+While most materials published on this platform are public, a fraction has a protected
+status and requires membership in the community (in our case it's **ePIC Community**).
 
-### What is Zenodo?
+**The membership
+status can be granted to the ePIC members by the community managers, once they send a request to
+<eic-software-l-request@lists.bnl.gov>.**
 
-Zenodo is an open-source data repository designed for scientific
-disciplines. ePIC is using a public implementation called Zenodo.org
-which is supported by CERN, OpenAire and the European Union. For more
-information, consult the Zenodo.org [<span
-class="underline">FAQ</span>](https://help.zenodo.org/faq/).
 
-### How To Upload A Document to Zenodo
+{{ site.hr }}
+#### How To Upload A Document to Zenodo
 
 Start by navigating to [<span
 class="underline">Zenodo.org</span>](http://zenodo.org) and log in or
@@ -55,13 +62,9 @@ You can now fill in the metadata for your upload. At a minimum, your
 upload should include the following information:
 
 -   A DOI (Digital Object Identifier). If you already have one you can enter it on the form, if you don’t select “No” and a button will appear that will allow you to generate one for your document.
-
 -   Select a descriptive title and publication date. If this is a conference presentation, it is helpful if you use the date you made the presentation. Otherwise, you can just enter today’s date.
-
 -   You will need to add information about the creator of this document. Typically this is you, but you can add multiple creators if that is appropriate. If you have an ORCID ID, it’s best to enter this in the form to add a creator as that uniquely identifies you.
-
 -   Add a meaningful description.
-
 -   The default license for the document (Creative Commons Attribution 4.0 International) is usually fine. If you want a specific license, you can select one here.
 
 This is all the required information by Zenodo, but to make the document
@@ -97,7 +100,8 @@ document is available for approval.
 If there are any problems with the information Zenodo.org will let you
 know and you can correct it and resubmit.
 
-### How To Approve A Document Submission to Zenodo
+{{ site.hr }}
+#### How To Approve A Document Submission to Zenodo
 
 Under **My Dashboard -&gt; Requests** (or **My Dashboard -&gt;
 Communities -&gt; ePIC -&gt; Requests**) click on the request that you
