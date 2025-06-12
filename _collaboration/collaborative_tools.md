@@ -15,7 +15,8 @@ as its information portal. Migration to this website (__www.epic-eic.org__) is w
 working group convener or a member of the leadership team.
 * Document management: the ePIC Collaboration is actively maintaining its
 [community within Zenodo (a repository hosted at CERN)](https://zenodo.org/communities/epic/){:target="_blank"}, which serves
-as the platform for collaborative review process, storage and management of reasearch materials.
+as the platform for collaborative review process, storage and management of reasearch materials. To gain access to the protected
+portion of the ePIC materials, please see intructions on the [document database page]({{ '/documents/zenodo.html' | relative_url }}){:target="_blank"}
 
 {{ site.hr }}
 
