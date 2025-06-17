@@ -27,21 +27,25 @@ mailing list for Collaboration-level conference material approval: __epic-talks-
 {{ site.hr }}
 
 ##### Submission and Review Procedure
-* In accordance with the requirements layed out in the [ePIC Conference and Talks Policy](https://zenodo.org/records/14052729){:target="_blank"}, this section details the steps collaborators should follow when submitting a presentation for review and approval.
+* In accordance with the requirements layed out in the [ePIC Conference and Talks Policy](https://zenodo.org/records/14052729){:target="_blank"}, this section summarizes the steps collaborators should follow when submitting a presentation for review and approval.
 * __NOTE:__  Please ensure you submit your material to the first-step approval entity __at least 8 business days before it is due.__ This is essential for providing adequate time for review and ensuring the reviewers are not overwhelmed. Presenters are of course free (and encouraged!) to discuss their material within their working group / DSC in advance of the 8 day limit.
 * __NOTE:__  The Collaborative Tools Task Force is actively working on tools to help automate the review workflow. As these services become available the steps enumerated below will necessarily change. We will communicate these changes as widely as we can, but please refer back to this section before you begin submitting a presentation for review to see the latest instructions.
 
 ###### Procedure for Submitting Presentations for Review and Approval:
 
-0. Presenter: Before submitting material for review and approval, please sign up for the talks mailing list (__epic-talks-l@lists.bnl.gov__) and the ePIC community on Zenodo
-1. Presenter: At your earliest convenience, inform the CTC (epic-ctc-l@lists.bnl.gov) that you plan to present and provide topic and details of the conference/workshop
-2. Presenter: Provide material (abstract text, talk, poster, etc) to the appropriate first-step approval entity email list (see section III.3.1 of the [ePIC Conference and Talks Policy]()(https://zenodo.org/records/14052729){:target="_blank"}) no later than 8 business days before it is due
-   * Material can be provided via email attachement or uploaded to Zenodo and shared via link (Zenodo can handle multiple versions of a record)
+0. Presenter: Before submitting material for review and approval, please sign up for the talks mailing list (__epic-talks-l@lists.bnl.gov__) and the ePIC community on [Zenodo](https://www.epic-eic.org/documents/zenodo.html){:target="_blank"}
+1. Presenter: At your earliest convenience, inform the CTC (epic-ctc-l@lists.bnl.gov) that you plan to present and provide topic and details of the conference/workshop. This applies for both invited and contributed presentations
+2. Presenter: Provide material (abstract text, talk, poster, etc) to the appropriate first-step approval entity email list (see section III.3.1 of the [ePIC Conference and Talks Policy]((https://zenodo.org/records/14052729){:target="_blank"}) no later than 8 business days before it is due
+   * Material can be provided via email attachement or uploaded to Zenodo and shared via link (Zenodo can handle multiple versions of a record). Note: mailing lists may have problems with large attachments
+   * When uploading to Zenodo, please be sure to include the Keyword for your conference (see table under "List of Events"). If your conference is not listed, please contact the CTC
    * Contact CTC if you are confused as to whom should be contacted as the first-step approval entity
-3. Reviewer: Provide feedback and communicate approval/disapproval decision within 4 weekdays of receiving material. If decision is approval, please inform appropriate second-step approval entity that material is ready for review
+3. First-Step Reviewer: Provide feedback and communicate approval/disapproval decision within 4 weekdays of receiving material. If decision is approval, please inform appropriate second-step approval entity that material is ready for review
    * Feedback and decisions should be communicated directly to the presenter and to the working group / DSC list
-4. Presenter: After first-step approval entity has signed off, upload material to Zenodo (either as new record, or if record already exists, new version) and send link and solicitation for feedback to the talks mailing list
-5. Reviewer: Second-step approval entity should ensure that all comments are incorporated into the presentation material and then communicate the final approval/disapproval decision to the ePIC talks mailing list
+4. Presenter: After first-step approval entity has signed off, upload material to Zenodo (either as new record, or if record already exists, new version) and send link and solicitation for Collaboration-wide feedback to the epic-talks mailing list
+5. Second-Step Reviewer: Second-step approval entity should check that all comments are incorporated into the presentation material and then communicate the final approval/disapproval decision to the ePIC talks mailing list
+6. Presenter: Please ensure that the final version of the presentation (the one shown at the conference) is uploaded to Zenodo and made public
+
+* __Reminder:__ For general ePIC overview talks that cover all aspects of the ePIC program, material should be sent directly to the epic-talks mailing list for second-step approval and comment from the Collaboration __at least 7 weekdays before the conference or abstract deadline__ 
 
 {{ site.hr }}
 
