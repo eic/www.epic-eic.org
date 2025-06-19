@@ -22,9 +22,18 @@ Be vocal about the challenges early career members are facing or may face in the
 
 <a id="cc"></a>
 
-##### Collaboration Council - Current Representatives (2023-2025)
+##### Collaboration Council Representatives
 
 Three early career members are elected as representatives, for a two-year term. They serve as a bridge between the early career members and the council, voting in the council to represent the decisions of the members on relevant topics. At least one of the elected persons must be a graduate student (Master's or PhD candidate).
+
+Current Representatives (2025-present)
+
+* [Yevheniia Khyzhniak](https://www.linkedin.com/in/nia-khyzhniak/){:target="_blank"},	        PhD Candidate,	The Ohio State University,	USA. [e-mail](mailto:khyzhniak.1@buckeyemail.osu.edu)
+* [Gary Penman](https://www.linkedin.com/in/gary-penman-a2b06619b/){:target="_blank"},			Post-Doctoral Fellow,	University of Glasgow,	UK. [e-mail](mailto:g.penman.1@research.gla.ac.uk)
+* [Akshaya Vijay](https://www.linkedin.com/in/akshaya-vijay-431644148/){:target="_blank"},			PhD Candidate,	University of Manitoba
+,	Canada. [e-mail](vijaya2@myumanitoba.ca)
+
+Past Representatives (2023-2025)
 
 * [Maria Stefaniak](https://www.linkedin.com/in/maria-stefaniak-physics/){:target="_blank"},	Post-Doctoral Fellow,	Ohio State University,	USA. [e-mail](mailto:stefaniak.9@osu.edu)
 * [Nicolas Schimdt](https://www.linkedin.com/in/nicolas-vt-schmidt/){:target="_blank"},			Post-Doctoral Fellow,	Oak Ridge National Lab,	USA. [e-mail](mailto:schmidtnv@ornl.gov)
