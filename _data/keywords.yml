@@ -311,6 +311,20 @@
 
 # 2025
 
+- name: is2025
+  description: The VIII-th International Conference on the Initial Stages of High-Energy Nuclear Collisions
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.cern.ch/event/1479384/'
+
+- name: spin2025
+  description: The 26th International Symposium on Spin Physics
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.ihep.ac.cn/event/22189/'
+
 - name: aum2025
   description: The RHIC/AGS Users Meeting (2025)
   category: conference
