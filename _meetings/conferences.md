@@ -9,6 +9,14 @@ years:
 ---
 {% include layouts/title.md %}
 
+##### Table of Contents
+- [Policies and Procedures](#policies-and-procedures)
+- [Links of Interest](#links-of-interest)
+- [Submission and Review Procedure](#submission-and-review-procedure)
+- [List of Events](#list-of-events)
+
+{{ site.hr }}
+
 ##### Policies and Procedures
 
 * __The Conference and Talk Committee (CTC)__ is responsible for the oversight and management of all oral and poster presentations given at scientific conferences on behalf of the Collaboration. 
