@@ -332,14 +332,14 @@
   year: 2025
   url: 'https://indico.bnl.gov/event/27198/'
 
-- name: eicLatAm2025
+- name: eiclatam2025
   description: EIC Latin America 2025
   category: conference
   upload: no
   year: 2025
   url: 'https://indico.ku.edu/event/478/'
 
-- name: hotQuark2025
+- name: hotquark2025
   description: Hot Quarks 2025
   category: conference
   upload: no
