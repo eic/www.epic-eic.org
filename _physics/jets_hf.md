@@ -12,26 +12,23 @@ __Simulations__
 * D<sup>0</sup> samples
   * e+p
     * 18x275
-      * Each event contains at least one D<sup>0</sup>
+      * Each event contains at least one D<sup>0</sup> that can decay through any channels
       * Location: ``` SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
     * 10x100
-      * Each event contains at least one D<sup>0</sup> that decays into π+K pair, and the decay daughters are within |eta| < 3.5
+      * Each event contains at least one D<sup>0</sup> that decays into π+K pair, and the decay daughters are within pseudorapidity of &plusmn;3.5
       * Location:
         * Q<sup>2</sup> > 1: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_1/hiDiv  ```
         * Q<sup>2</sup> > 100: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_100/hiDiv  ```
   * e+Au
-    * 10x100
-      * Simulated with BeAGLE v1.03.01
-      * Each event contains at least one D<sup>0</sup> that decays into π+K pair
-      * Location: [Simulation request submitted]
-    * 5x41
-      * Simulated with BeAGLE v1.03.01
-      * Each event contains at least one D<sup>0</sup> that decays into π+K pair
-      * Location: [Simulation request submitted]
+    * Simulated with BeAGLE v1.03.01
+    * Each event contains at least one D<sup>0</sup> that decays into π+K pair
+    * Location:
+      * 10x100: [Simulation request submitted]
+      * 5x41: [Simulation request submitted]
 * L<sub>c</sub> samples
   * e+p
     * 18x275
-      * Each event contains at least one L<sub>c</sub>
+      * Each event contains at least one L<sub>c</sub> that can decay through any channels
       * Location: ``` SIDIS/Lambda_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
      
 __Analysis macros__
@@ -47,7 +44,7 @@ There are currently four jet collections in the default output of EICrecon:
 * _ReconstructedJets_, which are reconstructed from ```ReconstructedParticle``` objects (combinations of tracks and EMCal clusters produced by the MatchClusters algorithm);
 * _ReconstructedChargedJets_, which are reconstructed from ```ReconstructedChargedParticle``` objects (i.e. tracks).
 
-In all cases, the jets are formed via [FastJet3](https://fastjet.fr) {:target="_blank"} according the parameters listed in the table below, and are stored as ```edm4eic::ReconstructedParticle``` objects. As this data type was intended to describe particles rather than extended objects like jets, additional information like the jet area currently is not stored.
+In all cases, the jets are formed via [FastJet3](https://fastjet.fr) according the parameters listed in the table below, and are stored as ```edm4eic::ReconstructedParticle``` objects. As this data type was intended to describe particles rather than extended objects like jets, additional information like the jet area currently is not stored.
 
 | Parameter | Name | Value |
 | --- | --- | --- |
