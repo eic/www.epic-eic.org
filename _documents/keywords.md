@@ -20,11 +20,10 @@ relevant keywords to the uploads.
 
 ##### Keyword creation guidelines
 
-To reduce the potential of mistyping keywords in our internal documents and
-also in query forms in the Zenodo system, it is strongly suggested to stick
-with the simplest descriptive form, and lowercase letters, while also reducing
-the use of dash '-' and underscore '_' unless it really helps the readability.
-Using decimal numbers is often a neccessity so it's acceptable.
+Use simple, lowercase words for all keywords in internal documents and Zenodo queries.
+Avoid using dashes (-) and underscores (_) unless they clearly improve readability. Decimal
+numbers may be used when necessary. This approach helps reduce errors when typing keywords and
+ensures consistency across documents and systems. 
 
 ##### Conferences
 
