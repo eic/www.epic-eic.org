@@ -2,17 +2,34 @@
 title: ePIC Keywords
 name: keywords
 layout: default
-years:
-- 2024
-- 2023
 ---
 {% include layouts/title.md %}
 
 
-#### Conferences
+##### Use of keywords in ePIC
+
+The keywords assigned to a variety of materials (which can inclusde papers,
+slides, images, computer code and software etc) play a crucial role in
+integration of the information systems used in ePIC. This page serves as
+the main information point regarding management of keywords. Proposals
+for creation of new words should be sent to the leadership of the Collaboration.
+The tables below contain a list of both accepted and proposed keywords.
+When uploding materials to the Collaboration Document Management Database
+(Zenodo) it is strongly recommended to assign some of the approved and
+relevant keywords to the uploads.
+
+##### Keyword creation guidelines
+
+Use simple, lowercase words for all keywords in internal documents and Zenodo queries.
+Avoid using dashes (-) and underscores (_) unless they clearly improve readability. Decimal
+numbers may be used when necessary. This approach helps reduce errors when typing keywords and
+ensures consistency across documents and systems. 
+
+##### Conferences
 
 * Please note that conference keywords (tags) are presented on a dedicated [conference page](/meetings/conferences.html) with links to the conferences' websites.
 * Some of the keywords are posted here before the correponding materials are uploaded to Zenodo, which means not every query will return results.
+
 
 ---
 

@@ -64,6 +64,7 @@ mailing list for Collaboration-level conference material approval: __epic-talks-
 Keywords rendered as clickable links will list the ePIC items on archived on Zenodo, related to the conference (or meeting).
 * Please note that some conference uploads (especially for future conferences) may be still pending i.e. not all queries will produce results.
 * For easy access, the conferences are grouped by the year.
+* When suggesting a keyword for a new conference, please consult the guidelines on top of the [keywords page](/documents/keywords.html).
 
 {{ site.hr }}
 
