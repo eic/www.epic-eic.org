@@ -311,6 +311,34 @@
 
 # 2025
 
+- name: eiclhcsynergies2025
+  description: Joint ECFA-NuPECC-APPEC Workshop: Synergies Between the EIC and the LHC
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.ifj.edu.pl/event/1417/'
+
+- name: rich2025
+  description: XII International Workshop on Ring Imaging Cherenkov Detectors
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.gsi.de/event/20387/'
+
+- name: cfnsfixedtarget2025
+  description: New Horizons with Fixed-Target Proton-Nucleus Experiments at Intermediate Energies
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.cfnssbu.physics.sunysb.edu/event/430/'
+
+- name: vertex2025
+  description: 33rd International Workshop on Vertex Detectors
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.phy.ornl.gov/event/677/'
+
 - name: is2025
   description: The VIII-th International Conference on the Initial Stages of High-Energy Nuclear Collisions
   category: conference
