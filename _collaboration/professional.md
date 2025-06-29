@@ -8,8 +8,7 @@ layout: default
 
 #### Committee Members
 
-* Megan Connors (chair)
-* Christine Nattrass (vice-chair)
+* Christine Nattrass (chair)
 * Francesco Bossù
 * Wouter Deconinck
 * Narbe Kalantarians
@@ -21,7 +20,7 @@ layout: default
 
 #### Representation
 <a id="eb"></a>
-* Executive Board member: Megan Connors <meganconnors@gmail.com>
+* Executive Board member: Christine Nattrass <cnattras@utk.edu>
 
 #### ePIC Community Values
 
