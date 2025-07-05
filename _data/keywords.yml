@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: dnp2025
+  description: 2025 Fall Meeting of the APS Division of Nuclear Physics 
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.phy.anl.gov/event/58/'
+
 - name: eiclhcsynergies2025
   description: Joint ECFA-NuPECC-APPEC Workshop Synergies Between the EIC and the LHC
   category: conference
