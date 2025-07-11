@@ -73,7 +73,7 @@ layout: default
 ---
 
 ### Backwards HCAL
-* DSL: Leszek Kosarzewski <leszek.kosarzewski@gmail.com>
+* DSL: Daniel Brandenburg <brandenburg.89@osu.edu>
 * DSTC: Caroline Riedl <criedl@illinois.edu>
 
 ---
