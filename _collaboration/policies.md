@@ -12,4 +12,4 @@ layout: default
 * The [Conference and Talks Policy](https://zenodo.org/records/14052729){:target="_blank"} adopted by Council November 7, 2024 (restricted to members).
 * The [Code of Conduct](https://zenodo.org/records/14617833){:target="_blank"} adopted by Council December 23, 2024 (restricted to members).
 * The [Results Release Policy](https://zenodo.org/records/15390156){:target="_blank"} adopted by Council May 9, 2025 (restricted to members).
-* The Publication Policy adopted by Council July 10, 2025 (restricted to members).
+* The [Publication Policy](https://zenodo.org/records/15874182){:target="_blank"} adopted by Council July 10, 2025 (restricted to members).
