@@ -12,11 +12,11 @@ chairs:
       attribute2: 7/2025-present
 
 past:
-    - attribute1: Thomas Ullrich (vice-chair)
-      attribute2: 5/2024-7/2025
-    
     - attribute1: Bernd Surrow (chair)
       attribute2: 5/2024-7/2025
+
+    - attribute1: Thomas Ullrich (vice-chair)
+      attribute2: 5/2024-7/2025    
 
     - attribute1: Ernst Sichtermann (chair)
       attribute2: 2/2023-5/2024
