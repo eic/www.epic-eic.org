@@ -5,13 +5,19 @@ layout: default
 
 
 chairs:
-    - attribute1: Bernd Surrow (chair)
-      attribute2: 5/2024-present
+    - attribute1: Thomas Ullrich (chair)
+      attribute2: 7/2025-present
 
-    - attribute1: Thomas Ullrich (vice-chair)
-      attribute2: 5/2024-present
+    - attribute1: Renee Fatemi (vice-chair)
+      attribute2: 7/2025-present
 
 past:
+    - attribute1: Thomas Ullrich (vice-chair)
+      attribute2: 5/2024-7/2025
+    
+    - attribute1: Bernd Surrow (chair)
+      attribute2: 5/2024-7/2025
+
     - attribute1: Ernst Sichtermann (chair)
       attribute2: 2/2023-5/2024
 
@@ -29,7 +35,7 @@ The Collaboration Council (CC) is the governing body of the ePIC Collaboration o
 
 ##### Council Meetings
 
-The list of all council meetings can be found [here](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting will be late May or early June, 2025. It will be a remote meeting.
+The list of all council meetings can be found [here](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is not fixed yet.
 
 ---
 
