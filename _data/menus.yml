@@ -34,6 +34,13 @@
       label: yes
       full: ' '
 
+    - name: new_member
+      full: Information for New Members
+
+    - name: separator
+      label: yes
+      full: ' '
+
     - name: early
       full: Early Career
 
