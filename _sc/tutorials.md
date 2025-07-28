@@ -31,7 +31,7 @@ layout: default
 ##### [Developing benchmarks](https://eic.github.io/tutorial-developing-benchmarks)
 [![BenchmarkTutSS](/assets/images/tutorials/BenchmarkTutSS.png){: width="40%" }](https://eic.github.io/tutorial-developing-benchmarks)
 
-##### [Simulations using ddsim and geant4](https://eic.github.io/tutorial-simulations-using-ddsim-and-geant4/)
+##### [Simulations using npsim and geant4](https://eic.github.io/tutorial-simulations-using-npsim-and-geant4/)
 [![SimTutSS](/assets/images/tutorials/SimTutSS.png){: width="40%" }](https://eic.github.io/tutorial-simulations-using-ddsim-and-geant4/)
 [![video1](/assets/images/tutorials/SimVid1.png){: width="18%" }](https://www.youtube.com/watch?v=QjjD1_wjLIw)
 [![video2](/assets/images/tutorials/SimVid2.png){: width="18%" }](https://www.youtube.com/watch?v=WqSQ4m_esUw)
