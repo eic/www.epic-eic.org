@@ -59,8 +59,7 @@ large early career members.
 *  [Version 1.0](https://zenodo.org/records/11584258){:target="_blank"} as passed by the ePIC Council on 12/14/2022 
 
 ###### Policies
-
-* [The Policies Web Page](/collaboration/policies.html)
+* [The Policies and Guidelines Web Page](/collaboration/policies.html)
 
 {{ site.hr }}
 
