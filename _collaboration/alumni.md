@@ -20,15 +20,27 @@ layout: default
 #### Collaboration Council
 
 * Chair
-   * Bernd Surrow (2023-)
-
-* Vice-Chair
-   * Thomas Ullrich (2023-)
+   * Bernd Surrow (2024-2025)
+   * Ernst Sichtermann (2023-2024)
 
 ---
 #### DEI Office
 
 * Chair
-   * Megan Connors (2023-)
-* Vice-chair
-   * Christine Nattrass (2023-)
+   * Megan Connors (2023-2025)
+ 
+#### Conferences and Talks Committee
+
+* Chair
+   * Maria Zurek (2023-2024)
+ 
+#### Publication Committee
+
+* Chair
+   * Rene Bellwied (2024-2025)
+ 
+#### Membership Committee
+
+* Chair
+   * Peter Steinberg   (2023-2024)
+   * Pietro Antonioli  (2024-2025)
