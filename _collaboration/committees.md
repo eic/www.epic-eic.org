@@ -14,8 +14,8 @@ layout: default
 * __Mailing List__ for Collaboration-level conference material approval: _epic-talks-l@lists.bnl.gov_
 * __Contact Email__: _epic-ctc-l@lists.bnl.gov_
 * __Committee Members__
-   * Maria Zurek (Chair)
-   * Brian Page (vice-chair)
+   * Brian Page (chair)
+   * Daniel Brandenburg (vice-chair)
    * Barbara Jacak
    * Daniel Brandenburg
    * Dmitry Kalinkin
@@ -32,8 +32,9 @@ layout: default
 * __Mission Statement__: The ePIC membership committee (eMC) is responsible for the development of the Membership policy and oversight of its fair implementation. The Membership Policy defines the process for establishing, and maintaining "Good Standing" status for Collaboration members, and the primary requirements for the authorship within ePIC. The committee will assist the Council in developing and enforcing, upon adoption of, the ePIC Membership policy.
 * __Contact Email__: _epic-cc-membership-committee-l@lists.bnl.gov_
 * __Committee Members__
-   * Peter Steinberg (Chair)
-   * Pietro Antonioli (vice-chair)
+   * Eric Lancon (chair)
+   * Carlos Munoz Camacho (vice-chair)
+   * Peter Steinberg 
    * Helen Caines
    * Bedanga Mohanty
    * Silvia Niccolai
@@ -54,9 +55,10 @@ layout: default
 {{ site.hr }}
 
 ##### Publications Committee
-* Chair: Rene Bellwied (Houston) <rbellwie@Central.UH.EDU>
-* Vice-Chair: Annalisa Mastroserio (INFN Bari) <annalisa.mastroserio@ba.infn.it>
+* Chair: Annalisa Mastroserio (INFN Bari) <annalisa.mastroserio@ba.infn.it>
+* Vice-Chair: TBE
 * Members
+   * Rene Bellwied (Houston)   
    * Lokesh Kumar (Panjab U.)
    * Michela Chiosso (Torino)
    * Prithwish Tribedy (BNL)
