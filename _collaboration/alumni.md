@@ -24,7 +24,7 @@ layout: default
    * Ernst Sichtermann (2023-2024)
 
 ---
-#### DEI Office
+#### Professional Conduct Office
 
 * Chair
    * Megan Connors (2023-2025)
