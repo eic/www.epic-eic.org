@@ -9,6 +9,7 @@ layout: default
 #### Committee Members
 
 * Christine Nattrass (chair)
+* Susanna Costanza (vice-chair)
 * Francesco Bossù
 * Wouter Deconinck
 * Narbe Kalantarians
