@@ -8,9 +8,11 @@ layout: default
 {% include layouts/wg_top.md %}
 
 __Simulations__
-* Repository for event generation: https://github.com/eic/HFsim
+* Repository for event generation
+  * https://github.com/eic/HFsim-PYTHIA
+  * https://github.com/eic/HFsim-BeAGLE 
 * D<sup>0</sup> samples
-  * e+p
+  * e+p: PYTHIA v8.306
     * 18x275
       * Each event contains at least one D<sup>0</sup> that can decay through any channels
       * Location: ``` SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
@@ -19,18 +21,23 @@ __Simulations__
       * Location:
         * Q<sup>2</sup> > 1: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_1/hiDiv  ```
         * Q<sup>2</sup> > 100: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_100/hiDiv  ```
-  * e+Au
-    * Simulated with BeAGLE v1.03.01
+  * e+Au: BeAGLE v1.03.01
     * Each event contains at least one D<sup>0</sup> that decays into π+K pair
+    * Q<sup>2</sup> > 1
     * Location:
-      * 10x100: [Simulation request submitted]
-      * 5x41: [Simulation request submitted]
+      * 10x100: ``` epic_craterlake_without_zdc/SIDIS/D0_ABCONV/HFsim-BeAGLE/BeAGLE1.03.01-1.0/eAu/10x100/q2_1to10000 ``` 
+      * 5x41: ``` epic_craterlake_without_zdc/SIDIS/D0_ABCONV/HFsim-BeAGLE/BeAGLE1.03.01-1.0/eAu/5x41/q2_1to10000 ``` 
 * L<sub>c</sub> samples
   * e+p
     * 18x275
       * Each event contains at least one L<sub>c</sub> that can decay through any channels
       * Location: ``` SIDIS/Lambda_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
-     
+  * e+Au: BeAGLE v1.03.01
+    * Each event contains at least one L<sub>c</sub> that decays through π+K+p channel
+    * Q<sup>2</sup> > 1
+    * Location:
+      * 10x100: ``` epic_craterlake_without_zdc/SIDIS/Lc_ABCONV/HFsim-BeAGLE/BeAGLE1.03.01-1.0/eAu/10x100/q2_1to10000 ```
+          
 __Analysis macros__
 * Jet reader: https://github.com/eic/snippets/tree/main/JetsAndHF/jetReaderExamples
 * D<sup>0</sup> reconstruction based on Helix swimming: https://github.com/eic/snippets/tree/main/JetsAndHF/HF/D0_helix
