@@ -7,6 +7,8 @@ layout: default
 
 This page summarizes the procedure for submitting an analysis or technical note to the ePIC document repository. This is intended to be a simple, lightweight procedure that ensure that everyone relevant is informed when a new analysis or technical note is created.
 
+Template for composing a note can be found on Zenodo: [https://zenodo.org/records/16619274](https://zenodo.org/records/16619274)
+
 * **Step 1**: Collaborator contacts the Analysis/Technical/Software and Computing Coordination Office with title to receive note number
   * Analysis/Technical/Software and Computing Coordination Offices maintain note numbers and list of notes
 * **Step 2**: DSC/WG leadership signs off on note
