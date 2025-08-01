@@ -163,6 +163,9 @@
     - name: note_process
       full: Ana/Tech Note Submission
 
+    - name: results_release
+      full: Results release procedure
+
     - name: separator
       label: yes
       full: ' '
