@@ -1,0 +1,1 @@
+This page briefly describes the procedure for releasing official ePIC results. The full policy can be found on Zenodo: [https://zenodo.org/records/15390156](https://zenodo.org/records/15390156){:target="_blank"}
