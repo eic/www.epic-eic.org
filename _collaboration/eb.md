@@ -15,7 +15,7 @@ layout: default
 ##### Coordinators
 * Markus Diefenthaler <mdiefent@jlab.org>
 * Salvatore Fazio <salvatore.fazio@unical.it>
-* Rosi Reed <rosijreed@gmail.com>
+* Rachel Montgomery <Rachel.Montgomery@glasgow.ac.uk>
 
 ##### DEI Member
 * Megan Connors <meganconnors@gmail.com>
