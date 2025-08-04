@@ -16,6 +16,9 @@ layout: default
 * Deputy Spokesperson
    * Silvia Dalla Torre (2023-)
 
+* Physics Analysis Coordination
+  * Rosi Reed (2023-2025) 
+
 ---
 #### Collaboration Council
 
@@ -44,3 +47,39 @@ layout: default
 * Chair
    * Peter Steinberg   (2023-2024)
    * Pietro Antonioli  (2024-2025)
+
+#### Inclusive Physics Working Group
+
+* Co-Convener
+  * Claire Gwenlan (2023-2024)
+  * Tyler Kutz (2023-2025)
+
+#### Semi-Inclusive Physics Working Group
+
+* Co-Convener
+  * Charlotte Van Hulse (2023-2024)
+  * Stefan Diehl (2023-2025)
+
+#### Exclusive and Diffration Physics Working Group
+
+* Co-Convener
+  * Rachel Montgomery (2023-2024)
+  * Raphael Dupre (2023-2025)
+
+#### Jets and Heavy Flavor Physics Working Group
+
+* Co-Convener
+  * Brian Page (2023-2024)
+  * Olga Evdokimov (2023-2025)
+
+
+#### BSM & Electroweak Physics Working Group
+
+* Co-Convener
+  * Michael Nycz (2023-2024)
+  * Ciprian Gal (2023-2025)
+
+#### Streaming Computing Working Group
+
+* Co-Convener
+  * Jin Huang (2023-2025)
