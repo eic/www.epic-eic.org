@@ -11,6 +11,7 @@ This page briefly describes the procedure for releasing official ePIC results. T
 Types of ePIC result tags
 * Published results: **ePIC** 
 * Physics results: **ePIC Preliminary**
+  * Based on real data 
 * Performance results
   *  **ePIC Test Beam**: results based on test beam data
   *  **ePIC Computing**: results related to software and computing infrastructure, algorithm, flow chart, plans, DAQ, etc.
