@@ -15,12 +15,15 @@ __Simulations__
   * e+p: PYTHIA v8.306
     * 18x275
       * Each event contains at least one D<sup>0</sup> that can decay through any channels
-      * Location: ``` SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
+      * Location: ``` epic_craterlake/SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
     * 10x100
       * Each event contains at least one D<sup>0</sup> that decays into π+K pair, and the decay daughters are within pseudorapidity of &plusmn;3.5
       * Location:
-        * Q<sup>2</sup> > 1: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_1/hiDiv  ```
-        * Q<sup>2</sup> > 100: ``` SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_100/hiDiv  ```
+        * Q<sup>2</sup> > 1: ``` epic_craterlake/SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_1/hiDiv  ```
+        * Q<sup>2</sup> > 100: ``` epic_craterlake/SIDIS/D0_ABCONV/pythia8.306-1.1/10x100/q2_100/hiDiv  ```
+    * 5x41
+      * Each event contains at least one D<sup>0</sup> that can decays into π+K pair
+      * Location: ``` epic_craterlake/SIDIS/D0_ABCONV/HFsim-PYTHIA/pythia8.306-1.2/ep/5x41/q2_1to10000/hiDiv  ```
   * e+Au: BeAGLE v1.03.01
     * Each event contains at least one D<sup>0</sup> that decays into π+K pair
     * Q<sup>2</sup> > 1
@@ -31,7 +34,10 @@ __Simulations__
   * e+p
     * 18x275
       * Each event contains at least one L<sub>c</sub> that can decay through any channels
-      * Location: ``` SIDIS/Lambda_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
+      * Location: ``` epic_craterlake/SIDIS/Lambda_ABCONV/pythia8.306-1.0/18x275/hiDiv  ```
+    * 10x100
+      * Each event contains at least one L<sub>c</sub> that decays to a π+K+p channel
+      * Location: ``` epic_craterlake/SIDIS/Lc_ABCONV/HFsim-PYTHIA/pythia8.306-1.2/ep/10x100/q2_1to10000/hiDiv  ```
   * e+Au: BeAGLE v1.03.01
     * Each event contains at least one L<sub>c</sub> that decays through π+K+p channel
     * Q<sup>2</sup> > 1
