@@ -6,6 +6,7 @@ layout: default
 {% include layouts/title.md %}
 
 This page briefly describes the procedure for releasing official ePIC results. The full policy can be found on Zenodo: [https://zenodo.org/records/15390156](https://zenodo.org/records/15390156){:target="_blank"}
+ * A template plotting macro can be found on Zenodo [LINK](https://zenodo.org/records/16615455){:target="_blank"} or Github [LINK](https://github.com/eic/ResultsCommittee_templates/tree/main/plot_macro){:target="_blank"}
 
 
 Types of ePIC result tags
