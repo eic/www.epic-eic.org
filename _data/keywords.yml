@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: cpad2025
+  description: Coordinating Panel for Advanced Detectors Workshop
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.global/event/14966/overview'
+
 - name: iwhss2025
   description: Joint 21st International Workshop on Hadron Structure and Spectroscopy and 6th workshop on the QCD Structure of the Nucleon 
   category: conference
