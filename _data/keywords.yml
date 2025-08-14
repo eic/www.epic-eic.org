@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: eunpc2025
+  description: European Nuclear Physics Conference 2025
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.in2p3.fr/event/30430/page/3471-home'
+
 - name: cpad2025
   description: Coordinating Panel for Advanced Detectors Workshop
   category: conference
