@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: hyp2025
+  description: 15th International Conference on Hypernuclear and Strange Particle Physics
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico2.riken.jp/event/5204/overview'
+
 - name: eunpc2025
   description: European Nuclear Physics Conference 2025
   category: conference
