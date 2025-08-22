@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: lp2025
+  description: 32nd International Symposium on Lepton Photon Interactions at High Energies
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://agenda.hep.wisc.edu/event/2188/overview'
+
 - name: hyp2025
   description: 15th International Conference on Hypernuclear and Strange Particle Physics
   category: conference
