@@ -1,10 +1,16 @@
 # There is not predefined order here. We are adding conveners on top, to feed the WG pages with contact info
 
 # inclusive
+- name: win_lin
+  full: Win Lin
+  email: win.lin@stonybrook.edu
+  roles: [convener]          
+  teams:
+
 - name: tyler_kutz
   full: Tyler Kutz
   email: tkutz@mit.edu
-  roles: [convener]
+  roles:
   teams: 
 
 - name: claire_gwenlan
@@ -15,16 +21,22 @@
 
 - name: stephen_maple
   full: Stephen Maple
-  email: SCM633@student.bham.ac.uk
+  email: s.maple@bham.ac.uk
   roles: [convener]
   teams:
 
 
 # exclusive_diffraction
+#- name: stephen_kay
+#  full: Stephen Kay
+#  email: stephen.kay@york.ac.uk
+#  roles: [convener]          
+#  teams:
+
 - name: rachel_montgomery
   full: Rachel Montgomery
   email: rachel.montgomery@glasgow.ac.uk
-  roles: [convener]
+  roles:
   teams: 
 
 - name: raphael_dupre
@@ -41,10 +53,16 @@
   teams: 
 
 # semi_inclusive
+- name: anselm_vossen
+  full: Anselm Vossen
+  email: anselm.vossen@duke.edu
+  roles: [convener]
+  teams:
+
 - name: stefan_diehl
   full: Stefan Diehl
   email: stefan.diehl@exp2.physik.uni-giessen.de
-  roles: [convener]
+  roles:
   teams: 
 
 - name: charlotte_van_hulse
@@ -60,10 +78,16 @@
   teams:
 
 # jets_hf
+- name: shyam_kumar
+  full: Shyam Kumar
+  email: shyam.kumar@ba.infn.it
+  roles: [convener]
+  teams:
+
 - name: olga_evdokimov
   full: Olga Evdokimov
   email: evdolga@uic.edu
-  roles: [convener]
+  roles:
   teams: 
 
 - name: brian_page
@@ -79,6 +103,12 @@
   teams:
 
 # bsm_ew
+- name: zuhal_seyma
+  full: Zuhal Seyma
+  email: zuhal.seyma.demiroglu@cern.ch
+  roles: [convener]
+  teams:
+
 - name: michael_nycz
   full: Michael Nycz
   email: mnycz@jlab.org
@@ -88,7 +118,7 @@
 - name: ciprian_gal
   full: Ciprian Gal
   email: ciprian@jlab.org
-  roles: [convener]
+  roles:
   teams:
 
 - name: juliette_mammei
