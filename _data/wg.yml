@@ -2,7 +2,7 @@
 - name:               inclusive
   description:        'Inclusive'
   mission_statement:  'The inclusive physics working group evaluates the ability of the ePIC detector to observe inclusive processes. As this largely relies on detecting the scattered beam electron, the inclusive PWG is contributing significantly to the development of electron identification and reconstruction algorithms. Inclusive kinematics can also be reconstructed using information from the hadronic final state, and therefore the inclusive PWG is also contributing to hadronic reconstruction algorithms. Evaluating the resolutions of multiple reconstruction methods across the ePIC acceptance will allow maximal exploitation of ePICs capabilities. Last but not least, the inclusive PWG is benchmarking ePIC performance by extracting key inclusive physics observables, namely reduced cross sections (NC and CC) and double-spin asymmetries.'
-  conveners:          tyler_kutz, stephen_maple
+  conveners:          stephen_maple, win_lin
   list:               'eic-projdet-Inclusive-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-inclusive-l'
   indico:             'https://indico.bnl.gov/category/417/'
@@ -13,7 +13,7 @@
 - name:               exclusive_diffraction
   description:        'Exclusive and Diffraction'
   mission_statement:  'The responsibilities of the Exclusive, Diffraction, and Tagging working group are to evaluate the performance of the ePIC detector as it relates to exclusive, diffractive, or tagging processes. We are charged with the development of a set of performance and physics benchmarks.'
-  conveners:          zhoudunming_tu, raphael_dupre
+  conveners:          zhoudunming_tu, stephen_kay
   list:               'eic-projdet-excldiff-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-excldiff-l'
   indico:             'https://indico.bnl.gov/category/419/'
@@ -24,7 +24,7 @@
 - name:               semi_inclusive
   description:        'Semi-Inclusive'
   mission_statement:  'The semi-inclusive working group evaluates the performance of the ePIC detector for the future measurements of semi-inclusive processes. For this, it needs to study the reconstruction of the scattered lepton and the typical DIS variables as well as the reconstruction of the produced hadrons, including the quality of their identification.'
-  conveners:          stefan_diehl, ralf_seidl
+  conveners:          ralf_seidl, anselm_vossen
   list:               'eic-projdet-semiincl-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-semiincl-l'
   indico:             'https://indico.bnl.gov/category/418/'
@@ -35,7 +35,7 @@
 - name:               jets_hf
   description:        'Jets and Heavy Flavor'
   mission_statement:  'The responsibilities of the Jets and Heavy Flavor working group are to evaluate the performance of the ePIC detector as it relates to jet and heavy flavor observables utilizing a set of performance and physics benchmarks. We also work on developing the analysis techniques and software tools needed to implement the benchmarks used in detector evaluation.'
-  conveners:          olga_evdokimov, rongrong_ma
+  conveners:          rongrong_ma, shyam_kumar
   list:               'eic-projdet-jethf-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-jethf-l'
   indico:             'https://indico.bnl.gov/category/420/'
@@ -46,7 +46,7 @@
 - name:               bsm_ew
   description:        'BSM and EW'
   mission_statement:  'The BSM and EW group looks at physics topics that are not usually associated with the EIC such as Charged Lepton Flavor Violation and Dark Photons. The impressive ePIC detector will allow for physics reach that is complementary to other searches of beyond the standard model physics at the LHC or other low energy facilities around the world. The group explores ways to improve detector sensitivities to such searches through particle detection and simulations. New ideas and exploratory investigations are welcome and supported within the group.'
-  conveners:          ciprian_gal, juliette_mammei
+  conveners:          juliette_mammei, zuhal_seyma
   list:               'eic-projdet-bsmew-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-bsmew-l'
   indico:             'https://indico.bnl.gov/category/421/'
