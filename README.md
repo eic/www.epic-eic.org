@@ -1,12 +1,11 @@
 # The ePIC website
 
 ## About
-This is the future home of the ePIC collaboration website. It is in early stages of development.
-Suggestions are welcome.
+This is the ePIC collaboration website - work in progress.
 
 ## Current work items
 
-Fill out the required pages. Please contact T.Ullrich for details.
+Please contact T.Ullrich for details.
 
 
 ### New features
@@ -23,9 +22,11 @@ WG descriptions are now kept in the file _wg.yml_ in the *_data_* folder
 
 * Keywords (a stub)
 
-### Filtering
+### Filtering - examples
 
-Work in progress, examples:
+This is an example of applying filters in the _Liquid_ language used in the web pages
+templates:
+
 ```
 {% assign nominations=site.data.keywords | where_exp: "item", "item.category=='conference'" | where_exp: "item", "item.year==2024" %}
 
@@ -41,4 +42,12 @@ Work in progress, examples:
 {% endfor %}
 ```
 
+## Running local build
+
+```bash
+bundle exec jekyll serve --port 8000
+```
+
+That assumes you did the installation of Ruby/Jekyll:
+* https://jekyllrb.com/
 
