@@ -342,7 +342,7 @@
 - name: iwhss2025
   description: Joint 21st International Workshop on Hadron Structure and Spectroscopy and 6th workshop on the QCD Structure of the Nucleon 
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.cern.ch/event/1527657/'
 
@@ -377,7 +377,7 @@
 - name: vertex2025
   description: 33rd International Workshop on Vertex Detectors
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.phy.ornl.gov/event/677/'
 
@@ -398,7 +398,7 @@
 - name: aum2025
   description: The RHIC/AGS Users Meeting (2025)
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.bnl.gov/event/27198/'
 
@@ -493,24 +493,28 @@
 - name: cpad2024
   description: Coordinating Panel for Advanced Detectors Workshop
   category: conference
+  upload: yes
   year: 2024
   url: 'https://indico.phy.ornl.gov/event/510/'
 
 - name: epic2024winter
   description: The ePIC Collaboration Meeting, winter 2024
   category: conference
+  upload: no
   year: 2024
   url: 'https://indico.bnl.gov/event/20473/'
 
 - name: dis2024
   description: The 31st International Workshop on Deep Inelastic Scattering (2024)
   category: conference
+  upload: yes
   year: 2024
   url: 'https://lpsc-indico.in2p3.fr/event/3268/'
 
 - name: chep2024
   description: The 27th International Conference on Computing in High-Energy and Nuclear Physics (2024)
   category:  conference
+  upload: yes
   nominations:
     - name: Sakib Rakhman
       title: The ePIC Simulation Campaign Workflow on the Open Science Grid
@@ -540,6 +544,7 @@
 - name: dnp2024
   description: The Fall Meeting of the APS Division of Nuclear Physics (2024)
   category:  conference
+  upload: yes
   year: 2024
   url: 'https://web.mit.edu/dnp2024/index.html'
 
@@ -593,6 +598,7 @@
 - name: lhcp2024
   description: The 12th Large Hadron Collider Physics Conference - LHCP (2024)
   category:  conference
+  upload: yes
   year: 2024
   url: 'https://indico.cern.ch/event/1253590/'
 
@@ -627,6 +633,7 @@
 - name: qwg2024
   description: The 16th International Workshop on Heavy Quarkonium (2024)
   category: conference
+  upload: yes
   year: 2024
   url: 'https://indico.cern.ch/event/1226860/'
 
