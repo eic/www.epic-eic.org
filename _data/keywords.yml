@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: rucio2025
+  description: Eighth Rucio Community Workshop
+  category: conference
+  upload: no
+  year: 2025
+  url: 'https://indico.cern.ch/event/1545309/'
+
 - name: lp2025
   description: 32nd International Symposium on Lepton Photon Interactions at High Energies
   category: conference
