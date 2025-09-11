@@ -8,6 +8,8 @@ layout: default
 
 ### Welcome to the ePIC Collaboration 🎉
 
+<br>
+
 We are excited to welcome you to the **ePIC Collaboration**, the principal detector of the EIC. Whether you’re joining as a student, postdoc, scientist, or engineer, your contributions are essential to our success.
 
 ePIC is a diverse, international effort to design, build, and operate a state-of-the-art detector system that will unlock the mysteries of nucleon and nuclear structure. To coordinate this work, the collaboration is organized into:
@@ -24,6 +26,8 @@ This guide outlines the practical steps and resources to help you get started.
 ---
 
 ### First Steps
+
+<br>
 
 
 #### 1. Subscribe to Mailing Lists  
