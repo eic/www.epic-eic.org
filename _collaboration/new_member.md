@@ -6,7 +6,7 @@ layout: default
 
 {% include layouts/title.md %}
 
-# Welcome to the ePIC Collaboration 🎉
+## Welcome to the ePIC Collaboration 🎉
 
 We are excited to welcome you to the **ePIC Collaboration**, the principal detector of the EIC. Whether you’re joining as a student, postdoc, scientist, or engineer, your contributions are essential to our success.
 
@@ -15,7 +15,7 @@ ePIC is a diverse, international effort to design, build, and operate a state-of
 - **Physics Working Groups (PWGs)** – Develop and refine the physics program.  
 - **Detector Subsystem Collaborations (DSCs)** – Design and build detector components.  
 - **Software & Computing Groups** – Provide tools for simulation, reconstruction, and analysis.  
-- **Collaboration Council (CC), Spokesperson Office & Coordination Teams** – Oversee governance, policies, membership, authorship, and strategy.  
+- **Collaboration Council (CC), Spokesperson Office (SP) & Coordination Teams** – Oversee governance, policies, membership, authorship, publications, and strategy.  
 
 👉 The [ePIC website](https://www.epic-eic.org/) is your hub for public documentation, group overviews, mailing lists, governance, and more.
 
@@ -23,9 +23,9 @@ This guide outlines the practical steps and resources to help you get started.
 
 ---
 
-# First Steps
+## First Steps
 
-## 1. Subscribe to Mailing Lists  
+### 1. Subscribe to Mailing Lists  
 Mailing lists are the backbone of our communication. At a minimum, please subscribe to:
 
 - **Collaboration list**: [eic-projdet-collab-l](https://lists.bnl.gov/sympa/info/eic-projdet-collab-l)  
@@ -35,22 +35,39 @@ For **DSCs**, see the [detector page](https://www.epic-eic.org/detector/dsc.html
 
 ---
 
-## 2. Register for BNL Tools  
-Access to collaborative tools at BNL requires registration. Key services include:
+### 2. Signing up for Mattermost  
 
-- **Indico** – Meetings & conferences  
-- **Phonebook** – Contact database (expanding into a full collaboration directory)  
+We use [Mattermost](https://chat.epic-eic.org/) as our main communication channel.
 
-The registration process involves:  
-- **CILogon** – Federated authentication  
-- **COmanage** – Registry for multi-account access  
-- **ORCID** – Unique identifier required for full access  
-
-📄 The registration procedure is managed at BNL. Documentation both for first-time users, and people logging in with new credentials is [here](https://www.sdcc.bnl.gov/information/comanage-setup-new-accounts).  
+To join email a request for an invitation to [this address](eic-software-l-request@lists.bnl.gov).
 
 ---
 
-## 3. Update the Phonebook  
+### 3. Accessing ePIC Services at BNL  
+Access to collaborative tools at BNL requires registration. Key services include Indico, and user database a.k.a. the Phonebook (see below).
+
+To use ePIC services at BNL, follow these steps:
+
+1. Register in COmanage
+
+    COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.
+
+    - [Register in COmanage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/) 
+
+2. Use CILogon for Login
+
+    CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login.
+
+3. Provide Your ORCID
+
+    An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.
+
+    - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
+    - Already have an ORCID? Add it to your COmanage profile during registration.
+
+---
+
+### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/) lists collaborators’ contact and institutional info.  
 
 Please make sure that your entry in the phonebook is up-to-date. If something is not correct
@@ -62,7 +79,7 @@ Please make sure that your entry in the phonebook is up-to-date. If something is
 
 ---
 
-## 4. Access Indico  
+### 5. Access Indico  
 All meetings are organized via [Indico](https://indico.bnl.gov/category/402/), including:  
 
 - Collaboration meetings  
@@ -74,19 +91,19 @@ You can also subscribe to calendar feeds.
 
 ---
 
-## 5. Document Database  
+### 6. Document Database  
 📌 *Coming soon…*  
 
 ---
 
-## 6. For Council Representatives  
+### 7. For Council Representatives  
 Council representatives are automatically subscribed to the **Council mailing list (ePIC-CC-l)**. Please review:  
 
 - [Charter & Policies](https://www.epic-eic.org/collaboration/council.html)  
 
 ---
 
-## 7. Talks & Conferences  
+### 8. Talks & Conferences  
 If you plan to present **ePIC results**, subscribe to:  
 
 - Your primary **PWG/DSC mailing list**  
@@ -94,12 +111,12 @@ If you plan to present **ePIC results**, subscribe to:
 
 ---
 
-## 8. Software & Computing  
+### 9. Software & Computing  
 The [Getting Started guide](https://www.epic-eic.org/sc/getstarted.html) explains how to set up and contribute to the ePIC software framework.  
 
 ---
 
-# Useful Resources  
+## Useful Resources  
 - 🌐 [ePIC Website](https://www.epic-eic.org/)  
 - 📚 [ePIC Wiki](https://wiki.bnl.gov/EPIC/index.php?title=Main_Page)  
 - 🗓️ [Indico Area](https://indico.bnl.gov/category/402)  
