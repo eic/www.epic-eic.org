@@ -6,7 +6,7 @@ layout: default
 
 {% include layouts/title.md %}
 
-## Welcome to the ePIC Collaboration 🎉
+### Welcome to the ePIC Collaboration 🎉
 
 We are excited to welcome you to the **ePIC Collaboration**, the principal detector of the EIC. Whether you’re joining as a student, postdoc, scientist, or engineer, your contributions are essential to our success.
 
@@ -23,9 +23,10 @@ This guide outlines the practical steps and resources to help you get started.
 
 ---
 
-## First Steps
+### First Steps
 
-### 1. Subscribe to Mailing Lists  
+
+#### 1. Subscribe to Mailing Lists  
 Mailing lists are the backbone of our communication. At a minimum, please subscribe to:
 
 - **Collaboration list**: [eic-projdet-collab-l](https://lists.bnl.gov/sympa/info/eic-projdet-collab-l)  
@@ -35,7 +36,7 @@ For **DSCs**, see the [detector page](https://www.epic-eic.org/detector/dsc.html
 
 ---
 
-### 2. Signing up for Mattermost  
+#### 2. Signing up for Mattermost  
 
 We use [Mattermost](https://chat.epic-eic.org/) as our main communication channel.
 
@@ -43,7 +44,7 @@ To join email a request for an invitation to [this address](eic-software-l-reque
 
 ---
 
-### 3. Accessing ePIC Services at BNL  
+#### 3. Accessing ePIC Services at BNL  
 Access to collaborative tools at BNL requires registration. Key services include Indico, and user database a.k.a. the Phonebook (see below).
 
 To use ePIC services at BNL, follow these steps:
@@ -67,7 +68,7 @@ To use ePIC services at BNL, follow these steps:
 
 ---
 
-### 4. Update the Phonebook  
+#### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/) lists collaborators’ contact and institutional info.  
 
 Please make sure that your entry in the phonebook is up-to-date. If something is not correct
@@ -79,7 +80,7 @@ Please make sure that your entry in the phonebook is up-to-date. If something is
 
 ---
 
-### 5. Access Indico  
+#### 5. Access Indico  
 All meetings are organized via [Indico](https://indico.bnl.gov/category/402/), including:  
 
 - Collaboration meetings  
@@ -91,19 +92,19 @@ You can also subscribe to calendar feeds.
 
 ---
 
-### 6. Document Database  
+#### 6. Document Database  
 📌 *Coming soon…*  
 
 ---
 
-### 7. For Council Representatives  
+#### 7. For Council Representatives  
 Council representatives are automatically subscribed to the **Council mailing list (ePIC-CC-l)**. Please review:  
 
 - [Charter & Policies](https://www.epic-eic.org/collaboration/council.html)  
 
 ---
 
-### 8. Talks & Conferences  
+#### 8. Talks & Conferences  
 If you plan to present **ePIC results**, subscribe to:  
 
 - Your primary **PWG/DSC mailing list**  
@@ -111,12 +112,12 @@ If you plan to present **ePIC results**, subscribe to:
 
 ---
 
-### 9. Software & Computing  
+#### 9. Software & Computing  
 The [Getting Started guide](https://www.epic-eic.org/sc/getstarted.html) explains how to set up and contribute to the ePIC software framework.  
 
 ---
 
-## Useful Resources  
+### Useful Resources  
 - 🌐 [ePIC Website](https://www.epic-eic.org/)  
 - 📚 [ePIC Wiki](https://wiki.bnl.gov/EPIC/index.php?title=Main_Page)  
 - 🗓️ [Indico Area](https://indico.bnl.gov/category/402)  
