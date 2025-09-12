@@ -55,13 +55,17 @@ To use ePIC services at BNL, follow these steps:
 
 1. Register in COmanage
 
-    COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.
+    COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile. You can select your own institution or BNL as identity provider.
 
-    - [Register in COmanage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/) 
+    - [Register in COmanage](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/)
+  
+    Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication) enabled.
 
 2. Use CILogon for Login
 
-    CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login.
+    CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login. Here is an example from Indico:<br>
+    <img height="200" alt="image" src="https://github.com/user-attachments/assets/bc3c75a6-fb0e-4d8f-8f3d-f8b53c44d291" />
+
 
 3. Provide Your ORCID
 
