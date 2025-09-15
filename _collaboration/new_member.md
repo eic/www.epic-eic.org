@@ -43,7 +43,7 @@ Access to collaborative tools at BNL requires registration. Key services include
 * Provide Your ORCID
    * An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.
    * Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
-   * Already have an ORCID? Add it to your COmanage profile during registration (instructions [here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
+   * Already have an ORCID? Add it to your COmanage profile during registration (instructions [here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/)).
 
 ##### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists the collaborators’ contact
