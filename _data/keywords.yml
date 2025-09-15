@@ -311,6 +311,13 @@
 
 # 2025
 
+- name: iprd2025
+  description: 17th Topical Seminar on Innovative Particle and Radiation Detectors
+  category: conference
+  upload: yes
+  year: 2025
+  url: 'https://www.bo.infn.it/sminiato/siena25.html'
+
 - name: rucio2025
   description: Eighth Rucio Community Workshop
   category: conference
