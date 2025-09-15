@@ -34,13 +34,15 @@ layout: default
 * __Committee Members__
    * Eric Lancon (chair)
    * Carlos Munoz Camacho (vice-chair)
-   * Peter Steinberg 
+   * Pietro Antonioli
+   * Friederike Bock
    * Helen Caines
+   * Douglas Higinbotham
    * Bedanga Mohanty
    * Silvia Niccolai
-   * Douglas Higinbotham
    * Marzia Rosati
-   * Friederike Bock
+   * Kenta Shigaki
+   * Peter Steinberg 
 
 {{ site.hr }}
 
