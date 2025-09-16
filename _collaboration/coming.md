@@ -20,6 +20,8 @@ If you need help or advise please contact [Rachel Nieves](mailto:irachel@bnl.gov
 
 BNL requires that your training is up to-date to perform many critical tasks. To find out what training you need go to the [BNL training web site](https://www.bnl.gov/training/). The vast majority of courses can be taken online. Right now there are no ePIC specific courses but this will certainly change in the near future.  Please note that if you work on tests at one of the RICH experiments you have to do the required training for this specific experiment. For STAR you will need to contact [J.H. Lee](mailto:jhlee@bnl.gov) before visiting STAR.
 
+Starting 8/27/2025 the EIC Project put specific procedures in place that affect ePIC detector systems design and component testing activities at BNL facilities by both BNL staff and non-BNL staff.  These work activities will be authorized primarily under BNL’s experimental safety review (ESR) process. This is outlined in the document titled: [Process for Planning and Authorizing ePIC Component Testing Activities](https://zenodo.org/records/17137507).
+
 #### Child Care
 
 A “drop-in” (short-term) child care is available. Either use their [general contact email](mailto:Parents@skiesthelimitllc.com) or touch base with the [director, Jamie Cagna](mailto:jcagna@skiesthelimitllc.com), directly. There is also a [web site](https://www.bnl.gov/hr/benefits/childcare.php) with more info.
