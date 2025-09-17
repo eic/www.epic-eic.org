@@ -19,7 +19,7 @@ When your _GR_ is approved, you will receive an e-mail indicating that you have 
 {{ site.hr }}
 ##### Contact
 
-If you need help or advise please contact [Rachel Nieves](mailto:irachel@bnl.gov).
+If you need help or advise please contact [Rachel Nieves](mailto:irachel@bnl.gov) or [Bisi Ogunleye](mailto:oogunleye@bnl.gov).
 
 {{ site.hr }}
 ##### Essential Training
@@ -31,7 +31,7 @@ BNL requires that your training is up to-date to perform many critical tasks. To
 
 Starting 8/27/2025 the EIC Project put specific procedures in place that affect ePIC detector systems design and component testing activities at BNL facilities by both BNL staff and non-BNL staff.  These work activities will be authorized primarily under BNL’s experimental safety review (ESR) process.
 
-This is outlined in the document titled **Process for Planning and Authorizing ePIC Component Testing Activities** available at this link: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17137507.svg) https://zenodo.org/records/17137507](https://doi.org/10.5281/zenodo.17137507){:target="_blank"}
+This is outlined in the document titled **Process for Planning and Authorizing ePIC Component Testing Activities** available at this link: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17137507.svg) {:target="_blank"}
 
 {{ site.hr }}
 #### Child Care
