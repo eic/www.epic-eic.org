@@ -31,7 +31,7 @@ BNL requires that your training is up to-date to perform many critical tasks. To
 
 Starting 8/27/2025 the EIC Project put specific procedures in place that affect ePIC detector systems design and component testing activities at BNL facilities by both BNL staff and non-BNL staff.  These work activities will be authorized primarily under BNL’s experimental safety review (ESR) process.
 
-This is outlined in the document titled **Process for Planning and Authorizing ePIC Component Testing Activities** available at this link: ![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17137507.svg).
+This is outlined in the document titled **Process for Planning and Authorizing ePIC Component Testing Activities** available at this [link](https://zenodo.org/records/17137507).
 
 {{ site.hr }}
 #### Child Care
