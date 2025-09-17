@@ -7,7 +7,7 @@ layout: default
 {% include layouts/title.md %}
 
 {{ site.hr }}
-#### Welcome to the ePIC Collaboration 🎉
+#### Welcome to the ePIC Collaboration
 
 We are excited to welcome you to the **ePIC Collaboration**, the principal detector of the EIC. Whether you’re joining as a student, postdoc, scientist, or engineer, your contributions are essential to our success.
 ePIC is a diverse, international effort to design, build, and operate a state-of-the-art detector system that will unlock the mysteries of nucleon and nuclear structure. To coordinate this work, the collaboration is organized into:
@@ -21,6 +21,8 @@ This guide outlines the practical steps and resources to help you get started.
 
 {{ site.hr }}
 #### First Steps
+
+
 
 ##### 1. Subscribe to Mailing Lists  
 * Mailing lists are the backbone of our communication. At a minimum, please subscribe to the main 
@@ -43,7 +45,7 @@ Access to collaborative tools at BNL requires registration. Key services include
 * Provide Your ORCID
    * An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.
    * Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
-   * Already have an ORCID? Add it to your COmanage profile during registration (instructions [here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
+   * Already have an ORCID? Add it to your COmanage profile during registration (instructions [here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/)).
 
 ##### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists the collaborators’ contact
@@ -84,10 +86,10 @@ The [Getting Started guide](https://www.epic-eic.org/sc/getstarted.html){:target
 
 {{ site.hr }}
 #### Useful Resources  
-- 🌐 [ePIC Website](https://www.epic-eic.org/){:target="_blank"}
-- 📚 [ePIC Wiki](https://wiki.bnl.gov/EPIC/index.php?title=Main_Page){:target="_blank"}
-- 🗓️ [Indico Area](https://indico.bnl.gov/category/402){:target="_blank"}
-- 📄 [Charter & Policies](https://www.epic-eic.org/collaboration/council.html){:target="_blank"}
+-  [ePIC Website](https://www.epic-eic.org/){:target="_blank"}
+-  [ePIC Wiki](https://wiki.bnl.gov/EPIC/index.php?title=Main_Page){:target="_blank"}
+-  [Indico Area](https://indico.bnl.gov/category/402){:target="_blank"}
+-  [Charter & Policies](https://www.epic-eic.org/collaboration/council.html){:target="_blank"}
 
 If you’re unsure about anything, reach out to your **group leader, convener, or a collaboration coordinator**.  
 For corrections or missing information, email [Bisi](mailto:oogunleye@bnl.gov).  
