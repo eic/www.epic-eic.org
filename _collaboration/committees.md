@@ -41,6 +41,8 @@ layout: default
    * Douglas Higinbotham
    * Marzia Rosati
    * Friederike Bock
+   * Kenta Shigaki
+   * Pietro Antonioli
 
 {{ site.hr }}
 
