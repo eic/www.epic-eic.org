@@ -51,29 +51,33 @@ __Analysis macros__
 
 __EICrecon Jet Reconstruction Documentation__
 
-There are currently four jet collections in the default output of EICrecon:
-* _GeneratedJets_, which are reconstructed from all final-state generator particles (particles from the ```GeneratedParticles``` collection) regardless of charge;
-* _GeneratedChargedJets_, which are reconstructed from all charged final-state generator particles;
-* _ReconstructedJets_, which are reconstructed from ```ReconstructedParticle``` objects (combinations of tracks and EMCal clusters produced by the MatchClusters algorithm);
-* _ReconstructedChargedJets_, which are reconstructed from ```ReconstructedChargedParticle``` objects (i.e. tracks).
+There are currently six jet collections in the default output of EICrecon:
+* _GeneratedJets_, which are reconstructed using charged and neutral particles from the ```GeneratedParticles``` collection(final-state primaries) using the anti-kT algorithm with R = 1.0;
+* _GeneratedChargedJets_, which are reconstructed using charged particles from the ```GeneratedParticles``` collection using the anti-kT algorithm with R = 1.0;
+* _GeneratedCentauroJets_, which are reconstructed using charged and neutral particles from the ```GeneratedParticles``` collection using the Centauro algorithm with R = 0.8;
+* _ReconstructedJets_, which are reconstructed using charged and neutral particles (tracks and EMCal clusters) from the ```ReconstructedParticles``` collection using the anti-kT algorithm with R = 1.0;
+* _ReconstructedChargedJets_, which are reconstructed using charged particles (tracks) from the ```ReconstructedChargedParticles``` collection using the anti-kT algorithm with R = 1.0;
+* _ReconstructedCentauroJets_, which are reconstructed using charged and neutral particles from the ```ReconstructedParticles``` collection using the Centauro algorithm with R = 0.8;
 
-In all cases, the jets are formed via [FastJet3](https://fastjet.fr) according the parameters listed in the table below, and are stored as ```edm4eic::ReconstructedParticle``` objects. As this data type was intended to describe particles rather than extended objects like jets, additional information like the jet area currently is not stored.
 
-| Parameter | Name | Value |
+Jet reconstruction is handled by [FastJet3](https://fastjet.fr). User-configurable parameters and their default values are listed in the table below. Jets are stored as ```edm4eic::ReconstructedParticle``` objects, and since this data type was intended to describe particles rather than jets, additional information like the jet area currently is not stored..
+
+| Parameter | Name | Default Value |
 | --- | --- | --- |
-| Jet algorithm | jetALgo | anti-kT |
-| Jet recombination scheme | recomScheme | E-scheme |
+| Jet algorithm | jetAlgo | anti-kT |
+| Jet recombination scheme | recombScheme | E-scheme |
 | Jet resolution parameter | rJet | 1 |
 | Exponent for generalized kT algorithms | pJet | -1 |
-| Minimum constituent pT | mimCstPt | 0.2 GeV/c |
+| Minimum constituent pT | minCstPt | 0.2 GeV/c |
 | Maximum constituent pT | maxCstPt | 100 GeV/c |
 | Minimum jet pT | minJetPt | 1 GeV/c |
 | Area type | areaType | active |
 | Maximum ghost rapidity | ghostMaxRap | 3.5 |
 | No. of repeated ghosts | numGhostRepeat | 1 |
-| Area per ghost | ghostArea | 0.001 |
+| Area per ghost | ghostArea | 0.01 |
+| Contributed jet algorithm | jetContribAlgo | Centauro |
 
-These parameters can be adjusted at runtime by the user, for example:
+These parameters can be adjusted at runtime, illustrated by the code snippet below. To use a contributed fastjet algorithm, the user should set ```jetAlgo``` to ```plugin_algorithm```.
 ```
 eicrecon \
   -Preco:ReconstructedChargedJets:jetAlgo=ee_genkt_algorithm \
