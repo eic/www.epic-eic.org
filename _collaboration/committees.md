@@ -48,11 +48,12 @@ layout: default
 
 ##### Elections Committee
 
-* Chair: Helen Caines <helen.caines@yale.edu>
-* Vice-Chair: Ken Barish <barish@ucr.edu>
+* Chair: Ken Barish <barish@ucr.edu>
+* Vice-Chair: Sylvester Joosten <sjoosten@anl.gov>
 * Members
+   * Helen Caines (outgoing chair)
    * Domenico Elia (Bari)
-   * Maria Stefaniak (OSU)
+   * Akshaya Vijay (Manitoba)
 
 {{ site.hr }}
 
