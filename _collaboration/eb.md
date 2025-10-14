@@ -18,7 +18,7 @@ layout: default
 * Rachel Montgomery <Rachel.Montgomery@glasgow.ac.uk>
 
 ##### DEI Member
-* Megan Connors <meganconnors@gmail.com>
+* Christine Elizabeth Nattrass <cnattras@utk.edu>
 
 ##### Early-Career Member
 Please see this section of the [Early Career Committee page](/collaboration/early.html#eb){:target="_blank"}
