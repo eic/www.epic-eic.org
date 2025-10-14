@@ -17,7 +17,7 @@ layout: default
 * Salvatore Fazio <salvatore.fazio@unical.it>
 * Rachel Montgomery <Rachel.Montgomery@glasgow.ac.uk>
 
-##### DEI Member
+##### Professional Conduct Office Representative
 * Christine Elizabeth Nattrass <cnattras@utk.edu>
 
 ##### Early-Career Member
