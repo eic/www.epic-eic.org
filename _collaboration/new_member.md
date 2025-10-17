@@ -35,13 +35,10 @@ This guide outlines the practical steps and resources to help you get started.
 * We use [Mattermost](https://chat.epic-eic.org/){:target="_blank"} as our main communication channel.
 * To join email a request for an invitation to <eic-software-l-request@lists.bnl.gov>.
 
-##### 3. Accessing ePIC Services at BNL  
+##### 3. Register to COmanage 
 Access to collaborative tools at BNL requires registration. Key services include Indico, and user database a.k.a. the Phonebook (see below). To use ePIC services at BNL, follow these steps:
 * Register in COmanage
    * COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g. from your home institution, CERN, or BNL) into a single profile. You can select your own institution or BNL as identity provider. To register in COmanage please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}. Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"} enabled.
-* Use CILogon for Login
-   * CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login. Here is an example from Indico:<br>
-    <img height="200" alt="image" src="https://github.com/user-attachments/assets/bc3c75a6-fb0e-4d8f-8f3d-f8b53c44d291" />
 * Provide Your ORCID
    * An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.
    * Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
@@ -56,6 +53,10 @@ and institutional info.   Please make sure that your entry in the phonebook is u
 🔑 Don’t forget to add your **ORCID** (if you don't have one, get it [here](https://orcid.org/){:target="_blank"}).  
 
 ##### 5. Access Indico  
+* Use CILogon for Login
+   * CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login. Here is an example from Indico:<br>
+    <img height="200" alt="image" src="https://github.com/user-attachments/assets/bc3c75a6-fb0e-4d8f-8f3d-f8b53c44d291" />
+    
 All meetings are organized via [Indico](https://indico.bnl.gov/category/402/){:target="_blank"}, including:  
 - Collaboration meetings  
 - Working group meetings  
