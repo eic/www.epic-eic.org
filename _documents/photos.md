@@ -16,3 +16,42 @@ Instructions come here
 
 #### Uploading approved photos
 Instructions come here
+
+#### Example of a gallery
+
+<table width="80%" border="1">
+
+<tr>
+<td>
+<a target="_blank" href="https://zenodo.org/records/14026774/files/ePIC_CentralDetector.png">
+  <img src="https://zenodo.org/records/14026774/files/ePIC_CentralDetector.png" alt="Central Detector" style="height:120px;border:1px">
+</a>
+</td>
+<td>
+Central Detector
+</td>
+</tr>
+
+<tr>
+<td>
+<a target="_blank" href="https://zenodo.org/records/14026774/files/Magnet_Overview.png">
+  <img src="https://zenodo.org/records/14026774/files/Magnet_Overview.png" alt="Magnet" style="height:120px;border:1px">
+</a>
+</td>
+<td>
+Magnet
+</td>
+</tr>
+
+<tr>
+<td>
+<a target="_blank" href="https://zenodo.org/records/14026774/files/Tracker_Overview_01.png">
+  <img src="https://zenodo.org/records/14026774/files/Tracker_Overview_01.png" alt="Tracker" style="height:120px;border:1px">
+</a>
+</td>
+<td>
+Tracker
+</td>
+</tr>
+
+</table>
