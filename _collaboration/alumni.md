@@ -16,6 +16,9 @@ layout: default
 * Deputy Spokesperson
    * Silvia Dalla Torre (2023-)
 
+* Technical Coordination
+   * Matt Posik (Deputy) (2023-2025)
+
 * Physics Analysis Coordination
   * Rosi Reed (2023-2025) 
 
@@ -48,6 +51,29 @@ layout: default
    * Peter Steinberg   (2023-2024)
    * Pietro Antonioli  (2024-2025)
 
+---
+#### Calorimetry Cross-Cutting Working Group
+
+* Co-Convener
+  * Friederike Bock (2023-2025)
+
+#### Tracking Cross-Cutting Working Group 
+
+* Co-Convener
+  * Ernst Sichtermann (2023-2025)
+
+#### Far-Forward/Far-Backward Cross-Cutting Working Group (2023-2024)
+
+* Co-Convener
+  * Simon Gardner (2023-2024)
+  * Nathaly Santiesteban (2023-2024)
+
+#### Particle Identification Cross-Cutting Working Group
+
+* Co-Convener
+  * Thomas Ullrich (2023-2025)
+  * Umberto Tamponi (2024-2025)
+  
 #### Inclusive Physics Working Group
 
 * Co-Convener
@@ -83,3 +109,14 @@ layout: default
 
 * Co-Convener
   * Jin Huang (2023-2025)
+
+#### Validation Working Group (2023-2025)
+
+* Co-Convener
+  * Tori Jeske  (2023-2025)
+  * Dmitry Kalinkin  (2023-2025)
+
+#### Analysis Tools Working Group (2023-2024)
+
+* Co-Convener
+  * Kong Tu (2023-2024)

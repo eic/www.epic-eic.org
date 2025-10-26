@@ -201,6 +201,12 @@
   roles: [convener]
   teams: reconstruction
 
+- name: chandra_chatterjee
+  full: Chandrady Chatterjee
+  email: chandradoy.chatterjee@ts.infn.it
+  roles: [convener]
+  team: reconstruction
+
 - name: marco_battaglieri
   full: Marco Battaglieri
   email: battaglieri@ge.infn.it
