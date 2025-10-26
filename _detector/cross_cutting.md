@@ -59,7 +59,6 @@ layout: default
 <a id="calorimetry"></a>
 <h4>Conveners</h4>
 * Oleg Tsai <tsai@physics.ucla.edu>
-* Friederike Bock <friederike.bock@cern.ch>
 
 <h4>Info</h4>
 * [Indico: https://indico.bnl.gov/category/405/](https://indico.bnl.gov/category/405/){:target="_blank"}

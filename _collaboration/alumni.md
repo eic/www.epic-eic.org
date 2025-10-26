@@ -17,7 +17,7 @@ layout: default
    * Silvia Dalla Torre (2023-)
 
 * Technical Coordination
-   * Matt Posik (2023-2025)
+   * Matt Posik (Deputy) (2023-2025)
 
 * Physics Analysis Coordination
   * Rosi Reed (2023-2025) 
