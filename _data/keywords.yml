@@ -342,7 +342,7 @@
 - name: eunpc2025
   description: European Nuclear Physics Conference 2025
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.in2p3.fr/event/30430/page/3471-home'
 
@@ -370,7 +370,7 @@
 - name: eiclhcsynergies2025
   description: Joint ECFA-NuPECC-APPEC Workshop Synergies Between the EIC and the LHC
   category: conference
-  upload: no
+  upload: yes
   year: 2025
   url: 'https://indico.ifj.edu.pl/event/1417/'
 
