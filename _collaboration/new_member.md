@@ -36,34 +36,43 @@ This guide outlines the practical steps and resources to help you get started.
 * To join email a request for an invitation to <eic-software-l-request@lists.bnl.gov>.
 
 ##### 3. Register to COmanage 
-Access to collaborative tools at BNL requires registration. Key services include Indico, and user database a.k.a. the Phonebook (see below). To use ePIC services at BNL, follow these steps:
-* Register in COmanage
-   * COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g. from your home institution, CERN, or BNL) into a single profile. You can select your own institution or BNL as identity provider. To register in COmanage please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}. Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"} enabled.
-* Provide Your ORCID
-   * An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.
-   * Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
-   * Already have an ORCID? Add it to your COmanage profile during registration (instructions [here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/)).
+Access to collaborative tools at BNL requires registration. Key services include **Indico** and the user database (also known as the **Phonebook**, see below).  
+To use ePIC services at BNL, follow these steps:
+
+* **Register in COmanage**  
+    COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.  
+  You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
+  To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}.  
+  *Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"} enabled.*
+
+* **Provide Your ORCID**  
+  An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.  
+  - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).  
+  - Already have an ORCID? You can add it to your COmanage profile during registration — see [instructions here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
+
+The COmanage registration request is usually processed within one business day.  
+If you have any questions regarding your registration, please contact the **BNL Computing Center** at [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov).
 
 ##### 4. Update the Phonebook  
-The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists the collaborators’ contact
-and institutional info.   Please make sure that your entry in the phonebook is up-to-date. If something is not correct:
-- ask your **Council Representative** to update your entry, or  
-- email [Rachel](mailto:irachel@bnl.gov) with your details  
+The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists collaborators’ contact and institutional information.  
+*Please make sure your entry in the **Phonebook** is up to date.*
 
-🔑 Don’t forget to add your **ORCID** (if you don't have one, get it [here](https://orcid.org/){:target="_blank"}).  
+If something is not correct:  
+- Ask your **Council Representative** to update your entry, or  
+- Email [Rachel](mailto:irachel@bnl.gov) with your details.  
 
 ##### 5. Access Indico  
-* Use CILogon for Login
-   * CILogon connects you to your home institution, BNL, or CERN and verifies your identity with COmanage. You’ll use it during both registration and login. Here is an example from Indico:<br>
+Use **CILogon** to log in. It connects you to your home institution, BNL, or CERN and verifies your identity through COmanage. You’ll use it during both registration and login.  
+Here is an example from Indico:<br>  
     <img height="200" alt="image" src="https://github.com/user-attachments/assets/bc3c75a6-fb0e-4d8f-8f3d-f8b53c44d291" />
     
 All meetings are organized via [Indico](https://indico.bnl.gov/category/402/){:target="_blank"}, including:  
 - Collaboration meetings  
 - Working group meetings  
 - Tutorials  
-- Conference prep  
+- Conference preparation  
 
-You can also subscribe to calendar feeds.  
+You can also subscribe to Indico calendar feeds to stay updated on upcoming meetings and events.
 
 ##### 6. The Document Database
 
