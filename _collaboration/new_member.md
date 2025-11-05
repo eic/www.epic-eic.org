@@ -54,15 +54,12 @@ If you have any questions regarding your registration, please contact the BNL Co
 
 
 ##### 4. Update the Phonebook  
-The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists collaborators’ contact and institutional information.  
-*Please make sure your entry in the **Phonebook** is up to date.*
+The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists collaborators’ contact and institutional information. *Please make sure your entry in the **Phonebook** is up to date.*  If something is not correct:  
 
-If something is not correct:  
 - Ask your **Council Representative** to update your entry, or  
 - Email [Rachel](mailto:irachel@bnl.gov) with your details.  
 
-🔑 Don’t forget to add your **ORCID** (if you don't have one, get it [here](https://orcid.org/){:target="_blank"}).  
-
+If you are a council representative you can modify phonebook entries by first logging into the Phonebook, clicking on the "My Overview" tab on the left menu and selecting the "My Institution" tab in the center panel. You should see a list of members associated with your institution and an edit icon to the right of their name. 🔑 Note that you must link your ***ORCID*** to your InCommon record in order to access the full functionality. Instructions on how to do that are [here](https://orcid.org/){:target="_blank"}.
 
 ##### 5. Access Indico  
 Use **CILogon** to log in. It connects you to your home institution, BNL, or CERN and verifies your identity through COmanage.  
