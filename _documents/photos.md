@@ -6,52 +6,31 @@ layout: default
 
 {% include layouts/title.md %}
 
-This is the portal to ePIC's photo repository. The photos are stored in our document database for easy access. All photos are vetted. When they show people we received their consent that we are allowed to share them with others. Photos of equiepemnts are approved by the reffering DSCs. You are free to use them in talks and publications.
+##### About
 
-#### Downloading photos
-Instructions come here...
+This page is the portal to ePIC's photo collection. The photos are stored in our document database (Zenodo)
+for reliable long-term access. Hosting of photos directly on this website is only possible in
+exceptional circumstances and needs to be approved by the ePIC leadership team.
 
-#### Getting photos approved
-Instructions come here
+All photos are vetted. Please contact Renee Fatemi, the Vice-Chair of the Colaboration Councul
+(<rhfate2@g.uky.edu>) in order to receive an approval. Approved photos should be uploaded to
+the ePIC Community on Zenodo, and
+will be linked at the relevant page.
 
-#### Uploading approved photos
-Instructions come here
+For the photos showing people the publishing person needs to receive their conscent before sharing.
+Photos of equipment, hardware etc need to be approved by the reffering DSCs before the final approval
+by Renee. You are free to use them in talks and publications.
 
-#### Example of a gallery
+##### The Document Database
 
-<table width="80%" border="1">
+For information about accessing the Collaboration Document Database, techincal details of the upload process etc
+please see the [dedicated Zenodo page]({% link _documents/zenodo.md %}){:target="_blank"}. Note that collections
+of files can be uploaded as a single Zenodo entitity, and in case the files are in one of the popular graphics formats
+(png, jpeg etc) the collection will be rendered as a gallery on the Zenodo portal, with thumbnails, controls for 
+navigation and zoom etc.
 
-<tr>
-<td>
-<a target="_blank" href="https://zenodo.org/records/14026774/files/ePIC_CentralDetector.png">
-  <img src="https://zenodo.org/records/14026774/files/ePIC_CentralDetector.png" alt="Central Detector" style="height:120px;border:1px">
-</a>
-</td>
-<td>
-Central Detector
-</td>
-</tr>
+##### Photos from Collaboration Meetings
 
-<tr>
-<td>
-<a target="_blank" href="https://zenodo.org/records/14026774/files/Magnet_Overview.png">
-  <img src="https://zenodo.org/records/14026774/files/Magnet_Overview.png" alt="Magnet" style="height:120px;border:1px">
-</a>
-</td>
-<td>
-Magnet
-</td>
-</tr>
+There is a collection of photos taken at the ePIC Collaboration Meetings uploaded to Zenodo:
 
-<tr>
-<td>
-<a target="_blank" href="https://zenodo.org/records/14026774/files/Tracker_Overview_01.png">
-  <img src="https://zenodo.org/records/14026774/files/Tracker_Overview_01.png" alt="Tracker" style="height:120px;border:1px">
-</a>
-</td>
-<td>
-Tracker
-</td>
-</tr>
-
-</table>
+[https://doi.org/10.5281/zenodo.17468755](https://doi.org/10.5281/zenodo.17468755){:target="_blank"}
