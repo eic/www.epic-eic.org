@@ -46,7 +46,7 @@ layout: default
 <a id="tracking"></a>
 <h4>Conveners</h4>
 * Barbara Jacak <jacak@berkeley.edu>
-* Barak Schmookler <barak.schmookler@ucr.edu>
+* Barak Schmookler <baschmoo@central.uh.edu>
 
 <h4>Info</h4>
 * [Indico: https://indico.bnl.gov/category/404/](https://indico.bnl.gov/category/404/){:target="_blank"}
