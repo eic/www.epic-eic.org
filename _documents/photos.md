@@ -12,7 +12,7 @@ This page is the portal to ePIC's photo collection. The photos are stored in our
 for reliable long-term access. Hosting of photos directly on this website is only possible in
 exceptional circumstances and needs to be approved by the ePIC leadership team.
 
-All photos are vetted. Please contact Renee Fatemi, the Vice-Chair of the Colaboration Councul
+All photos are vetted. Please contact Renee Fatemi, the Vice-Chair of the Colaboration Council
 (<rhfate2@g.uky.edu>) in order to receive an approval. Approved photos should be uploaded to
 the ePIC Community on Zenodo, and
 will be linked at the relevant page.
