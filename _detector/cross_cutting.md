@@ -65,3 +65,12 @@ layout: default
 * [Indico: https://indico.bnl.gov/category/405/](https://indico.bnl.gov/category/405/){:target="_blank"}
 * Email-list: eic-projdet-calo-l@lists.bnl.gov
 * Subscribe to mailing list through: [https://lists.bnl.gov/mailman/listinfo/eic-projdet-calo-l](https://lists.bnl.gov/mailman/listinfo/eic-projdet-calo-l){:target="_blank"}
+
+{{ site.hr }}
+
+### AC-LGAD
+<a id="ac-lgad"></a>
+<h4>Conveners</h4>
+* Alex Jentsch <ajentsch@bnl.gov>
+
+<h4>Info</h4>

@@ -32,6 +32,7 @@ layout: default
 
 ### Far-Forward
 * DSL: Alex Jentsch <ajentsch@bnl.gov>
+* Co-DSL: Yulia Furletova <yulia@jlab.org>
 * DSTC (B0): Zvi Citron <zhcitron@bgu.ac.il>
 * DSTC (Roman Pots/OMD): Alex Jentsch <ajentsch@bnl.gov>
 * DSTC (ZDC): Yuji Goto <goto@bnl.gov>
