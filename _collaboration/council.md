@@ -34,7 +34,7 @@ The Collaboration Council (CC) is the governing body of the ePIC Collaboration o
 ---
 ##### Important Note
 
-We are in the process of moving the current Indico Council pages into a new area that will be open to all ePIC collaborators but not to the general public. To access the new area you have to (i) be member of ePIC and listed in the [user DB](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} (aka Phonebook) and (ii) you will need to register with COmanage. This is a one time quick registration that is described in our [new member pages](http://www.epic-eic.org/collaboration/new_member.html){:target="_blank"}. Please do so at your earliest convenience.
+We are in the process of moving the current Indico Council pages into a new area that will be open to all ePIC collaborators but not to the general public. To access the new area you have to (i) be member of ePIC and listed in the [user DB](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} (aka Phonebook) and (ii) you will need to register with COmanage. This is a one time quick registration that is described in our [new member pages](http://www.epic-eic.org/collaboration/new_member.html){:target="_blank"}. Please do so at your earliest convenience. 
 
 ##### Council Meetings
 
