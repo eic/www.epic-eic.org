@@ -34,11 +34,11 @@ The Collaboration Council (CC) is the governing body of the ePIC Collaboration o
 ---
 ##### Important Note
 
-We are in the process of moving the current Indico Council pages into a new area that will be open to all ePIC collaborators but not to the general public. To access the new area you have to (i) be member of ePIC and listed in the [user DB](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} (aka Phonebook) and (ii) you will need to register with COmanage. This is a one time quick registration that is described in our [new member pages](http://www.epic-eic.org/collaboration/new_member.html){:target="_blank"}. Please do so at your earliest convenience. 
+We are in the process of moving the current Council indico pages to a protected area that will be open to all ePIC collaborators but not to the general public. To access the protected area you have to (i) be member of ePIC and listed in the [user DB](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} (aka Phonebook) and (ii) you will need to register with COmanage. This is a one time quick registration that is described in our [new member pages](http://www.epic-eic.org/collaboration/new_member.html){:target="_blank"}. Please do so at your earliest convenience. 
 
 ##### Council Meetings
 
-The list of all council meetings past and upcoming/planned can be found [here (old)](https://indico.bnl.gov/category/437/){:target="_blank"} and here (new) (https://indico.bnl.gov/category/641/){:target="_blank"}. The next meeting is on November 25, 2025.
+The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}  The most recent and upcoming council meeting are still available on the [public indico site.](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is on November 25, 2025.
 
 ---
 
