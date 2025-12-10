@@ -309,6 +309,16 @@
 # Conferences
 
 
+# 2026
+
+- name: dpg2026
+  description: German Physical Society Spring Meeting
+  category: conference
+  upload: yes
+  year: 2026
+  url: 'https://erlangen26.dpg-tagungen.de/'
+
+
 # 2025
 
 - name: iprd2025
