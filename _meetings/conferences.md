@@ -3,6 +3,7 @@ title: Conferences and Meetings with ePIC participation
 name: conferences
 layout: default
 years:
+- 2026
 - 2025
 - 2024
 - 2023
