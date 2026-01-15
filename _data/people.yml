@@ -187,7 +187,7 @@
   full: Sakib Rahman
   email: srahman1@bnl.gov
   roles: [convener]
-  teams: [simulation]
+  teams: simulation
 
 - name: shujie_li
   full: Shujie Li
@@ -201,7 +201,7 @@
   roles: [convener]
   teams: reconstruction
 
-- name: chandra_chatterjee
+- name: chandradoy_chatterjee
   full: Chandradoy Chatterjee
   email: chandradoy.chatterjee@ts.infn.it
   roles: [convener]
