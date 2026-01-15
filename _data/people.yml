@@ -145,7 +145,7 @@
   full: Sakib Rahman
   email: srahman1@bnl.gov
   roles: [convener]
-  teams: production
+  teams: production, simulation
 
 - name: thomas_britton
   full: Thomas Britton
@@ -179,13 +179,7 @@
 
 - name: simon_gardner
   full: Simon Gardner
-  email: pengc2010@gmail.com
-  roles: [convener]
-  teams: simulation
-
-- name: sakib_rahman
-  full: Sakib Rahman
-  email: srahman1@bnl.gov
+  email: simon.gardner@glasgow.ac.uk
   roles: [convener]
   teams: simulation
 
