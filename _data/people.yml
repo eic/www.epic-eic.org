@@ -153,9 +153,9 @@
   roles: [convener]
   teams: production
 
-- name: holly_szumilla
-  full: Holly Szumilla-Vance
-  email: hszumila@jlab.org
+- name: sasha_prozorov
+  full: Sasha Prozorov
+  email: alexandr.prozorov@cvut.cz
   roles: [convener]
   teams: learning
 
@@ -177,15 +177,15 @@
   roles: [convener]
   teams: validation
 
-- name: chao_peng
-  full: Chao Peng
+- name: simon_gardner
+  full: Simon Gardner
   email: pengc2010@gmail.com
   roles: [convener]
   teams: simulation
 
-- name: kauder
-  full: Kolja Kauder
-  email: kkauder@gmail.com
+- name: sakib_rahman
+  full: Sakib Rahman
+  email: srahman1@bnl.gov
   roles: [convener]
   teams: [simulation]
 
@@ -202,7 +202,7 @@
   teams: reconstruction
 
 - name: chandra_chatterjee
-  full: Chandrady Chatterjee
+  full: Chandradoy Chatterjee
   email: chandradoy.chatterjee@ts.infn.it
   roles: [convener]
   team: reconstruction
