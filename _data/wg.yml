@@ -70,7 +70,7 @@
 - name:               learning
   description:        'User Learning Working Group'
   mission_statement:  'The User Learning working group is responsible for managing the process of onboarding and continued learning of the ePIC members, in the field of software and computing.'
-  conveners:          holly_szumilla, stephen_kay
+  conveners:          sasha_prozorov, stephen_kay
   get_involved:       'Please contact the conveners for more information'
   indico:             'https://indico.bnl.gov/category/443/'
 
@@ -83,13 +83,13 @@
 - name:               simulation
   description:        'Physics and Simulation Working Group'
   mission_statement:  'The Physics and Simulation working group is responsible for managing event generators, physics components of the simulation process, detector simulations and other related topics.'
-  conveners:          kauder, chao_peng
+  conveners:          sakib_rahman, simon_gardner
   indico:             'https://indico.bnl.gov/category/463/'
 
 - name:               reconstruction
   description:        'Reconstruction Working Group'
   mission_statement:  'The Reconstruction working group is responsible for all aspects of reconstruction techniques and related software used in the ePIC experiment.'
-  conveners:          shujie_li, derek_anderson
+  conveners:          shujie_li, derek_anderson, chandradoy_chatterjee
   indico:             'https://indico.bnl.gov/category/463/'
 
 - name:               streaming

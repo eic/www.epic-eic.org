@@ -11,8 +11,8 @@ coordinator:
 
 deputies:
 
-    - name:     Wouter Deconinck (Operations)
-      email:    wouter.deconinck@umanitoba.ca
+    - name:     Holly Szumila-Vance (Operations)
+      email:    hszumila@jlab.org
 
     - name:     Dmitry Kalinkin (Development)
       email:    dmitry.kalinkin@gmail.com
