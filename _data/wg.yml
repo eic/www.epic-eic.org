@@ -89,7 +89,7 @@
 - name:               reconstruction
   description:        'Reconstruction Working Group'
   mission_statement:  'The Reconstruction working group is responsible for all aspects of reconstruction techniques and related software used in the ePIC experiment.'
-  conveners:          shujie_li, derek_anderson,  chandradoy_chatterjee
+  conveners:          shujie_li, derek_anderson, chandradoy_chatterjee
   indico:             'https://indico.bnl.gov/category/463/'
 
 - name:               streaming
