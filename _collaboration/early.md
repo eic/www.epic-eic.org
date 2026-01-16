@@ -31,7 +31,7 @@ Current Representatives (2025-present)
 * [Yevheniia Khyzhniak](https://www.linkedin.com/in/nia-khyzhniak/){:target="_blank"},	        PhD Candidate,	The Ohio State University,	USA. [e-mail](mailto:khyzhniak.1@buckeyemail.osu.edu)
 * [Gary Penman](https://www.linkedin.com/in/gary-penman-a2b06619b/){:target="_blank"},			Post-Doctoral Fellow,	University of Glasgow,	UK. [e-mail](mailto:g.penman.1@research.gla.ac.uk)
 * [Akshaya Vijay](https://www.linkedin.com/in/akshaya-vijay-431644148/){:target="_blank"},			PhD Candidate,	University of Manitoba
-,	Canada. [e-mail](vijaya2@myumanitoba.ca)
+,	Canada. [e-mail](mailto:vijaya2@myumanitoba.ca)
 
 Past Representatives (2023-2025)
 

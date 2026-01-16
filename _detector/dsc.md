@@ -82,7 +82,7 @@ layout: default
 ### Barrel ECAL
 * Co-DSL's: Sylvester Joosten <sjoosten@anl.gov>, Hwidong Yoo <hdyoo@yonsei.ac.kr>
 * Deputy DSL: Zurek, Maria <zurek@anl.gov>
-* DSTC: Jessice Metcalfe <jessica.metcalfe@gmail.com>
+* DSTC: Jessica Metcalfe <jessica.metcalfe@gmail.com>
 
 ---
 
