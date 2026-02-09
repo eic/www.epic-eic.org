@@ -30,7 +30,7 @@ layout: default
 ### PID (Cerenkov and TOF)
 <a id="pid"></a>
 <h4>Conveners</h4>
-* Sourav Tarafdar <stara@jlab.org>
+* Surabhi Tarafdar <stara@jlab.org>
 * Brian Page <bpage@bnl.gov>
 
 <h4>Info</h4>
