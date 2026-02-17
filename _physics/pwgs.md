@@ -6,7 +6,7 @@ layout: default
 
 # Overview
 
-Physics analysis for ePIC is co-ordinated by the [Physics Analysis Co-ordinators](./analysis_coordination.html}). The co-ordinators oversee the work done in the ePIC Physics Working Groups (PWGs).
+Physics analysis for ePIC is co-ordinated by the [Physics Analysis Co-ordinators](./analysis_coordination.html). The co-ordinators oversee the work done in the ePIC Physics Working Groups (PWGs).
 
 ---
 
