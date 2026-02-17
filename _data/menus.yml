@@ -88,6 +88,14 @@
   full: Physics
 
   submenus:
+
+    - name: pwg
+      full: Physics Working Groups
+
+    - name: separator
+      label: yes
+      full: ' '
+
     - name: inclusive
       full: Inclusive
 
