@@ -6,7 +6,7 @@ layout: default
 
 # Overview
 
-Physics analysis for ePIC is co-ordinated by the [Physics Analysis Co-ordinators]({% link analysis_coordination.md %}). The co-ordinators oversee the work done in the ePIC Physics Working Groups (PWGs).
+Physics analysis for ePIC is co-ordinated by the [Physics Analysis Co-ordinators](./analysis_coordination.html}). The co-ordinators oversee the work done in the ePIC Physics Working Groups (PWGs).
 
 ---
 
@@ -14,8 +14,8 @@ Physics analysis for ePIC is co-ordinated by the [Physics Analysis Co-ordinators
 
 Physics analysis efforts are sub-divided into 5 different physics working groups -
 
-* [Inclusive]({% link inclusive.md %})
-* [Semi-Inclusive]({% link semi_inclusive.md %})
-* [Exclusive, Diffraction and Tagging]({% link exclusive_diffraction.md %})
-* [Jets and Heavy Flavour]({% link jets_hf.md %})
-* [Beyond Standard Model and Electroweak]({% link bsm_ew.md %})
+* [Inclusive](./inclusive.html)
+* [Semi-Inclusive](./semi_inclusive.html)
+* [Exclusive, Diffraction and Tagging](./exclusive_diffraction.html)
+* [Jets and Heavy Flavour](./jets_hf.html)
+* [Beyond Standard Model and Electroweak](./link bsm_ew.html)
