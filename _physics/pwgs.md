@@ -18,4 +18,4 @@ Physics analysis efforts are sub-divided into 5 different physics working groups
 * [Semi-Inclusive](./semi_inclusive.html)
 * [Exclusive, Diffraction and Tagging](./exclusive_diffraction.html)
 * [Jets and Heavy Flavour](./jets_hf.html)
-* [Beyond Standard Model and Electroweak](./link bsm_ew.html)
+* [Beyond Standard Model and Electroweak](./bsm_ew.html)
