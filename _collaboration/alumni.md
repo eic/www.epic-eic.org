@@ -34,6 +34,7 @@ layout: default
 
 * Chair
    * Megan Connors (2023-2025)
+   * Christine Nattrass (2025-2026)
  
 #### Conferences and Talks Committee
 
