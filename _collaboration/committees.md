@@ -59,7 +59,7 @@ layout: default
 
 ##### Publications Committee
 * Chair: Annalisa Mastroserio (INFN Bari) <annalisa.mastroserio@ba.infn.it>
-* Vice-Chair: TBE
+* Vice-Chair: Xin Dong (LBNL) <xdong@lbl.gov>
 * Members
    * Rene Bellwied (Houston)   
    * Lokesh Kumar (Panjab U.)
