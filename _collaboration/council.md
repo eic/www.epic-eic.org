@@ -38,7 +38,7 @@ We are in the process of moving the current Council indico pages to a protected 
 
 ##### Council Meetings
 
-The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}  The most recent and upcoming council meeting are still available on the [public indico site.](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is on November 25, 2025.
+The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}  The most recent and upcoming council meeting are still available on the [public indico site.](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is in Spring 2026 but details are not known yet.
 
 ---
 
