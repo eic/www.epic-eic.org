@@ -8,9 +8,8 @@ layout: default
 
 #### Committee Members
 
-* Christine Nattrass (chair)
-* Susanna Costanza (vice-chair)
-* Francesco Bossù
+* Susanna Constanza (chair) <susanna.costanza@unipv.it>
+* Francesco Bossù (vice-chair)
 * Wouter Deconinck
 * Narbe Kalantarians
 * Iris Ponce Pinto
