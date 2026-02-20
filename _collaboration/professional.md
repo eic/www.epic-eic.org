@@ -20,7 +20,7 @@ layout: default
 
 #### Representation
 <a id="eb"></a>
-* Executive Board member: Christine Nattrass <cnattras@utk.edu>
+* Executive Board member: Susanna Constanza <susanna.costanza@unipv.it>
 
 #### ePIC Community Values
 
