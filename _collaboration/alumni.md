@@ -30,6 +30,11 @@ layout: default
    * Ernst Sichtermann (2023-2024)
 
 ---
+#### Executive Boaard
+* Elected Member
+  * Taku Gunji (2023-2025)
+
+---
 #### Professional Conduct Office
 
 * Chair

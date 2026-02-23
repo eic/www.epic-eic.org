@@ -9,7 +9,7 @@ layout: default
 
 ##### At-Large Members
 * Barbara Jacak <bvjacak@lbl.gov>
-* Taku Gunji <gunji@cns.s.u-tokyo.ac.jp>
+* Pietro Antonioli <pietro.antonioli@bo.infn.it>
 * Paul Newman <paul.newman@cern.ch>
 
 ##### Coordinators
