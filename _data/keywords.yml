@@ -311,6 +311,20 @@
 
 # 2026
 
+- name: chep2026
+  description: The 28th International Conference on Computing in High-Energy and Nuclear Physics (2026)
+  category: conference
+  upload: no
+  year: 2026
+  url: 'https://indico.cern.ch/event/1471803/'
+
+- name: dis2026
+  description: The XXXIII International Workshop on Deep Inelastic Scattering (2026)
+  category: conference
+  upload: no
+  year: 2026
+  url: 'https://dis2026.infn.it/'
+
 - name: dpg2026
   description: German Physical Society Spring Meeting
   category: conference
