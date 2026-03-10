@@ -1,5 +1,5 @@
 ---
-title: Exclusive and Diffraction
+title: Exclusive, Diffraction and Tagging
 name: exclusive_diffraction
 layout: default
 ---
