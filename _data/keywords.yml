@@ -311,6 +311,13 @@
 
 # 2026
 
+- name: sqm2026
+  description: The 22nd International Conference on Strangeness in Quark Matter
+  category: conference
+  upload: yes
+  year: 2026
+  url: 'https://indico.global/event/13943/overview'
+
 - name: chep2026
   description: The 28th International Conference on Computing in High-Energy and Nuclear Physics (2026)
   category: conference
