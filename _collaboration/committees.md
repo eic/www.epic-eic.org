@@ -16,13 +16,13 @@ layout: default
 * __Committee Members__
    * Brian Page (chair)
    * Daniel Brandenburg (vice-chair)
-   * Barbara Jacak
-   * Daniel Brandenburg
-   * Dmitry Kalinkin
-   * Nick Zachariou
+   * Fernando Flor
+   * Charles Joseph Naim 
+   * Sebouh Paul 
    * Nicola Rubini
    * Xuan Li
    * Wouter Deconinck (PC Liaison)
+
 * __Conference summaries__, useful plots, CTC policies, and others can be found at the interim [Wiki page](https://wiki.bnl.gov/EPIC/index.php?title=Conferences){:target="_blank"}
 
 {{ site.hr }}
