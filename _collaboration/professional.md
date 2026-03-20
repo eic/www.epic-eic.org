@@ -6,7 +6,7 @@ layout: default
 
 {% include layouts/title.md %}
 
-#### Committee Members
+#### Committee Members <i>(Election 2/27) </i>
 
 * Susanna Constanza (chair) <susanna.costanza@unipv.it>
 * Francesco Bossù (vice-chair)
