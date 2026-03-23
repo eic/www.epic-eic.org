@@ -14,3 +14,7 @@ layout: default
 [epic-AN-AC-2025-004](https://zenodo.org/records/17931714?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImEwM2EwOGZlLTUzMzAtNGE3NS05YmMyLTVjMzJjNWVlYWVmNyIsImRhdGEiOnt9LCJyYW5kb20iOiJmYjdiMjk0NmM5MDc1NWMzYmFjNDJkYmRjYzZlNzQ5NyJ9.-DfxOn3o0q0i49kSfMnaeeyVu92YKTPg06B_7UdrMR5xf9xIy9jPcnHWeLjVwhm3XcCvlyBaakr3veGeaLTUpA), S.Maple, "Reduced cross sections from electron-proton collisions during EIC early science"
 
 [epic-AN-AC-2025-005](https://zenodo.org/records/18040276), W. Lin, "Projection study of A1^n and g1^n Measurement at ePIC in the Early Running of EIC"
+
+[epic-AN-AC-2026-001](https://zenodo.org/records/18680881?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijg5YjM4ZjQ4LTI2YzgtNDhhNC04NWNmLWZhNDYwNTIzZGUyNyIsImRhdGEiOnt9LCJyYW5kb20iOiJhMDlhMjA5YjczZjNlOGFlNTQxZjZkYTZkY2FjYTMwNiJ9.vq16-6UQNEw-Q_EtnFWAwMQau9NLcenqFtwhtCTVyl0HXgEJQou9FOyfaQWIVwUbv32k_Eb8N5TfCNBpIFaOjA), S. Kumar, A. Mastroserio, D. Elia, "D^0 meson Reconstruction and Expected Statistical Precision on Nuclear Modification Factor (R_{eAu})"
+
+[epic-AN-AC-2026-002](https://zenodo.org/records/18681414?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY0Zjk1NjY5LTUxNWItNDllMi04OTU2LWEwODc3OTk5MzExMiIsImRhdGEiOnt9LCJyYW5kb20iOiJhN2Q3ZDZhMzE4YmQzMGFiYzkzN2Q2ZmNkYTQ1YjAxZCJ9.Iy_MmbxyI4wOO_5UnbQTuVyFeoxziVrlwXehV0YYNBzE49kkvXCmThD6cpyjV7JpG6DwuafFNy1OiqOdn-zjVA), G.M. Huber, S.J.D. Kay, and L. Preet, "Light Meson Form Factors from Deep Exclusive Meson Production in early EIC science configurations with the ePIC Detector"
