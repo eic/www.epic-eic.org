@@ -38,7 +38,7 @@ We are in the process of moving the current Council indico pages to a protected 
 
 ##### Council Meetings
 
-The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}  The most recent and upcoming council meeting are still available on the [public indico site.](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is in Spring 2026 but details are not known yet.
+The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}  The most recent and upcoming council meeting are still available on the [public indico site.](https://indico.bnl.gov/category/437/){:target="_blank"}. The next meeting is on Friday April 17, 2026. It is a closed meeting. It will be followed by an open meeting on May 29, 2026.
 
 ---
 
@@ -59,7 +59,9 @@ large early career members.
 
 ##### Documents
 ###### Charter
-*  [Version 1.0](https://zenodo.org/records/11584258){:target="_blank"} as passed by the ePIC Council on 12/14/2022 
+*  [Version 1.0](https://zenodo.org/records/11584258){:target="_blank"} as passed by the ePIC Council on 12/14/2022
+*  [Version 2.0 (Current)](https://zenodo.org/records/19455251){:target="_blank"} as passed by the ePIC Council on 4/3/2026 
+
 
 ###### Policies
 * [The Policies and Guidelines Web Page](/collaboration/policies.html)
