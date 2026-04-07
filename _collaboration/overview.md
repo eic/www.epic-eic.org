@@ -77,7 +77,7 @@ Eic-projdet-collab-l@lists.bnl.gov
 
 #### Collaboration Organization
 
-**The ePIC Collaboration Charter - version 2.0, as passed by the ePIC Council on 4/3/2026:** [EPIC_Charter-v1.0.pdf](https://zenodo.org/records/19455251){:target="_blank"}
+**The ePIC Collaboration Charter - version 2.0, as passed by the ePIC Council on 4/3/2026:** [EPIC_Charter-v2.0.pdf](https://zenodo.org/records/19455251){:target="_blank"}
 
 By charter, the ePIC Collaboration is organized around a *Collaboration Council*, with proportional representation for the institutions that make up the ePIC Collabiration.  An elected *Collaboration Council Chair* and *Vice Chair* organize meetings of the Council, and oversee the standing committees defined in the charter. A *Spokesperson* is elected every two years, and the *Spokesperson's Office* manages the scientific activity of the collaboration. A management plan is submitted by the *Spokesperson's Office* to the *Collaboration Council*. Top-level postitions within the management plan (like *Coordinators* or *Working Group Conveners*) also require endorsement by the Council.
 
