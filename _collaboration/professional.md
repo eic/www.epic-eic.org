@@ -1,5 +1,5 @@
 ---
-title: Professional Conduct Office
+title: Collaboration Culture Committee
 name: professional
 layout: default
 ---
@@ -8,7 +8,7 @@ layout: default
 
 #### Committee Members   <i>(Election 2/27)</i>
 
-* Susanna Constanza (chair) <susanna.costanza@unipv.it>
+* Susanna Costanza (chair) <susanna.costanza@unipv.it>
 * Francesco Bossù (vice-chair)
 * Wouter Deconinck
 * Narbe Kalantarians
@@ -20,7 +20,7 @@ layout: default
 
 #### Representation
 <a id="eb"></a>
-* Executive Board member: Susanna Constanza <susanna.costanza@unipv.it>
+* Executive Board member: Susanna Costanza <susanna.costanza@unipv.it>
 
 #### ePIC Community Values
 
