@@ -25,8 +25,8 @@ layout: default
 ---
 
 ### Backwards RICH
-* DSL/DSTC: Alexander Kiselev <ayk@bnl.gov>
-* Deputy DSL: Brian Page <bpage@bnl.gov>
+* DSL/DSTC: Brian Page <bpage@bnl.gov>
+* Deputy DSL: Alexander Kiselev <ayk@bnl.gov>
 
 ---
 
