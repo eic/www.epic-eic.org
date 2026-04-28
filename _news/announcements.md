@@ -7,6 +7,8 @@ layout: default
 
 #### April 28, 2026
 
-The video recorded at last ePIC Collaboration meeting is finished. Watch it at https://www.linkedin.com/feed/update/urn:li:activity:7453099404091289600. Please like and share! 
+The video recorded at last ePIC Collaboration meeting is finished. Watch it at [here](https://www.linkedin.com/feed/update/urn:li:activity:7453099404091289600). Please like and share! 
 
+<div align="center">
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7453099402996568064?collapsed=1" height="877" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+</div>
