@@ -36,7 +36,6 @@ layout: default
 * DSTC (B0): Zvi Citron <zhcitron@bgu.ac.il>
 * DSTC (Roman Pots/OMD): Alex Jentsch <ajentsch@bnl.gov>
 * DSTC (ZDC): Yuji Goto <goto@bnl.gov>
-* Co-DSL (ZDC): Miguel Arratia <miguel.arratia@ucr.edu>
 
 ---
 
@@ -101,7 +100,6 @@ layout: default
 ### Forward HCAL
 <a id="fhcal"></a>
 * DSL/DSTC: Friederike Bock <Friederike.Bock@cern.ch>
-* Deputy DSL/DSTC: Miguel Arratia <miguel.arratia@ucr.edu>
 
 ---
 
