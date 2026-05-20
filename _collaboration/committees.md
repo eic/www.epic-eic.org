@@ -29,10 +29,7 @@ layout: default
 {{ site.hr }}
 
 ##### Collaboration Culture Committee
-* __Mission Statement__: The Collaboration Culture Committee (CCC) is responsible for developing and maintaining the Col-
-laboration Code of Conduct Policy. It also addresses any violations of it by members of the
-Collaboration according to the Policies specified therein. The CCC is also charged with de-
-veloping approaches and activities to foster a stronger and more integrated collaboration. 
+* __Mission Statement__: The Collaboration Culture Committee (CCC) is responsible for developing and maintaining the Collaboration Code of Conduct Policy. It also addresses any violations of it by members of the Collaboration according to the Policies specified therein. The CCC is also charged with developing approaches and activities to foster a stronger and more integrated collaboration. 
 * __Mailing List__: _epic-culture-committee-l@lists.bnl.gov_
 * __Contact Email__: _epic-culture-committee-l@lists.bnl.gov_
 * __Committee Members__ 
