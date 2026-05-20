@@ -6,6 +6,8 @@ layout: default
 
 {% include layouts/title.md %}
 
+The ePIC Charter defines a set of five Standing Committees that are listed below. Their leadership is elected by the CC.
+
 <a id="talks"></a>
 <br/>
 <br/>
@@ -67,6 +69,7 @@ layout: default
 {{ site.hr }}
 
 ##### Elections Committee  
+* __Mission Statement__: The Election Committee is responsible fors oliciting nominations for elected positions, organizing the voting process, and reporting the vote outcomes to the CC (and the Collaboration, as specified). The Election Committee can be called upon to assist the CC in other significant voting matters, such as modifications to the Charter and/or Policies.
 * Chair: Ken Barish <barish@ucr.edu> 
 * Vice-Chair: Sylvester Joosten <sjoosten@anl.gov>
 * Members
