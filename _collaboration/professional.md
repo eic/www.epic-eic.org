@@ -1,26 +1,10 @@
 ---
-title: Collaboration Culture Committee
+title: ePIC Code-of-Conduct
 name: professional
 layout: default
 ---
 
 {% include layouts/title.md %}
-
-#### Committee Members   <i>(Election 2/27)</i>
-
-* Susanna Costanza (chair) <susanna.costanza@unipv.it>
-* Francesco Bossù (vice-chair)
-* Wouter Deconinck
-* Narbe Kalantarians
-* Iris Ponce Pinto
-* Maya Shimomura
-* Allison Zec
-
-<hr/>
-
-#### Representation
-<a id="eb"></a>
-* Executive Board member: Susanna Costanza <susanna.costanza@unipv.it>
 
 #### ePIC Community Values
 
