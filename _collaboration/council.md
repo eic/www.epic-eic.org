@@ -38,7 +38,7 @@ We are in the process of moving the current Council indico pages to a protected 
 
 ##### Council Meetings
 
-The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}. The next Council meeting is on May 29, 2026 followed by a special meeting on June 2, 2026. Both meetings are open to all ePIC members.
+The list of past council meetings is now located on the [protected indico site.](https://indico.bnl.gov/category/641/){:target="_blank"}. The next Council meeting is taking place during the ePIC Collaboration Meeting, July 11-17. More details soon.
 
 ---
 
