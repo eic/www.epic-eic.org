@@ -54,8 +54,8 @@ layout: default
 
 ### Si Trackers
 * DSL: Ernst Sichtermann <epsichtermann@lbl.gov>
-* Co-DSTC: Laura Gonella <laura.gonella@cern.ch>
 * Co-DSTC: Georg Viehhauser <georg.viehhauser@physics.ox.ac.uk>
+* Co-DSTC: Rosario Turrisi <rosario.turrisi@pd.infn.it>
 
 ---
 
