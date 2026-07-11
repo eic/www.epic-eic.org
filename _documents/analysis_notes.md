@@ -20,3 +20,6 @@ layout: default
 [epic-AN-AC-2026-002](https://zenodo.org/records/18681414?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY0Zjk1NjY5LTUxNWItNDllMi04OTU2LWEwODc3OTk5MzExMiIsImRhdGEiOnt9LCJyYW5kb20iOiJhN2Q3ZDZhMzE4YmQzMGFiYzkzN2Q2ZmNkYTQ1YjAxZCJ9.Iy_MmbxyI4wOO_5UnbQTuVyFeoxziVrlwXehV0YYNBzE49kkvXCmThD6cpyjV7JpG6DwuafFNy1OiqOdn-zjVA), G.M. Huber, S.J.D. Kay, and L. Preet, "Light Meson Form Factors from Deep Exclusive Meson Production in early EIC science configurations with the ePIC Detector"
 
 [epic-AN-AC-2026-003](https://zenodo.org/records/20710820), R. Siedl, "ePIC sensitivity studies for single hadron transverse single spin asymmetry measurements for the EIC early science running"
+
+[epic-AN-AC-2026-004](https://zenodo.org/records/21070447), J. Vanek, A. Jentsch, "Tagged Deep Inelastic Scattering in e-Deuteron collisions at 10x130 GeV"
+
