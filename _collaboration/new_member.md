@@ -44,7 +44,8 @@ To use ePIC services at BNL, follow these steps:
   During registration you may sign in using:
   - your home institution (preferred, if available through InCommon/eduGAIN)
   - CERN
-  - your BNL account
+  - your BNL or SDCC account
+  
   If you use an SDCC account, multi-factor authentication (MFA) must already be [enabled](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"}.
 
 * **Associate Your ORCID**  
