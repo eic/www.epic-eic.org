@@ -16,6 +16,9 @@
     - name: overview
       full: Overview
 
+    - name: institutions
+      full: ePIC Institutions
+
     - name: science
       full: ePIC Science
 
