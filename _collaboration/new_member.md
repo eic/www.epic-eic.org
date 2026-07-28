@@ -34,13 +34,15 @@ This guide outlines the practical steps and resources to help you get started.
 * To join email a request for an invitation to <eic-software-l-request@lists.bnl.gov>.
 
 ##### 3. Register with COmanage  
-Access to collaborative tools at BNL requires registration. Key services include **Indico** and the user database (also known as the **Phonebook**, see below).  
-To use ePIC services at BNL, follow these steps:
+Access to collaboration services hosted at BNL requires registration. These services include **Indico** and the user database (also known as the **Phonebook**, see below).  
 
-* **Register in COmanage**  
-  COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.  
-  You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
-  To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}.  
+To access ePIC services, complete the following steps:
+
+* **Register in COmanage**
+COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.
+You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
+
+To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}.  
   During registration you may sign in using:
   - your home institution (preferred, if available through InCommon/eduGAIN)
   - CERN
@@ -49,14 +51,16 @@ To use ePIC services at BNL, follow these steps:
   If you use an SDCC account, multi-factor authentication (MFA) must already be [enabled](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"}.
 
 * **Associate Your ORCID**  
-  An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
-  - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).  
-  - Already have an ORCID? You can add it to your COmanage profile during registration — see [instructions here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
-  - To check if your ORCID is properly linked to you COmanage entry, click [here](https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31)
+An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
+  - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
+  - During the COmanage registration process, associate your ORCID with your COmanage profile by following these [instructions](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
+  - Verify that your ORCID is correctly associated with your COmanage profile [here](https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31)
+
+**Important**: Associating your ORCID is a required step during COmanage registration. If you skip this step, your registration can still be approved, but your PhoneBook account cannot be created until you return to COmanage and associate your ORCID.
 
 * **Wait for approval**  
 The COmanage registration request is usually processed within one business day.
-Once your registration has been approved, you can access the ePIC PhoneBook, Indico, and other collaboration services.
+Once your registration has been approved, **and your ORCID has been associated with your COmanage profile**, you can access the ePIC PhoneBook, Indico, and other collaboration services.
 
 If you have any questions regarding your registration, please contact the BNL Computing Center at  
 [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov).
