@@ -6,21 +6,21 @@ layout: public
 
 {% include layouts/title.md %}
 
-## ARMENIA
+### ARMENIA
 
 - A. I. Alikhanyan National Science Laboratory
 
-## BELGIUM
+### BELGIUM
 
 - Vrije Universiteit Brussel
 
-## CANADA
+### CANADA
 
 - University of Manitoba
 - University of Regina
 - Mount Allison University
 
-## CHINA
+### CHINA
 
 - Central China Normal University
 - Fudan University
@@ -29,24 +29,24 @@ layout: public
 - Tsinghua University
 - University of Science and Technology of China
 
-## CZECH REPUBLIC
+### CZECH REPUBLIC
 
 - Charles University, Faculty of Mathematics and Physics
 - Czech Technical University in Prague
 - Nuclear Physics Institute, Czech Academy of Sciences
 
-## EGYPT
+### EGYPT
 
 - Egyptian Center for Theoretical Physics
 - American University in Cairo
 
-## FRANCE
+### FRANCE
 
 - CEA-Saclay
 - IJCLab (Orsay)
 - Laboratoire Leprince-Ringuet
 
-## GERMANY
+### GERMANY
 
 - GSI Helmholtzzentrum fuer Schwerionenforschung GmbH
 - Karlsruhe Institute of Technology
@@ -54,12 +54,12 @@ layout: public
 - Johannes Gutenberg University Mainz
 - Justus Liebig University Giessen
 
-## HUNGARY
+### HUNGARY
 
 - Eotvos Lorand University
 - University of Debrecen
 
-## INDIA
+### INDIA
 
 - Aligarh Muslim University
 - Banaras Hindu University
@@ -83,13 +83,13 @@ layout: public
 - Indian Institute of Technology Mandi
 - University of Petroleum and Energy Studies
 
-## ISRAEL
+### ISRAEL
 
 - Ben Gurion University of the Negev
 - Tel-Aviv University
 - Weizmann Institute of Science
 
-## ITALY
+### ITALY
 
 - INFN Gruppo Collegato di Cosenza
 - INFN Gruppo Collegato di Salerno
@@ -130,7 +130,7 @@ layout: public
 - Centro internazionale di fisica teorica Abdus Salam (ICTP)
 - University of Messina
 
-## JAPAN
+### JAPAN
 
 - Hiroshima University
 - Kobe University
@@ -146,11 +146,11 @@ layout: public
 - The University of Osaka
 - Tokyo City University
 
-## JORDAN
+### JORDAN
 
 - Yarmouk University
 
-## KOREA, REPUBLIC OF
+### KOREA, REPUBLIC OF
 
 - Hanyang University
 - Jeonbuk National University
@@ -165,48 +165,48 @@ layout: public
 - Chung-Ang University
 - Kangwon National University
 
-## MOROCCO
+### MOROCCO
 
 - University Ibn Tofail in Kenitra
 - Mohamed I University in Oujda
 - University of Mohammed V in Rabat
 - University of Mohammed VI Polytechnic in Bengurir
 
-## NORWAY
+### NORWAY
 
 - The University of Bergen
 - University of Oslo, Physics Department
 
-## POLAND
+### POLAND
 
 - AGH University of Krakow
 - Institute of Nuclear Physics Polish Academy of Sciences (IFJ PAN)
 - Warsaw University of Technology, Faculty of Physics
 
-## SAUDI ARABIA
+### SAUDI ARABIA
 
 - Jazan University
 
-## SENEGAL
+### SENEGAL
 
 - Cheikh Anta Diop University
 
-## SLOVENIA
+### SLOVENIA
 
 - Faculty of Mathematics and Physics, University of Ljubljana
 
-## TAIWAN
+### TAIWAN
 
 - Institute of Physics, Academia Sinica
 - National Central University
 - National Taiwan University
 - National Tsing Hua University
 
-## UKRAINE
+### UKRAINE
 
 - Taras Shevchenko National University of Kyiv
 
-## UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND
+### UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND
 
 - Brunel University of London
 - Daresbury Laboratory
@@ -218,7 +218,7 @@ layout: public
 - University of Oxford
 - University of York
 
-## UNITED STATES OF AMERICA
+### UNITED STATES OF AMERICA
 
 - Abilene Christian University
 - Argonne National Laboratory
