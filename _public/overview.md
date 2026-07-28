@@ -12,7 +12,11 @@ In the process of building and eventually using this detector to do groundbreaki
 
 The ePIC detector will be built with funding from the U.S. Department of Energy’s Office of Science, Office of Nuclear Physics, with key contributions from international partners.
 
-<img src="/assets/images/collaboration_stats/world_map_dashboard.png" alt="ePIC Institutions Worldwide Map" width="90%"/>
+<img src="/assets/images/collaboration_stats/ePIC_Statistics.png" alt="ePIC Statistics" width="90%"/>
+
+<br>
+
+<img src="/assets/images/collaboration_stats/ePIC_World_Map.png" alt="ePIC Institutions Worldwide Map" width="90%"/>
 
 <br>
 
