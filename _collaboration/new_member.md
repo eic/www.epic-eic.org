@@ -38,7 +38,7 @@ Access to collaboration services hosted at BNL requires registration. These serv
 
 > **Before you begin:** You need an **ORCID (Open Researcher and Contributor ID)**. Your ePIC PhoneBook account cannot be created without an ORCID associated with your COmanage profile.
 >
-> - Don't have an ORCID? Create one for free: https://orcid.org/register
+> - Don't have an ORCID? [Create](https://orcid.org/register){:target="_blank"} one for free
 
 Complete the following steps:
 
@@ -49,14 +49,15 @@ Register for a COmanage account by following the [SCDF registration instructions
 You may sign in using:
 - your home institution (preferred, if available through InCommon/eduGAIN)
 - CERN
-- your BNL or SDCC account
-If you use a BNL or SDCC account, multi-factor authentication (MFA) must already be [enabled](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication).
+- your BNL or SDCC account.
+  
+If you use a BNL or SDCC account, multi-factor authentication (MFA) must already be [enabled](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"}.
 
 ---
 
 ##### Step 2. Wait for approval
 
-Your COmanage registration request is typically processed within **one to two business days**. You will receive an email once your registration has been approved.  [oai_citation:0‡SCDF Documentation](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/?utm_source=chatgpt.com)
+Your COmanage registration request is typically processed within **one to two business days**. You will receive an email once your registration has been approved.  [SCDF Documentation](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/?utm_source=chatgpt.com){:target="_blank"}.
 
 ---
 
