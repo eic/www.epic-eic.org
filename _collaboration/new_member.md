@@ -38,7 +38,7 @@ Access to collaboration services hosted at BNL requires registration. These serv
 
 To access ePIC services, complete the following steps:
 
-**1. Register in COmanage**
+**3.1 Register in COmanage**
 
 COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.
 You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
@@ -54,7 +54,7 @@ To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/servic
 
 ---
 
-**2. Associate your ORCID**
+**3.2 Associate your ORCID**
 
 An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
 
@@ -66,7 +66,7 @@ An ORCID (Open Researcher and Contributor ID) is required to access ePIC service
 
 ---
 
-**3. Wait for approval**
+**3.3 Wait for approval**
 
 The COmanage registration request is usually processed within one business day.
 Once your registration has been approved, **and your ORCID has been associated with your COmanage profile**, you can access the ePIC PhoneBook, Indico, and other collaboration services.
