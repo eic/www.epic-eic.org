@@ -44,8 +44,7 @@ Complete the following steps:
 
 ##### Step 1. Register with COmanage
 
-Register for a COmanage account by following the instructions here:
-https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/
+Register for a COmanage account by following the [SCDF registration instructions](https://docs.sdcc.bnl.gov/services/comanage/Register_for_SCDF_COmanage/){:target="_blank"}.
 
 You may sign in using:
 - your home institution (preferred, if available through InCommon/eduGAIN)
@@ -63,18 +62,15 @@ Your COmanage registration request is typically processed within **one to two bu
 
 ##### Step 3. Associate your ORCID
 
-After your COmanage account has been approved, associate your ORCID with your COmanage profile by following the SCDF instructions:
-https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/
+After your COmanage account has been approved, associate your ORCID with your COmanage profile by following the [SCDF ORCID instructions](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/){:target="_blank"}.
 
-Sign in to COmanage and confirm that your ORCID appears in your profile.
-https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31
+Sign in to COmanage and confirm that your ORCID appears in your profile by visiting the [COmanage profile page](https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31){:target="_blank"}.
 
-> **Important:** Your ePIC PhoneBook account cannot be created until your ORCID has been associated with your COmanage profile.  [oai_citation:1‡SCDF Documentation](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson)
+> **Important:** Your ePIC PhoneBook account cannot be created until your ORCID has been associated with your COmanage profile.  
 
 Once your registration has been approved and your ORCID has been associated with your COmanage profile, you can access the ePIC PhoneBook, Indico, and other collaboration services.
 
-If you have any questions regarding your registration, please contact the BNL Computing Center:
-RT-RACF-UserAccounts@bnl.gov
+If you have any questions regarding your registration, please contact the [BNL Computing Center](mailto:RT-RACF-UserAccounts@bnl.gov).
 
 ##### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists collaborators’ contact and institutional information. *Please make sure your entry in the **Phonebook** is up to date.*  If something is not correct:  
