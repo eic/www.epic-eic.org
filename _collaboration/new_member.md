@@ -42,11 +42,10 @@ To use ePIC services at BNL, follow these steps:
   You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
   To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}.  
   During registration you may sign in using:
-* your home institution (preferred, if available through InCommon/eduGAIN)
-* CERN
-* your BNL account
-If you use an SDCC account, multi-factor authentication (MFA) must already be enabled.
-  *Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"} enabled.*
+  - your home institution (preferred, if available through InCommon/eduGAIN)
+  - CERN
+  - your BNL account
+  If you use an SDCC account, multi-factor authentication (MFA) must already be [enabled](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"}.
 
 * **Associate Your ORCID**  
   An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
