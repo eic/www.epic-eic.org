@@ -41,15 +41,23 @@ To use ePIC services at BNL, follow these steps:
   COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.  
   You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
   To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/){:target="_blank"}.  
+  During registration you may sign in using:
+* your home institution (preferred, if available through InCommon/eduGAIN)
+* CERN
+* your BNL account
+If you use an SDCC account, multi-factor authentication (MFA) must already be enabled.
   *Note that if you choose to log in with your SDCC account, you must have multi-factor [authentication](https://www.sdcc.bnl.gov/information/unified-multi-factor-authentication){:target="_blank"} enabled.*
 
-* **Provide Your ORCID**  
-  An ORCID (Open Researcher and Contributor ID) is required to access ePIC services. It ensures your identity is consistent across institutions and projects.  
+* **Associate Your ORCID**  
+  An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
   - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).  
   - Already have an ORCID? You can add it to your COmanage profile during registration — see [instructions here](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
   - To check if your ORCID is properly linked to you COmanage entry, click [here](https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31)
 
-The COmanage registration request is usually processed within one business day.  
+* **Wait for approval**  
+The COmanage registration request is usually processed within one business day.
+Once your registration has been approved, you can access the ePIC PhoneBook, Indico, and other collaboration services.
+
 If you have any questions regarding your registration, please contact the BNL Computing Center at  
 [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov).
 
