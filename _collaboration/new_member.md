@@ -33,12 +33,13 @@ This guide outlines the practical steps and resources to help you get started.
 * We use [Mattermost](https://chat.epic-eic.org/){:target="_blank"} as our main communication channel.
 * To join email a request for an invitation to <eic-software-l-request@lists.bnl.gov>.
 
-##### 3. Register with COmanage  
+##### 3. Access BNL Collaboration Services  
 Access to collaboration services hosted at BNL requires registration. These services include **Indico** and the user database (also known as the **Phonebook**, see below).  
 
 To access ePIC services, complete the following steps:
 
 **1. Register in COmanage**
+
 COmanage is BNL’s central identity management system. It securely stores your verified identity and allows you to link multiple accounts (e.g., from your home institution, CERN, or BNL) into a single profile.
 You can log in using your **home institution**, **BNL**, or **CERN** as your identity provider.  
 
@@ -51,21 +52,27 @@ If you use an SDCC account, multi-factor authentication (MFA) must already be [e
 
 To register in COmanage, please use this link: [https://docs.sdcc.bnl.gov/services/comanage/](https://docs.sdcc.bnl.gov/services/comanage/).  
 
+---
+
 **2. Associate your ORCID**
+
 An ORCID (Open Researcher and Contributor ID) is required to access ePIC services and to uniquely identify collaborators across institutions.
+
 - Don’t have an ORCID? Create one for free: [ORCID Registration](https://orcid.org/register).
 - During the COmanage registration process, associate your ORCID with your COmanage profile by following these [instructions](https://docs.sdcc.bnl.gov/services/comanage/Add_ORCID_to_COperson/).
 - Verify that your ORCID is correctly associated with your COmanage profile [here](https://comanage.sdcc.bnl.gov/registry/co_petitions/start/coef:31)
 
 **Important**: Associating your ORCID is a required step during COmanage registration. If you skip this step, your registration can still be approved, but your PhoneBook account cannot be created until you return to COmanage and associate your ORCID.
 
+---
+
 **3. Wait for approval**
+
 The COmanage registration request is usually processed within one business day.
 Once your registration has been approved, **and your ORCID has been associated with your COmanage profile**, you can access the ePIC PhoneBook, Indico, and other collaboration services.
 
 If you have any questions regarding your registration, please contact the BNL Computing Center at  
 [RT-RACF-UserAccounts@bnl.gov](mailto:RT-RACF-UserAccounts@bnl.gov).
-
 
 ##### 4. Update the Phonebook  
 The [ePIC Phonebook](https://phonebook.sdcc.bnl.gov/ePIC/){:target="_blank"} lists collaborators’ contact and institutional information. *Please make sure your entry in the **Phonebook** is up to date.*  If something is not correct:  
