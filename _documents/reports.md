@@ -5,4 +5,4 @@ layout: default
 ---
 {% include layouts/title.md %}
 
-TBD: _Reports_.
+ePIC Early Science Report, The ePIC Collaboration et al. [arXiv:2608.05377](https://arxiv.org/abs/2608.05377)
