@@ -21,7 +21,7 @@ layout: default
 
 [epic-AN-AC-2026-003](https://zenodo.org/records/20710820), R. Siedl, "ePIC sensitivity studies for single hadron transverse single spin asymmetry measurements for the EIC early science running"
 
-[epic-AN-AC-2026-004](https://zenodo.org/records/21809177), the ePIC Collaboration et al., "ePIC Early Science Report" 
+[epic-AN-AC-2026-004](https://zenodo.org/records/21809177), The ePIC Collaboration et al., "ePIC Early Science Report" 
 
 [epic-AN-AC-2026-005](https://zenodo.org/records/21070447), J. Vanek, A. Jentsch, "Tagged Deep Inelastic Scattering in e-Deuteron collisions at 10x130 GeV"
 
