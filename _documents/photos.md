@@ -33,4 +33,4 @@ navigation and zoom etc.
 
 There is a collection of photos taken at the ePIC Collaboration Meetings uploaded to Zenodo:
 
-[https://doi.org/10.5281/zenodo.17468755](https://doi.org/10.5281/zenodo.17468755){:target="_blank"}
+[https://doi.org/10.5281/zenodo.22047844](https://doi.org/10.5281/zenodo.22047844){:target="_blank"}

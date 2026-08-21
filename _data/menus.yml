@@ -191,8 +191,8 @@
     - name: analysis_notes
       full: Analysis Notes
 
-    - name: theses
-      full: Theses
+#    - name: theses
+#      full: Theses
 
     - name: reports
       full: Reports
@@ -263,8 +263,8 @@
     - name: newsletter
       full: ePIC Newsletter
 
-    - name: press
-      full: ePIC in the Press
+#    - name: press
+#      full: ePIC in the Press
       
 #------------------------------------------------------------------------------
 ### ATTIC -- kept for reference
