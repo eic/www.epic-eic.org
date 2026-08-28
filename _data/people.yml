@@ -10,7 +10,7 @@
 - name: tyler_kutz
   full: Tyler Kutz
   email: tkutz@mit.edu
-  roles:
+  roles: [convener]
   teams: 
 
 - name: claire_gwenlan
@@ -22,7 +22,7 @@
 - name: stephen_maple
   full: Stephen Maple
   email: s.maple@bham.ac.uk
-  roles: [convener]
+  roles: 
   teams:
 
 
@@ -49,6 +49,12 @@
 - name: zhoudunming_tu
   full: Zhoudunming Tu
   email: zhoudunming@bnl.gov
+  roles:
+  teams: 
+
+- name: jan_vanek
+  full: Jan Vanek
+  email: jvanek@bnl.gov
   roles: [convener]
   teams: 
 
@@ -74,6 +80,12 @@
 - name: ralf_seidl
   full: Ralf Seidl
   email: rseidl@ribf.riken.jp
+  roles:
+  teams:
+
+- name: oleg_eyser
+  full: Oleg Eyser
+  email: keyser@bnl.gov
   roles: [convener]
   teams:
 
@@ -99,6 +111,12 @@
 - name: rongrong_ma
   full: Rongrong Ma
   email: marr@bnl.gov
+  roles:
+  teams:
+
+- name: austin_baty
+  full: Austin Baty
+  email: abaty@uic.edu
   roles: [convener]
   teams:
 
@@ -124,6 +142,12 @@
 - name: juliette_mammei
   full: Juliette Mammei
   email: jmammei@physics.umanitoba.ca
+  roles: 
+  teams: 
+
+- name: jae_nam
+  full: Jae Nam
+  email: jnam@bnl.gov
   roles: [convener]
   teams: 
 
