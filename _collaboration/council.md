@@ -5,7 +5,7 @@ layout: default
 
 
 chairs:
-    - attribute1: Renee Fatemi (vice-chair)
+    - attribute1: Renee Fatemi (chair)
       attribute2: 8/2026-present
 
     - attribute1: Marco Radici  (vice-chair)
