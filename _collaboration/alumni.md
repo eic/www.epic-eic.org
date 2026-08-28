@@ -20,7 +20,8 @@ layout: default
    * Matt Posik (Deputy) (2023-2025)
 
 * Physics Analysis Coordination
-  * Rosi Reed (2023-2025) 
+  * Rosi Reed (2023-2025)
+  * Rachel Montgomery (2025-2026)
 
 ---
 #### Collaboration Council
@@ -85,24 +86,28 @@ layout: default
 * Co-Convener
   * Claire Gwenlan (2023-2024)
   * Tyler Kutz (2023-2025)
+  * Stephen Maple (2024-2026)
 
 #### Semi-Inclusive Physics Working Group
 
 * Co-Convener
   * Charlotte Van Hulse (2023-2024)
   * Stefan Diehl (2023-2025)
+  * Ralf Seidl (2024-2026)
 
 #### Exclusive and Diffration Physics Working Group
 
 * Co-Convener
   * Rachel Montgomery (2023-2024)
   * Raphael Dupre (2023-2025)
+  * Zhoudunming Tu (2024-2026)
 
 #### Jets and Heavy Flavor Physics Working Group
 
 * Co-Convener
   * Brian Page (2023-2024)
   * Olga Evdokimov (2023-2025)
+  * Rongrong Ma (2024-2026)
 
 
 #### BSM & Electroweak Physics Working Group
@@ -110,6 +115,7 @@ layout: default
 * Co-Convener
   * Michael Nycz (2023-2024)
   * Ciprian Gal (2023-2025)
+  * Juliette Mammei (2024-2026)
 
 #### Streaming Computing Working Group
 

@@ -9,8 +9,8 @@ coordinators:
     - name:     Salvatore Fazio
       email:    salvatore.fazio@unical.it
 
-    - name:     Rachel Montgomery
-      email:    rachel.montgomery@glasgow.ac.uk
+    - name:     Charlotte Van Hulse
+      email:    charlotte.barbara.van.hulse@cern.ch
 
     - name:     Rosi Reed (Deputy)
       email:    srosijreed@lehigh.edu
