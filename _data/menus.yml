@@ -191,14 +191,14 @@
     - name: analysis_notes
       full: Analysis Notes
 
-#    - name: theses
-#      full: Theses
+    - name: tech
+      full: Technical Notes
+
+    - name: theses
+      full: Theses
 
     - name: reports
       full: Reports
-
-    - name: tech
-      full: Technical Documents
 
     - name: figures
       full: Figure Repository
