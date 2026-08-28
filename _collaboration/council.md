@@ -5,13 +5,19 @@ layout: default
 
 
 chairs:
-    - attribute1: Thomas Ullrich (chair)
-      attribute2: 7/2025-present
-
     - attribute1: Renee Fatemi (vice-chair)
-      attribute2: 7/2025-present
+      attribute2: 8/2026-present
+
+    - attribute1: Marco Radici  (vice-chair)
+      attribute2: 8/2026-present
 
 past:
+    - attribute1: Thomas Ullrich (chair)
+      attribute2: 7/2025-8/2026
+
+    - attribute1: Renee Fatemi (vice-chair)
+      attribute2: 7/2025-8/2026
+
     - attribute1: Bernd Surrow (chair)
       attribute2: 5/2024-7/2025
 
