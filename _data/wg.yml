@@ -13,7 +13,7 @@
 - name:               exclusive_diffraction
   description:        'Exclusive and Diffraction'
   mission_statement:  'The responsibilities of the Exclusive, Diffraction, and Tagging working group are to evaluate the performance of the ePIC detector as it relates to exclusive, diffractive, or tagging processes. We are charged with the development of a set of performance and physics benchmarks.'
-  conveners:          jae_nam, stephen_kay
+  conveners:          jan_vanek, stephen_kay
   list:               'eic-projdet-excldiff-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-excldiff-l'
   indico:             'https://indico.bnl.gov/category/419/'
@@ -46,7 +46,7 @@
 - name:               bsm_ew
   description:        'BSM and EW'
   mission_statement:  'The BSM and EW group looks at physics topics that are not usually associated with the EIC such as Charged Lepton Flavor Violation and Dark Photons. The impressive ePIC detector will allow for physics reach that is complementary to other searches of beyond the standard model physics at the LHC or other low energy facilities around the world. The group explores ways to improve detector sensitivities to such searches through particle detection and simulations. New ideas and exploratory investigations are welcome and supported within the group.'
-  conveners:          juliette_mammei, zuhal_seyma
+  conveners:          jae_nam, zuhal_seyma
   list:               'eic-projdet-bsmew-l@lists.bnl.gov'
   list_sub:           'https://lists.bnl.gov/mailman/listinfo/eic-projdet-bsmew-l'
   indico:             'https://indico.bnl.gov/category/421/'
