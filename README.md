@@ -107,6 +107,11 @@ InspireHEP fetch before `jekyll build`. This requires **Settings -> Pages ->
 Source** to be set to **GitHub Actions**; the classic "deploy from a branch"
 build cannot run the fetch step.
 
+Netlify builds the pull-request deploy previews, and `netlify.toml` runs the
+same fetch there so a preview shows the same graph as production. The graph
+step is separated from the Jekyll build by `;` rather than `&&`, so a preview
+degrades to the placeholder rather than failing if InspireHEP is unreachable.
+
 The page loads d3 from a CDN with a Subresource Integrity hash. If d3 is ever
 upgraded, the pinned version and the hash in `_public/publications.md` must be
 updated together:

@@ -15,13 +15,17 @@
 # Do NOT list the EIC White Paper or the EIC Yellow Report.  Records that are
 # *not* in this list but are cited by MORE than `threshold` of the ones that
 # are get pulled into the graph automatically; that is exactly how those two
-# are meant to show up.  "More than 5" means 6 or more.
+# are meant to show up.  The comparison is strictly greater, so a threshold of
+# 3 means a work needs 4 of the publications below citing it.
+#
+# Tuned down from 5: across the 13 publications below, only a single work
+# cleared that bar, leaving the graph a lone hub.  Retune as the list grows.
 #
 # To regenerate the list from InspireHEP:
 #
 #     python3 tools/seed_publications.py > _data/publications.yml
 #
-threshold: 5
+threshold: 3
 
 publications:
   - key: ePIC:2026sgq

@@ -14,9 +14,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import urllib.parse
 import urllib.request
+from pathlib import Path
 
 API_ROOT = "https://inspirehep.net/api/literature"
 USER_AGENT = (
@@ -32,6 +34,19 @@ HEADER = """\
 threshold: %d
 
 publications:"""
+
+
+def current_threshold(default=5):
+    """The threshold already in _data/publications.yml, if there is one.
+
+    Regenerating the list should not quietly reset a value someone tuned.
+    """
+    config = Path(__file__).resolve().parent.parent / "_data" / "publications.yml"
+    try:
+        found = re.search(r"^threshold:\s*(\d+)", config.read_text(encoding="utf-8"), re.M)
+    except OSError:
+        return default
+    return int(found.group(1)) if found else default
 
 
 def fetch(query, size):
@@ -59,8 +74,9 @@ def main(argv=None):
                         help="InspireHEP search query (default: %(default)s)")
     parser.add_argument("-n", "--size", type=int, default=250,
                         help="maximum number of records to request")
-    parser.add_argument("-t", "--threshold", type=int, default=5,
-                        help="value written to the `threshold` key")
+    parser.add_argument("-t", "--threshold", type=int, default=current_threshold(),
+                        help="value written to the `threshold` key "
+                             "(default: whatever _data/publications.yml already uses)")
     args = parser.parse_args(argv)
 
     payload = fetch(args.query, args.size)
