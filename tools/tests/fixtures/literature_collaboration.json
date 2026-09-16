@@ -1,0 +1,21 @@
+{
+ "control_number": 2812345,
+ "texkeys": ["Adkins:2024xyz"],
+ "titles": [{"title": "Measurement of\n  something at the ePIC detector"}],
+ "collaborations": [{"value": "ePIC"}],
+ "earliest_date": "2024-06-11",
+ "citation_count": 17,
+ "arxiv_eprints": [{"value": "2406.01234", "categories": ["hep-ex"]}],
+ "dois": [{"value": "10.1103/PhysRevD.110.012345"}],
+ "references": [
+  {"record": {"$ref": "https://inspirehep.net/api/literature/1206324"},
+   "reference": {"label": "1"}},
+  {"record": {"$ref": "https://inspirehep.net/api/literature/1958350"},
+   "reference": {"label": "2"}},
+  {"record": {"$ref": "https://inspirehep.net/api/literature/1206324"},
+   "reference": {"label": "3"}},
+  {"reference": {"label": "4", "misc": ["unmatched preprint, no record"]}},
+  {"record": {"$ref": "https://inspirehep.net/api/literature/2812345"},
+   "reference": {"label": "5"}}
+ ]
+}

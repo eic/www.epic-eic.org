@@ -1,0 +1,34 @@
+################################################################################
+#                                                                              #
+# Publications shown on /public/publications.html                              #
+#                                                                              #
+################################################################################
+#
+# Each entry is an InspireHEP key -- either a texkey exactly as shown on
+# inspirehep.net (e.g. Accardi:2012qut) or a bare numeric record id
+# (e.g. 1206324).  tools/inspire_graph.py resolves both.
+#
+# List the publications of the ePIC collaboration and of ePIC collaborators
+# here.  The graph tells the two apart on its own, from the `collaborations`
+# field of the InspireHEP record -- there is nothing to mark up by hand.
+#
+# Do NOT list the EIC White Paper or the EIC Yellow Report.  Records that are
+# *not* in this list but are cited by MORE than `threshold` of the ones that
+# are get pulled into the graph automatically; that is exactly how those two
+# are meant to show up.  "More than 5" means 6 or more.
+#
+# To regenerate the list from InspireHEP:
+#
+#     python3 tools/seed_publications.py > _data/publications.yml
+#
+threshold: 5
+
+publications: []
+
+# Example of the shape, once seeded:
+#
+# publications:
+#   - key: Adkins:2024xyz         # texkey
+#   - key: 2812345                # or a bare record id
+#   - key: Zurek:2025abc
+#     note: short label override  # optional; replaces the texkey on the node

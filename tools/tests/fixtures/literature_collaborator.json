@@ -1,0 +1,10 @@
+{
+ "control_number": 2900001,
+ "texkeys": ["Zurek:2025abc"],
+ "titles": [{"title": "A study by ePIC collaborators, not a collaboration paper"}],
+ "earliest_date": "2025-02-03",
+ "citation_count": 4,
+ "references": [
+  {"record": {"$ref": "https://inspirehep.net/api/literature/1206324"}}
+ ]
+}
