@@ -22,6 +22,7 @@ from inspire_graph import (  # noqa: E402
     collect_primaries,
     external_counts,
     make_node,
+    publication_year,
     select_citing,
     select_externals,
 )
@@ -187,6 +188,45 @@ class MakeNodeTest(unittest.TestCase):
         self.assertIsNone(node["year"])
         self.assertIsNone(node["arxiv"])
         self.assertEqual("1", node["label"])
+
+
+class PublicationYearTest(unittest.TestCase):
+    """Conference papers often leave earliest_date blank; the Year column
+    should not go blank along with it."""
+
+    def test_prefers_earliest_date(self):
+        metadata = {
+            "earliest_date": "2024-03-01",
+            "preprint_date": "2023-11-01",
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2024, publication_year(metadata))
+
+    def test_falls_back_to_preprint_date(self):
+        metadata = {
+            "preprint_date": "2023-11-01",
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2023, publication_year(metadata))
+
+    def test_falls_back_to_imprint_date(self):
+        metadata = {
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2022, publication_year(metadata))
+
+    def test_falls_back_to_publication_info_year(self):
+        self.assertEqual(2021, publication_year({"publication_info": [{"year": 2021}]}))
+
+    def test_publication_info_year_as_string(self):
+        self.assertEqual(2021, publication_year({"publication_info": [{"year": "2021"}]}))
+
+    def test_no_date_anywhere_is_none(self):
+        self.assertIsNone(publication_year({}))
+        self.assertIsNone(publication_year({"earliest_date": "unknown"}))
 
 
 class CiterMapTest(unittest.TestCase):

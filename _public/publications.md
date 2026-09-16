@@ -27,7 +27,14 @@ points at enough of them.
 
 <table id="pubgraph-table" width="100%" border="1">
 <thead>
-<tr><th>Publication</th><th>Year</th><th>Category</th><th>Cited by</th><th>Cites</th><th>Citations</th></tr>
+<tr>
+<th data-sort-key="title" tabindex="0" role="button" aria-sort="none">Publication</th>
+<th data-sort-key="year" tabindex="0" role="button" aria-sort="descending">Year</th>
+<th data-sort-key="group" tabindex="0" role="button" aria-sort="none">Category</th>
+<th data-sort-key="in_degree" tabindex="0" role="button" aria-sort="none">Cited by</th>
+<th data-sort-key="out_degree" tabindex="0" role="button" aria-sort="none">Cites</th>
+<th data-sort-key="citations" tabindex="0" role="button" aria-sort="none">Citations</th>
+</tr>
 </thead>
 <tbody>
 {%- assign configured = site.data.publications.publications -%}
@@ -41,7 +48,7 @@ points at enough of them.
 </tbody>
 </table>
 
-<p><small><em>Cited by</em> and <em>Cites</em> count connections within this graph only; <em>Citations</em> is the total recorded by InspireHEP.</small></p>
+<p><small>Click a column header to sort the list by it, most recent first by default. <em>Cited by</em> and <em>Cites</em> count connections within this graph only; <em>Citations</em> is the total recorded by InspireHEP.</small></p>
 
 ##### Reference graph
 

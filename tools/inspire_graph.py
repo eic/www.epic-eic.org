@@ -52,10 +52,19 @@ DISPLAY_FIELDS = (
     "titles",
     "collaborations",
     "earliest_date",
+    "preprint_date",
+    "imprints",
+    "publication_info",
     "citation_count",
     "arxiv_eprints",
     "dois",
 )
+
+# Order in which to try to date a record.  ``earliest_date`` is InspireHEP's
+# own best guess and wins when present; conference papers and proceedings
+# often leave it blank, so a chain of fallbacks keeps the Year column from
+# going blank for those.
+YEAR_RE = re.compile(r"(\d{4})")
 
 # Reference lists are large; only fetched for records whose edges we draw.
 REFERENCE_FIELDS = DISPLAY_FIELDS + ("references",)
@@ -177,6 +186,37 @@ def author_label(metadata, texkey):
     return ""
 
 
+def publication_year(metadata):
+    """Best-effort publication year.
+
+    ``earliest_date`` is InspireHEP's own best guess and wins when present.
+    Conference papers and proceedings frequently leave it blank, so fall back
+    through the fields that usually carry a date on those records instead of
+    leaving the Year column empty.
+    """
+    date = metadata.get("earliest_date") or ""
+    if date[:4].isdigit():
+        return int(date[:4])
+
+    date = metadata.get("preprint_date") or ""
+    if date[:4].isdigit():
+        return int(date[:4])
+
+    for imprint in metadata.get("imprints") or []:
+        match = YEAR_RE.search(imprint.get("date") or "")
+        if match:
+            return int(match.group(1))
+
+    for info in metadata.get("publication_info") or []:
+        year = info.get("year")
+        if isinstance(year, int):
+            return year
+        if isinstance(year, str) and year.isdigit():
+            return int(year)
+
+    return None
+
+
 def make_node(recid, metadata, group, in_degree, out_degree=0, note=None):
     """One node of the graph payload."""
     texkeys = metadata.get("texkeys") or []
@@ -194,8 +234,7 @@ def make_node(recid, metadata, group, in_degree, out_degree=0, note=None):
         if (c.get("value") or "").strip()
     ]
 
-    date = metadata.get("earliest_date") or ""
-    year = int(date[:4]) if date[:4].isdigit() else None
+    year = publication_year(metadata)
 
     return {
         "id": recid,

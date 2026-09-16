@@ -41,6 +41,43 @@
 
   var GROUP_ORDER = ["collaboration", "collaborator", "cited", "citing"];
 
+  // The publication table's columns, keyed by the <th data-sort-key>. Each
+  // click-to-sort column needs the value to compare on, its type (so ties and
+  // missing values behave sensibly), and which direction makes sense first --
+  // newest year and highest counts first, but titles and categories A-to-Z.
+  var SORT_COLUMNS = {
+    title: {
+      value: function (d) { return d.title || ""; },
+      type: "string",
+      defaultDir: "asc"
+    },
+    year: {
+      value: function (d) { return d.year; },
+      type: "number",
+      defaultDir: "desc"
+    },
+    group: {
+      value: function (d) { return GROUP_ORDER.indexOf(d.group); },
+      type: "number",
+      defaultDir: "asc"
+    },
+    in_degree: {
+      value: function (d) { return d.in_degree; },
+      type: "number",
+      defaultDir: "desc"
+    },
+    out_degree: {
+      value: function (d) { return d.out_degree; },
+      type: "number",
+      defaultDir: "desc"
+    },
+    citations: {
+      value: function (d) { return d.citations; },
+      type: "number",
+      defaultDir: "desc"
+    }
+  };
+
   var WIDTH = 1000;
   var HEIGHT = 640;
 
@@ -545,8 +582,12 @@
       return haystack.indexOf(term) !== -1;
     }
 
+    function currentTerm() {
+      return (search.value || "").trim().toLowerCase();
+    }
+
     function applyFilter() {
-      var term = (search.value || "").trim().toLowerCase();
+      var term = currentTerm();
       var visible = 0;
 
       node.classed("is-hidden", function (d) {
@@ -582,6 +623,77 @@
 
     var table = document.getElementById("pubgraph-table");
 
+    // Most-recent-first until the reader clicks a header. A column keeps its
+    // own natural direction (newest year / highest count first, A-to-Z for
+    // text) the first time it's chosen; clicking the same header again flips
+    // it.
+    var sortState = { key: "year", dir: "desc" };
+
+    function compareBy(column) {
+      var sign = sortState.dir === "asc" ? 1 : -1;
+      return function (a, b) {
+        var av = column.value(a);
+        var bv = column.value(b);
+        var aMissing = av === null || av === undefined || av === "";
+        var bMissing = bv === null || bv === undefined || bv === "";
+        if (aMissing || bMissing) {
+          // Missing values always sort last, whichever direction is active.
+          return aMissing === bMissing ? 0 : aMissing ? 1 : -1;
+        }
+        if (column.type === "string") {
+          return sign * String(av).localeCompare(String(bv));
+        }
+        return sign * (av - bv);
+      };
+    }
+
+    function updateSortIndicators() {
+      if (!table) {
+        return;
+      }
+      table.querySelectorAll("th[data-sort-key]").forEach(function (th) {
+        var key = th.getAttribute("data-sort-key");
+        th.setAttribute(
+          "aria-sort",
+          key !== sortState.key
+            ? "none"
+            : sortState.dir === "asc"
+              ? "ascending"
+              : "descending"
+        );
+      });
+    }
+
+    function setSort(key) {
+      var column = SORT_COLUMNS[key];
+      if (!column) {
+        return;
+      }
+      if (sortState.key === key) {
+        sortState.dir = sortState.dir === "asc" ? "desc" : "asc";
+      } else {
+        sortState.key = key;
+        sortState.dir = column.defaultDir;
+      }
+      updateSortIndicators();
+      renderTable(currentTerm());
+    }
+
+    if (table) {
+      table.querySelectorAll("th[data-sort-key]").forEach(function (th) {
+        th.addEventListener("click", function () {
+          setSort(th.getAttribute("data-sort-key"));
+        });
+        th.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setSort(th.getAttribute("data-sort-key"));
+          }
+        });
+      });
+      updateSortIndicators();
+    }
+
     function renderTable(term) {
       if (!table) {
         return;
@@ -593,9 +705,7 @@
         .filter(function (d) {
           return groupShown(d.group) && matches(d, term);
         })
-        .sort(function (a, b) {
-          return (b.year || 0) - (a.year || 0) || (b.degree || 0) - (a.degree || 0);
-        })
+        .sort(compareBy(SORT_COLUMNS[sortState.key]))
         .forEach(function (d) {
           var row = document.createElement("tr");
 
