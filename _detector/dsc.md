@@ -40,8 +40,7 @@ layout: default
 ---
 
 ### Luminosity
-* Co-DSL: Nick Zachariou <nick.zachariou@york.ac.uk>
-* Co-DSL: Krzysztof Piotrzkowski <piotrzkowski@agh.edu.pl>
+* DSL: Nick Zachariou <nick.zachariou@york.ac.uk>
 * DSTC (Pair Spectrometer): Stephen Kay <stephen.kay@york.ac.uk>
 
 ---
