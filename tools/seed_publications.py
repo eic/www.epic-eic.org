@@ -35,18 +35,32 @@ threshold: %d
 
 publications:"""
 
+CONFIG_PATH = Path(__file__).resolve().parent.parent / "_data" / "publications.yml"
+
+
+def _config_text():
+    try:
+        return CONFIG_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
 
 def current_threshold(default=5):
     """The threshold already in _data/publications.yml, if there is one.
 
     Regenerating the list should not quietly reset a value someone tuned.
     """
-    config = Path(__file__).resolve().parent.parent / "_data" / "publications.yml"
-    try:
-        found = re.search(r"^threshold:\s*(\d+)", config.read_text(encoding="utf-8"), re.M)
-    except OSError:
-        return default
+    found = re.search(r"^threshold:\s*(\d+)", _config_text(), re.M)
     return int(found.group(1)) if found else default
+
+
+def existing_keys():
+    """Keys already listed in _data/publications.yml.
+
+    Used by --new-only so a refresh only prints publications that are not
+    already there, ready to paste straight under the existing list.
+    """
+    return set(re.findall(r"^\s*-\s*key:\s*(\S+)\s*$", _config_text(), re.M))
 
 
 def fetch(query, size):
@@ -77,6 +91,10 @@ def main(argv=None):
     parser.add_argument("-t", "--threshold", type=int, default=current_threshold(),
                         help="value written to the `threshold` key "
                              "(default: whatever _data/publications.yml already uses)")
+    parser.add_argument("--new-only", action="store_true",
+                        help="print only publications not already listed in "
+                             "_data/publications.yml (by key), with no YAML "
+                             "header, ready to paste under the existing list")
     args = parser.parse_args(argv)
 
     payload = fetch(args.query, args.size)
@@ -90,17 +108,31 @@ def main(argv=None):
         print("warning: no records found -- check the query, e.g. "
               "collaborations:EPIC", file=sys.stderr)
 
-    print(HEADER % args.threshold)
+    known = existing_keys() if args.new_only else set()
+
+    if not args.new_only:
+        print(HEADER % args.threshold)
+
+    printed = 0
     for hit in hits:
         metadata = hit.get("metadata") or {}
         texkeys = metadata.get("texkeys") or []
         key = texkeys[0] if texkeys else str(metadata.get("control_number"))
+        if args.new_only and key in known:
+            continue
         titles = metadata.get("titles") or []
         raw_title = titles[0].get("title") if titles else None
         title = " ".join((raw_title or "").split())
         year = (metadata.get("earliest_date") or "")[:4]
         print("  - key: %s" % key)
         print("    # %s %s" % (year or "????", title[:88]))
+        printed += 1
+
+    if args.new_only:
+        print(
+            "%d new, %d already listed" % (printed, len(hits) - printed),
+            file=sys.stderr,
+        )
     return 0
 
 
