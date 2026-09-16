@@ -58,9 +58,16 @@ publications. Which publications appear is configured in
 `_data/publications.yml` by InspireHEP key -- either a texkey
 (`Accardi:2012qut`) or a bare record id (`1206324`).
 
-Works that are *not* in that list but are cited by more than `threshold` of the
-ones that are get added to the graph automatically. That is how the EIC White
-Paper and the EIC Yellow Report appear without being listed by hand.
+The graph reaches one step out from that list in both directions, and both
+sides are discovered automatically rather than listed by hand:
+
+* works that more than `threshold` of the configured publications **cite** --
+  the shared foundations, which is how the EIC White Paper and the EIC Yellow
+  Report appear, and
+* works that themselves **cite** more than `threshold` of them -- the
+  literature building on ePIC results.
+
+Neither side is expanded further, so the graph stays one hop deep on each side.
 
 The graph data is fetched from the InspireHEP API at build time. To build it
 locally (needs Python 3 and PyYAML):

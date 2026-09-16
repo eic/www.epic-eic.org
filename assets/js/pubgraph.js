@@ -15,24 +15,31 @@
 (function () {
   "use strict";
 
-  /* Categorical slots 1-3 of the validated light-mode palette.  Checked with
-   * the all-pairs rule (a network puts arbitrary classes side by side): worst
-   * CVD dE 9.2, worst normal-vision dE 24.0 against a white surface.  The
-   * aqua slot sits below 3:1 contrast, so external nodes are always directly
-   * labelled and every node is repeated in the table below the graph. */
+  /* Four slots of the validated light-mode palette, checked with the
+   * all-pairs rule because a network puts arbitrary classes side by side:
+   * worst CVD dE 9.2, worst normal-vision dE 16.3 against a white surface.
+   * Violet is the only fourth hue that clears both floors -- yellow, magenta,
+   * green and red all fail against the orange slot.  The aqua slot sits below
+   * 3:1 contrast, so related works are always directly labelled and every
+   * node is repeated in the publication list. */
   var COLOR = {
     collaboration: "#2a78d6",
     collaborator: "#eb6834",
-    external: "#1baf7a"
+    cited: "#1baf7a",
+    citing: "#4a3aa7"
   };
 
   var GROUP_NAME = {
     collaboration: "ePIC collaboration paper",
     collaborator: "ePIC collaborator paper",
-    external: "Cited by ePIC publications"
+    cited: "Cited by ePIC publications",
+    citing: "Cites ePIC publications"
   };
 
-  var GROUP_ORDER = ["collaboration", "collaborator", "external"];
+  // Groups that are discovered rather than configured.
+  var RELATED = { cited: true, citing: true };
+
+  var GROUP_ORDER = ["collaboration", "collaborator", "cited", "citing"];
 
   var WIDTH = 1000;
   var HEIGHT = 640;
@@ -84,7 +91,7 @@
     .catch(function () {
       message(
         "The publication graph has not been generated yet. Run " +
-          "tools/inspire_graph.py to build it, or see the publication list below."
+          "tools/inspire_graph.py to build it, or see the publication list above."
       );
     });
 
@@ -98,7 +105,7 @@
       message(
         data.degraded
           ? "The publication data could not be retrieved from InspireHEP when " +
-              "this site was built. The publication list is below."
+              "this site was built. The publication list is above."
           : "No publications are configured yet. Add InspireHEP keys to " +
               "_data/publications.yml to populate this graph."
       );
@@ -126,15 +133,27 @@
       neighbours[link.target][link.source] = true;
     });
 
+    // Total connections within the graph: a citing node has no incoming
+    // edges at all, so sizing on in_degree alone would shrink every one of
+    // them to the floor.
+    nodes.forEach(function (node) {
+      node.degree = (node.in_degree || 0) + (node.out_degree || 0);
+    });
     var maxDegree = d3.max(nodes, function (node) {
-      return node.in_degree || 0;
+      return node.degree;
     }) || 1;
     var radius = d3
       .scaleSqrt()
       .domain([0, maxDegree])
       .range([6, 26]); // >= 8px across at the smallest
 
-    root.appendChild(buildControls(data, nodes));
+    var controlsHost = document.getElementById("pubgraph-controls") || root;
+    if (controlsHost !== root) {
+      controlsHost.innerHTML = "";
+    }
+    var chrome = buildControls(data, nodes);
+    controlsHost.appendChild(chrome);
+    root.appendChild(buildLegend(data, nodes));
 
     var figure = el("div", "pubgraph-figure");
     root.appendChild(figure);
@@ -202,7 +221,7 @@
       .append("circle")
       .attr("class", "pubgraph-hit")
       .attr("r", function (d) {
-        return Math.max(radius(d.in_degree || 0) + 6, 14);
+        return Math.max(radius(d.degree || 0) + 6, 14);
       });
 
     node
@@ -211,7 +230,7 @@
         return "pubgraph-dot pubgraph-dot-" + d.group;
       })
       .attr("r", function (d) {
-        return radius(d.in_degree || 0);
+        return radius(d.degree || 0);
       })
       .attr("fill", function (d) {
         return COLOR[d.group];
@@ -230,13 +249,13 @@
       .attr("class", "pubgraph-label")
       .attr("text-anchor", "middle")
       .attr("dy", function (d) {
-        return -radius(d.in_degree || 0) - 6;
+        return -radius(d.degree || 0) - 6;
       })
       .text(function (d) {
         return d.label || d.texkey || d.id;
       })
       .classed("is-persistent", function (d) {
-        return d.group === "external";
+        return !!RELATED[d.group];
       });
 
     var simulation = d3
@@ -256,7 +275,7 @@
       .force(
         "collide",
         d3.forceCollide().radius(function (d) {
-          return radius(d.in_degree || 0) + 14;
+          return radius(d.degree || 0) + 14;
         })
       )
       .on("tick", tick)
@@ -289,7 +308,7 @@
       return {
         dx: dx / distance,
         dy: dy / distance,
-        r: radius(d.target.in_degree || 0) + 3
+        r: radius(d.target.degree || 0) + 3
       };
     }
     function edgeX(d) {
@@ -345,7 +364,7 @@
       target.call(zoom.transform, transform);
     }
 
-    root.querySelector(".pubgraph-reset").addEventListener("click", function () {
+    chrome.querySelector(".pubgraph-reset").addEventListener("click", function () {
       fitToView(400);
     });
 
@@ -462,7 +481,7 @@
           )
         );
       }
-      tooltip.appendChild(el("div", "pubgraph-tip-count", citedBy(d)));
+      tooltip.appendChild(el("div", "pubgraph-tip-count", connections(d)));
 
       tooltip.hidden = false;
 
@@ -477,9 +496,20 @@
 
     /* ------------------------------------------------------------ filtering */
 
-    var search = root.querySelector(".pubgraph-search");
-    var showExternal = root.querySelector(".pubgraph-show-external");
-    var count = root.querySelector(".pubgraph-count");
+    var search = chrome.querySelector(".pubgraph-search");
+    var showCited = chrome.querySelector(".pubgraph-show-cited");
+    var showCiting = chrome.querySelector(".pubgraph-show-citing");
+    var count = chrome.querySelector(".pubgraph-count");
+
+    function groupShown(group) {
+      if (group === "cited") {
+        return !showCited || showCited.checked;
+      }
+      if (group === "citing") {
+        return !showCiting || showCiting.checked;
+      }
+      return true;
+    }
 
     function matches(d, term) {
       if (!term) {
@@ -494,11 +524,10 @@
 
     function applyFilter() {
       var term = (search.value || "").trim().toLowerCase();
-      var withExternal = showExternal.checked;
       var visible = 0;
 
       node.classed("is-hidden", function (d) {
-        var shown = (withExternal || d.group !== "external") && matches(d, term);
+        var shown = groupShown(d.group) && matches(d, term);
         if (shown) {
           visible += 1;
         }
@@ -514,19 +543,23 @@
 
       count.textContent =
         visible === nodes.length
-          ? nodes.length + " publications shown"
-          : visible + " of " + nodes.length + " publications shown";
-      renderTable(term, withExternal);
+          ? nodes.length + " works shown"
+          : visible + " of " + nodes.length + " works shown";
+      renderTable(term);
     }
 
     search.addEventListener("input", applyFilter);
-    showExternal.addEventListener("change", applyFilter);
+    [showCited, showCiting].forEach(function (box) {
+      if (box) {
+        box.addEventListener("change", applyFilter);
+      }
+    });
 
     /* --------------------------------------------------- the table-view twin */
 
     var table = document.getElementById("pubgraph-table");
 
-    function renderTable(term, withExternal) {
+    function renderTable(term) {
       if (!table) {
         return;
       }
@@ -535,10 +568,10 @@
 
       nodes
         .filter(function (d) {
-          return (withExternal || d.group !== "external") && matches(d, term);
+          return groupShown(d.group) && matches(d, term);
         })
         .sort(function (a, b) {
-          return (b.year || 0) - (a.year || 0) || (b.in_degree || 0) - (a.in_degree || 0);
+          return (b.year || 0) - (a.year || 0) || (b.degree || 0) - (a.degree || 0);
         })
         .forEach(function (d) {
           var row = document.createElement("tr");
@@ -561,7 +594,7 @@
           var groupCell = document.createElement("td");
           var swatch = el(
             "span",
-            d.group === "external" ? "pubgraph-swatch is-external" : "pubgraph-swatch"
+            RELATED[d.group] ? "pubgraph-swatch is-" + d.group : "pubgraph-swatch"
           );
           swatch.style.backgroundColor = COLOR[d.group];
           swatch.style.color = COLOR[d.group];
@@ -570,6 +603,7 @@
           row.appendChild(groupCell);
 
           row.appendChild(el("td", null, d.in_degree));
+          row.appendChild(el("td", null, d.out_degree));
           row.appendChild(
             el("td", null, typeof d.citations === "number" ? d.citations : "")
           );
@@ -595,25 +629,34 @@
     search.setAttribute("aria-label", "Filter publications");
     bar.appendChild(search);
 
-    var toggleWrap = el("label", "pubgraph-toggle");
-    var toggle = document.createElement("input");
-    toggle.type = "checkbox";
-    toggle.className = "pubgraph-show-external";
-    toggle.checked = true;
-    toggleWrap.appendChild(toggle);
-    toggleWrap.appendChild(
-      document.createTextNode(
-        " Show works cited by more than " + (data.threshold || 5) + " of them"
-      )
-    );
-    bar.appendChild(toggleWrap);
+    var threshold = data.threshold === undefined ? 5 : data.threshold;
+    [
+      ["cited", "pubgraph-show-cited", "Show works cited by more than " + threshold],
+      ["citing", "pubgraph-show-citing", "Show works citing more than " + threshold]
+    ].forEach(function (spec) {
+      if (!nodes.some(function (node) { return node.group === spec[0]; })) {
+        return;
+      }
+      var wrap = el("label", "pubgraph-toggle");
+      var box = document.createElement("input");
+      box.type = "checkbox";
+      box.className = spec[1];
+      box.checked = true;
+      wrap.appendChild(box);
+      wrap.appendChild(document.createTextNode(" " + spec[2]));
+      bar.appendChild(wrap);
+    });
 
     var reset = el("button", "pubgraph-reset btn btn-sm btn-outline-secondary", "Reset view");
     reset.type = "button";
     bar.appendChild(reset);
 
-    bar.appendChild(el("span", "pubgraph-count", nodes.length + " publications shown"));
+    bar.appendChild(el("span", "pubgraph-count", nodes.length + " works shown"));
 
+    return bar;
+  }
+
+  function buildLegend(data, nodes) {
     var legend = el("div", "pubgraph-legend");
     legend.setAttribute("role", "list");
     GROUP_ORDER.forEach(function (group) {
@@ -634,7 +677,6 @@
     });
 
     var wrapper = el("div", "pubgraph-chrome");
-    wrapper.appendChild(bar);
     wrapper.appendChild(legend);
     if (data.generated) {
       wrapper.appendChild(
@@ -680,10 +722,23 @@
     });
   }
 
-  function citedBy(d) {
-    return d.in_degree === 1
-      ? "Cited by 1 publication in this graph"
-      : "Cited by " + d.in_degree + " publications in this graph";
+  function connections(d) {
+    var parts = [];
+    if (d.in_degree) {
+      parts.push(
+        d.in_degree === 1
+          ? "Cited by 1 publication here"
+          : "Cited by " + d.in_degree + " publications here"
+      );
+    }
+    if (d.out_degree) {
+      parts.push(
+        d.out_degree === 1
+          ? "Cites 1 publication here"
+          : "Cites " + d.out_degree + " publications here"
+      );
+    }
+    return parts.length ? parts.join(" \u00b7 ") : "No connections in this graph";
   }
 
   function describe(d) {
@@ -695,8 +750,13 @@
       parts.push(d.year);
     }
     parts.push(GROUP_NAME[d.group]);
-    parts.push(citedBy(d));
-    return parts.join(". ");
+    parts.push(connections(d));
+    // Bylines already end in a stop ("Adkins et al."), so don't double it.
+    return parts
+      .map(function (part) {
+        return String(part).replace(/\.+$/, "");
+      })
+      .join(". ");
   }
 
   function summary(data, nodes, links) {
@@ -720,7 +780,7 @@
       pieces.join(", ") +
       ") connected by " +
       links.length +
-      " references. The same information is listed in the table below."
+      " references. The same information is listed in the table above."
     );
   }
 })();

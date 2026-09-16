@@ -5,13 +5,15 @@ Reads ``_data/publications.yml``, resolves every InspireHEP key in it to a
 record, walks the reference lists of those records, and writes
 ``assets/data/publications_graph.json`` for ``assets/js/pubgraph.js`` to draw.
 
-Two kinds of node end up in the graph:
+Four kinds of node end up in the graph:
 
 * the publications named in ``_data/publications.yml`` ("primaries"), split
-  into ePIC collaboration papers and ePIC collaborator papers, and
-* records *outside* that list cited by MORE than ``threshold`` of them
-  ("externals") -- which is what surfaces the EIC White Paper and the EIC
-  Yellow Report without anyone having to name them.
+  into ePIC collaboration papers and ePIC collaborator papers,
+* records *outside* that list CITED BY more than ``threshold`` of them
+  ("cited") -- the shared foundations, which is what surfaces the EIC White
+  Paper and the EIC Yellow Report without anyone having to name them, and
+* records outside that list that CITE more than ``threshold`` of them
+  ("citing") -- the work building on ePIC output.
 
 API responses are cached under ``.cache/inspire/`` so repeated builds do not
 hammer inspirehep.net.  Pass ``--no-cache`` for a fresh local build.
@@ -121,10 +123,38 @@ def select_externals(cmap, primary_ids, threshold):
     return {recid for recid, n in counts.items() if n > threshold}
 
 
-def classify(metadata, is_primary):
-    """One of ``collaboration``, ``collaborator`` or ``external``."""
+def citer_map(citers_by_primary):
+    """Invert ``{primary -> recids citing it}`` into ``{citer -> primaries it cites}``."""
+    inverted = {}
+    for primary, citers in citers_by_primary.items():
+        for citer in citers:
+            if citer == primary:      # a record never cites itself here
+                continue
+            inverted.setdefault(citer, set()).add(primary)
+    return inverted
+
+
+def select_citing(cmap, primary_ids, threshold):
+    """Recids that cite MORE than ``threshold`` of the publications.
+
+    The mirror of select_externals: those are works the publications build on,
+    these are works building on the publications.
+    """
+    return {
+        recid
+        for recid, cited in cmap.items()
+        if recid not in primary_ids and len(cited) > threshold
+    }
+
+
+def classify(metadata, is_primary, group="cited"):
+    """The node's group.
+
+    Primaries split into ``collaboration`` and ``collaborator``; anything else
+    keeps the group it was discovered as (``cited`` or ``citing``).
+    """
     if not is_primary:
-        return "external"
+        return group
     for collaboration in metadata.get("collaborations") or []:
         if EPIC_RE.match((collaboration.get("value") or "").strip()):
             return "collaboration"
@@ -147,7 +177,7 @@ def author_label(metadata, texkey):
     return ""
 
 
-def make_node(recid, metadata, group, in_degree, note=None):
+def make_node(recid, metadata, group, in_degree, out_degree=0, note=None):
     """One node of the graph payload."""
     texkeys = metadata.get("texkeys") or []
     texkey = texkeys[0] if texkeys else None
@@ -180,46 +210,66 @@ def make_node(recid, metadata, group, in_degree, note=None):
         "doi": dois[0].get("value") if dois else None,
         "url": "%s/%s" % (WEB_ROOT, recid),
         "group": group,
+        # Within this graph only: how many of its members cite this record,
+        # and how many of them it cites.
         "in_degree": in_degree,
+        "out_degree": out_degree,
     }
 
 
-def build_graph(primaries, externals, threshold, notes=None):
+def build_graph(primaries, cited, citing, cmap_citing, threshold, notes=None):
     """Assemble the node/link payload.
 
-    ``primaries``  -- ``{recid: metadata}`` for the records in the YAML list
-    ``externals``  -- ``{recid: metadata}`` for records that passed the threshold
-    ``notes``      -- optional ``{recid: label}`` overrides from the YAML
+    ``primaries``    -- ``{recid: metadata}`` for the records in the YAML list
+    ``cited``        -- ``{recid: metadata}`` for works enough primaries cite
+    ``citing``       -- ``{recid: metadata}`` for works citing enough primaries
+    ``cmap_citing``  -- ``{citer recid: set of primaries it cites}``
+    ``notes``        -- optional ``{recid: label}`` overrides from the YAML
 
-    Externals are leaves: their own reference lists are never fetched, so the
-    only edges into them come from primaries, and there are no
-    external-to-external edges.  Everything is emitted in sorted order so the
-    output is byte-stable across runs.
+    Edges run citing -> cited throughout, so a "cited" node only ever has
+    arrows coming in from the publications, and a "citing" node only ever has
+    arrows going out to them. Neither kind is expanded further: their own
+    reference lists are not walked, so the graph stays one hop deep on each
+    side. Everything is emitted in sorted order so the output is byte-stable.
     """
     notes = notes or {}
     primary_ids = set(primaries)
-    keep = set(externals)
+    keep_cited = set(cited)
     cmap = citation_map(primaries)
 
     links = []
-    in_degree = {recid: 0 for recid in list(primaries) + list(externals)}
-    for citing in sorted(cmap):
-        for cited in sorted(cmap[citing]):
-            if cited not in primary_ids and cited not in keep:
-                continue
-            links.append({"source": citing, "target": cited})
-            in_degree[cited] = in_degree.get(cited, 0) + 1
+    everyone = list(primaries) + list(cited) + list(citing)
+    in_degree = {recid: 0 for recid in everyone}
+    out_degree = {recid: 0 for recid in everyone}
+
+    def add(source, target):
+        links.append({"source": source, "target": target})
+        out_degree[source] = out_degree.get(source, 0) + 1
+        in_degree[target] = in_degree.get(target, 0) + 1
+
+    # What the publications cite: primary -> primary, and primary -> cited.
+    for source in sorted(cmap):
+        for target in sorted(cmap[source]):
+            if target in primary_ids or target in keep_cited:
+                add(source, target)
+
+    # What cites the publications: citing -> primary.
+    for source in sorted(citing):
+        for target in sorted(cmap_citing.get(source, ())):
+            if target in primary_ids:
+                add(source, target)
 
     nodes = [
         make_node(recid, metadata, classify(metadata, True),
-                  in_degree.get(recid, 0), notes.get(recid))
+                  in_degree.get(recid, 0), out_degree.get(recid, 0), notes.get(recid))
         for recid, metadata in sorted(primaries.items())
     ]
-    nodes += [
-        make_node(recid, metadata, "external",
-                  in_degree.get(recid, 0), notes.get(recid))
-        for recid, metadata in sorted(externals.items())
-    ]
+    for group, records in (("cited", cited), ("citing", citing)):
+        nodes += [
+            make_node(recid, metadata, group,
+                      in_degree.get(recid, 0), out_degree.get(recid, 0), notes.get(recid))
+            for recid, metadata in sorted(records.items())
+        ]
 
     return {"threshold": threshold, "nodes": nodes, "links": links}
 
@@ -388,6 +438,36 @@ class Inspire:
         return payload.get("metadata") or {}
 
 
+    def fetch_citing(self, recid, page_size=250, max_pages=8):
+        """Recids of the records that cite ``recid``.
+
+        InspireHEP exposes this as the `refersto` search operator. Results are
+        paged; a publication with more citations than max_pages * page_size is
+        truncated, which only costs edges on an already-dense node.
+        """
+        found, page = set(), 1
+        while page <= max_pages:
+            query = urllib.parse.urlencode({
+                "q": "refersto recid %s" % recid,
+                "fields": "control_number",
+                "size": page_size,
+                "page": page,
+            })
+            payload = self._get(
+                "%s?%s" % (API_ROOT, query),
+                "citing/%s.p%d" % (recid, page),
+            )
+            hits = (payload.get("hits") or {}).get("hits") or []
+            for hit in hits:
+                number = (hit.get("metadata") or {}).get("control_number")
+                if number is not None:
+                    found.add(str(number))
+            if len(hits) < page_size:
+                break
+            page += 1
+        return found
+
+
 def _retry_after(error):
     try:
         return int(error.headers.get("Retry-After"))
@@ -451,15 +531,32 @@ def collect_primaries(client, entries, problems):
     return primaries, notes
 
 
-def collect_externals(client, recids, problems):
+def collect_externals(client, recids, problems, kind="cited"):
     """``{recid: metadata}`` for the records that passed the threshold."""
     externals = {}
     for recid in sorted(recids):
         try:
             externals[recid] = client.fetch_record(recid)
         except FetchError as error:
-            problems.append("could not fetch cited record %s: %s" % (recid, error))
+            problems.append("could not fetch %s record %s: %s" % (kind, recid, error))
     return externals
+
+
+def collect_citers(client, primary_ids, problems):
+    """``{primary recid: set of recids citing it}``.
+
+    A publication whose citation list cannot be fetched is reported and
+    skipped, exactly as in collect_primaries -- it costs that one node its
+    incoming edges, not the whole run.
+    """
+    citers = {}
+    for recid in sorted(primary_ids):
+        try:
+            citers[recid] = client.fetch_citing(recid)
+        except FetchError as error:
+            problems.append("could not fetch citations of %s: %s" % (recid, error))
+            citers[recid] = set()
+    return citers
 
 
 def report(problems):
@@ -507,9 +604,22 @@ def main(argv=None):
 
     problems = []
     primaries, notes = collect_primaries(client, entries, problems)
+    primary_ids = set(primaries)
+
+    # What the publications cite.
     cmap = citation_map(primaries)
-    wanted = select_externals(cmap, set(primaries), threshold)
-    externals = collect_externals(client, wanted, problems)
+    cited = collect_externals(
+        client, select_externals(cmap, primary_ids, threshold), problems, "cited")
+
+    # What cites the publications.
+    cmap_citing = citer_map(collect_citers(client, primary_ids, problems))
+    citing = collect_externals(
+        client, select_citing(cmap_citing, primary_ids, threshold), problems, "citing")
+
+    # A record can clear both bars; it is drawn once, as a foundation, but
+    # keeps the edges of both directions.
+    for recid in set(cited) & set(citing):
+        del citing[recid]
 
     # Nothing came back at all: InspireHEP is unreachable, or every key is bad.
     if entries and not primaries:
@@ -529,7 +639,7 @@ def main(argv=None):
               "writing an empty graph so the build can continue"
               % args.output, file=sys.stderr)
 
-    graph = build_graph(primaries, externals, threshold, notes)
+    graph = build_graph(primaries, cited, citing, cmap_citing, threshold, notes)
     graph["generated"] = (
         datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     )

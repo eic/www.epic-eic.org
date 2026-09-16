@@ -18,9 +18,11 @@ from inspire_graph import (  # noqa: E402
     citation_map,
     cited_recids,
     classify,
+    citer_map,
     collect_primaries,
     external_counts,
     make_node,
+    select_citing,
     select_externals,
 )
 
@@ -138,8 +140,11 @@ class ClassifyTest(unittest.TestCase):
                 value,
             )
 
-    def test_non_primary_is_always_external(self):
-        self.assertEqual("external", classify(fixture("literature_collaboration"), False))
+    def test_non_primary_keeps_the_group_it_was_discovered_as(self):
+        record = fixture("literature_collaboration")
+        self.assertEqual("cited", classify(record, False))
+        self.assertEqual("cited", classify(record, False, "cited"))
+        self.assertEqual("citing", classify(record, False, "citing"))
 
 
 class MakeNodeTest(unittest.TestCase):
@@ -160,19 +165,42 @@ class MakeNodeTest(unittest.TestCase):
         self.assertEqual("Zurek et al.", node["authors"])
 
     def test_note_overrides_the_label(self):
-        node = make_node("1206324", fixture("literature_external"), "external", 6, note="EIC White Paper")
+        node = make_node("1206324", fixture("literature_external"), "cited", 6, note="EIC White Paper")
         self.assertEqual("EIC White Paper", node["label"])
 
     def test_label_defaults_to_the_texkey(self):
-        node = make_node("1206324", fixture("literature_external"), "external", 6)
+        node = make_node("1206324", fixture("literature_external"), "cited", 6)
         self.assertEqual("Accardi:2012qut", node["label"])
 
     def test_tolerates_an_empty_record(self):
-        node = make_node("1", {}, "external", 0)
+        node = make_node("1", {}, "cited", 0)
         self.assertEqual("(untitled)", node["title"])
         self.assertIsNone(node["year"])
         self.assertIsNone(node["arxiv"])
         self.assertEqual("1", node["label"])
+
+
+class CiterMapTest(unittest.TestCase):
+    """The mirror of the cited side: works that CITE the publications."""
+
+    def test_inverts_citations_per_citer(self):
+        citers = {"9000": {"5555", "6666"}, "9001": {"5555"}}
+        self.assertEqual({"5555": {"9000", "9001"}, "6666": {"9000"}},
+                         citer_map(citers))
+
+    def test_a_record_citing_itself_is_dropped(self):
+        self.assertEqual({}, citer_map({"9000": {"9000"}}))
+
+    def test_threshold_is_strictly_greater(self):
+        five = citer_map({str(9000 + i): {"5555"} for i in range(5)})
+        six = citer_map({str(9000 + i): {"5555"} for i in range(6)})
+        ids = {str(9000 + i) for i in range(6)}
+        self.assertEqual(set(), select_citing(five, ids, 5))
+        self.assertEqual({"5555"}, select_citing(six, ids, 5))
+
+    def test_a_primary_is_never_selected_as_a_citing_node(self):
+        cmap = citer_map({str(9000 + i): {"9999"} for i in range(6)})
+        self.assertEqual(set(), select_citing(cmap, {"9999"} | {str(9000 + i) for i in range(6)}, 5))
 
 
 class BuildGraphTest(unittest.TestCase):
@@ -183,39 +211,66 @@ class BuildGraphTest(unittest.TestCase):
         }
         # One of them also cites another primary, and an under-threshold record.
         self.primaries["9000"] = citing_record("1206324", "9001", "7777777")
-        self.externals = {"1206324": fixture("literature_external")}
+        self.cited = {"1206324": fixture("literature_external")}
+        # One outside record cites every primary, so it clears the bar too.
+        self.cmap_citing = {"4444": set(self.primaries)}
+        self.citing = {"4444": fixture("literature_collaborator")}
+
+    def graph(self, **kw):
+        kw.setdefault("primaries", self.primaries)
+        kw.setdefault("cited", self.cited)
+        kw.setdefault("citing", self.citing)
+        kw.setdefault("cmap_citing", self.cmap_citing)
+        return build_graph(kw["primaries"], kw["cited"], kw["citing"],
+                           kw["cmap_citing"], 5)
 
     def test_node_groups_and_counts(self):
-        graph = build_graph(self.primaries, self.externals, 5)
         groups = {}
-        for node in graph["nodes"]:
+        for node in self.graph()["nodes"]:
             groups[node["group"]] = groups.get(node["group"], 0) + 1
-        self.assertEqual({"collaborator": 6, "external": 1}, groups)
+        self.assertEqual({"collaborator": 6, "cited": 1, "citing": 1}, groups)
 
-    def test_in_degree_matches_the_link_count(self):
-        graph = build_graph(self.primaries, self.externals, 5)
-        counted = {}
+    def test_degrees_match_the_link_counts(self):
+        graph = self.graph()
+        into, outof = {}, {}
         for link in graph["links"]:
-            counted[link["target"]] = counted.get(link["target"], 0) + 1
+            into[link["target"]] = into.get(link["target"], 0) + 1
+            outof[link["source"]] = outof.get(link["source"], 0) + 1
         for node in graph["nodes"]:
-            self.assertEqual(counted.get(node["id"], 0), node["in_degree"], node["id"])
+            self.assertEqual(into.get(node["id"], 0), node["in_degree"], node["id"])
+            self.assertEqual(outof.get(node["id"], 0), node["out_degree"], node["id"])
+
+    def test_a_cited_node_only_has_incoming_edges(self):
+        graph = self.graph()
+        cited = [n for n in graph["nodes"] if n["group"] == "cited"][0]
+        self.assertEqual(0, cited["out_degree"])
+        self.assertGreater(cited["in_degree"], 0)
+
+    def test_a_citing_node_only_has_outgoing_edges(self):
+        graph = self.graph()
+        citer = [n for n in graph["nodes"] if n["group"] == "citing"][0]
+        self.assertEqual(0, citer["in_degree"])
+        self.assertEqual(6, citer["out_degree"])
+
+    def test_citing_edges_point_at_the_publications(self):
+        links = self.graph()["links"]
+        self.assertIn({"source": "4444", "target": "9000"}, links)
 
     def test_under_threshold_record_gets_no_node_and_no_edge(self):
-        graph = build_graph(self.primaries, self.externals, 5)
+        graph = self.graph()
         self.assertNotIn("7777777", [n["id"] for n in graph["nodes"]])
         self.assertNotIn("7777777", [l["target"] for l in graph["links"]])
 
     def test_primary_to_primary_edges_are_kept(self):
-        graph = build_graph(self.primaries, self.externals, 5)
-        self.assertIn({"source": "9000", "target": "9001"}, graph["links"])
+        self.assertIn({"source": "9000", "target": "9001"}, self.graph()["links"])
 
     def test_output_is_stable_across_runs(self):
-        first = build_graph(self.primaries, self.externals, 5)
-        second = build_graph(dict(reversed(list(self.primaries.items()))), self.externals, 5)
+        first = self.graph()
+        second = self.graph(primaries=dict(reversed(list(self.primaries.items()))))
         self.assertEqual(json.dumps(first, sort_keys=True), json.dumps(second, sort_keys=True))
 
     def test_empty_configuration_is_a_valid_graph(self):
-        graph = build_graph({}, {}, 5)
+        graph = build_graph({}, {}, {}, {}, 5)
         self.assertEqual([], graph["nodes"])
         self.assertEqual([], graph["links"])
 
