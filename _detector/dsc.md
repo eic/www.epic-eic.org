@@ -72,8 +72,7 @@ layout: default
 ---
 
 ### Backwards HCAL
-* DSL: Daniel Brandenburg <brandenburg.89@osu.edu>
-* DSTC: Caroline Riedl <criedl@illinois.edu>
+* DSL/DSTC: Daniel Brandenburg <brandenburg.89@osu.edu>
 
 ---
 
