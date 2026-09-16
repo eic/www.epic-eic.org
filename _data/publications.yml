@@ -8,6 +8,14 @@
 # inspirehep.net (e.g. Accardi:2012qut) or a bare numeric record id
 # (e.g. 1206324).  tools/inspire_graph.py resolves both.
 #
+# The graph labels each node with the publication TITLE, wrapped to two lines
+# and cut with an ellipsis when it is still too long; the full title is always
+# in the tooltip and in the publication list.  To label a node with a short
+# name instead, add a `note` to its entry:
+#
+#     - key: Accardi:2012qut
+#       note: EIC White Paper
+#
 # List the publications of the ePIC collaboration and of ePIC collaborators
 # here.  The graph tells the two apart on its own, from the `collaborations`
 # field of the InspireHEP record -- there is nothing to mark up by hand.

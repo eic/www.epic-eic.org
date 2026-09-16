@@ -168,9 +168,18 @@ class MakeNodeTest(unittest.TestCase):
         node = make_node("1206324", fixture("literature_external"), "cited", 6, note="EIC White Paper")
         self.assertEqual("EIC White Paper", node["label"])
 
-    def test_label_defaults_to_the_texkey(self):
+    def test_label_defaults_to_the_title(self):
+        # The texkey is an InspireHEP implementation detail; the title is what
+        # a reader recognises beside a node.
         node = make_node("1206324", fixture("literature_external"), "cited", 6)
-        self.assertEqual("Accardi:2012qut", node["label"])
+        self.assertEqual("Electron Ion Collider: The Next QCD Frontier", node["label"])
+
+    def test_label_falls_back_to_the_texkey_without_a_title(self):
+        node = make_node("1", {"texkeys": ["Someone:2024abc"]}, "cited", 0)
+        self.assertEqual("Someone:2024abc", node["label"])
+
+    def test_label_falls_back_to_the_recid_with_nothing_else(self):
+        self.assertEqual("1", make_node("1", {}, "cited", 0)["label"])
 
     def test_tolerates_an_empty_record(self):
         node = make_node("1", {}, "cited", 0)

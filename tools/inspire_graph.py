@@ -201,7 +201,11 @@ def make_node(recid, metadata, group, in_degree, out_degree=0, note=None):
         "id": recid,
         "texkey": texkey,
         "title": title,
-        "label": note or texkey or recid,
+        # What the graph draws beside the node.  The title is what a reader
+        # recognises; the texkey is an InspireHEP implementation detail and is
+        # only a last resort.  A `note` in the YAML overrides both, which is
+        # how a long title gets a short name ("EIC White Paper").
+        "label": note or (title if titles else None) or texkey or recid,
         "year": year,
         "authors": author_label(metadata, texkey),
         "collaboration": collaborations[0] if collaborations else None,

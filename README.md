@@ -101,6 +101,11 @@ python3 tools/seed_publications.py > _data/publications.yml
 Review the result before committing; the query only finds ePIC *collaboration*
 papers, so papers by ePIC collaborators have to be added by hand.
 
+Nodes in the graph are labelled with the publication title, wrapped to two
+lines and cut with an ellipsis when it is still too long; the full title is
+always in the tooltip and the publication list. Add a `note` to an entry to
+label that node with a short name instead.
+
 Tests for the graph logic run from committed fixtures, with no network:
 
 ```bash

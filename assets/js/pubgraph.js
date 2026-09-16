@@ -44,6 +44,13 @@
   var WIDTH = 1000;
   var HEIGHT = 640;
 
+  // Node labels carry the publication title, so they need wrapping: two lines
+  // of roughly this width, then an ellipsis. The full title is always in the
+  // tooltip, the node's <title>, and the publication list.
+  var LABEL_CHARS = 26;
+  var LABEL_LINES = 2;
+  var LABEL_SIZE = 11;
+
   var root = document.getElementById("pubgraph");
   if (!root) {
     return;
@@ -248,15 +255,18 @@
       .append("text")
       .attr("class", "pubgraph-label")
       .attr("text-anchor", "middle")
-      .attr("dy", function (d) {
-        return -radius(d.degree || 0) - 6;
-      })
-      .text(function (d) {
-        return d.label || d.texkey || d.id;
-      })
       .classed("is-persistent", function (d) {
         return !!RELATED[d.group];
       });
+
+    label.each(function (d) {
+      var lines = wrapLabel(d.label || d.texkey || d.id);
+      d.labelLines = lines.length;
+      var text = d3.select(this);
+      lines.forEach(function (line) {
+        text.append("tspan").attr("x", 0).text(line);
+      });
+    });
 
     var simulation = d3
       .forceSimulation(nodes)
@@ -330,11 +340,24 @@
         scaleLabels(event.transform.k);
       });
 
+    /* The labels live inside the zoomed viewport, so every screen-space
+     * measurement -- glyph size, line spacing, the gap above the node -- has
+     * to be divided by the zoom factor to stay put as the reader zooms. */
     function scaleLabels(k) {
-      label
-        .style("font-size", 11 / k + "px")
-        .style("stroke-width", 3 / k);
+      var size = LABEL_SIZE / k;
+      var lineHeight = size * 1.15;
+      label.style("font-size", size + "px").style("stroke-width", 3 / k);
+      label.each(function (d) {
+        var top =
+          -radius(d.degree || 0) - 6 / k - ((d.labelLines || 1) - 1) * lineHeight;
+        d3.select(this)
+          .selectAll("tspan")
+          .attr("y", function (ignored, i) {
+            return top + i * lineHeight;
+          });
+      });
     }
+    scaleLabels(1);
     svg.call(zoom);
 
     /* Scale and centre the laid-out graph so it fills the frame, whether it
@@ -739,6 +762,52 @@
       );
     }
     return parts.length ? parts.join(" \u00b7 ") : "No connections in this graph";
+  }
+
+  /* Greedy word wrap into at most LABEL_LINES lines of ~LABEL_CHARS. */
+  function wrapLabel(text) {
+    var words = String(text || "").split(/\s+/).filter(Boolean);
+    var lines = [];
+    var current = "";
+    var truncated = false;
+
+    for (var i = 0; i < words.length; i++) {
+      var candidate = current ? current + " " + words[i] : words[i];
+      if (!current || candidate.length <= LABEL_CHARS) {
+        current = candidate;
+        continue;
+      }
+      lines.push(current);
+      current = words[i];
+      if (lines.length === LABEL_LINES) {
+        truncated = true;
+        current = "";
+        break;
+      }
+    }
+    if (current) {
+      if (lines.length < LABEL_LINES) {
+        lines.push(current);
+      } else {
+        truncated = true;
+      }
+    }
+    if (!lines.length) {
+      return [""];
+    }
+    // A single word longer than the line still has to be cut.
+    lines = lines.map(function (line) {
+      return line.length > LABEL_CHARS + 6
+        ? line.slice(0, LABEL_CHARS + 5) + "\u2026"
+        : line;
+    });
+    if (truncated) {
+      var last = lines[lines.length - 1];
+      if (last.slice(-1) !== "\u2026") {
+        lines[lines.length - 1] = last.replace(/[\s,;:.]+$/, "") + "\u2026";
+      }
+    }
+    return lines;
   }
 
   function describe(d) {
