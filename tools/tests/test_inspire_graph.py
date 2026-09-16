@@ -13,10 +13,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from inspire_graph import (  # noqa: E402
+    FetchError,
     build_graph,
     citation_map,
     cited_recids,
     classify,
+    collect_primaries,
     external_counts,
     make_node,
     select_externals,
@@ -120,6 +122,22 @@ class ClassifyTest(unittest.TestCase):
     def test_other_collaborations_do_not_match(self):
         self.assertEqual("collaborator", classify({"collaborations": [{"value": "STAR"}]}, True))
 
+    def test_epic_subsystem_collaborations_count_as_collaboration_papers(self):
+        for value in ["ePIC Dual-RICH subsystem", "ePIC dRICH", "EPIC Barrel Imaging Calorimeter"]:
+            self.assertEqual(
+                "collaboration",
+                classify({"collaborations": [{"value": value}]}, True),
+                value,
+            )
+
+    def test_a_name_merely_starting_with_those_letters_does_not_match(self):
+        for value in ["Epicurus", "EPICS", "Epically"]:
+            self.assertEqual(
+                "collaborator",
+                classify({"collaborations": [{"value": value}]}, True),
+                value,
+            )
+
     def test_non_primary_is_always_external(self):
         self.assertEqual("external", classify(fixture("literature_collaboration"), False))
 
@@ -200,6 +218,88 @@ class BuildGraphTest(unittest.TestCase):
         graph = build_graph({}, {}, 5)
         self.assertEqual([], graph["nodes"])
         self.assertEqual([], graph["links"])
+
+
+class FakeClient:
+    """Stands in for Inspire: resolves texkeys from a table, fails on demand."""
+
+    def __init__(self, table, unreachable=()):
+        self.table = table            # texkey -> recid ("" means no such record)
+        self.unreachable = set(unreachable)
+
+    def resolve_key(self, key):
+        if key in self.unreachable:
+            raise FetchError("simulated outage for %s" % key)
+        return self.table.get(key) or None
+
+    def fetch_record(self, recid, with_references=False):
+        return citing_record("1206324")
+
+
+class CollectPrimariesTest(unittest.TestCase):
+    """One bad record must not cost the others their place in the graph."""
+
+    def test_unreachable_key_is_reported_and_the_rest_survive(self):
+        client = FakeClient({"A:1": "1", "B:2": "2", "C:3": "3"}, unreachable=["B:2"])
+        problems = []
+        primaries, _ = collect_primaries(
+            client, [("A:1", None), ("B:2", None), ("C:3", None)], problems
+        )
+        self.assertEqual({"1", "3"}, set(primaries))
+        self.assertEqual(1, len(problems))
+        self.assertIn("B:2", problems[0])
+
+    def test_run_continues_past_a_failure_in_the_first_entry(self):
+        client = FakeClient({"A:1": "1", "B:2": "2"}, unreachable=["A:1"])
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("B:2", None)], problems)
+        self.assertEqual({"2"}, set(primaries))
+
+    def test_key_with_no_record_is_reported_and_skipped(self):
+        client = FakeClient({"A:1": "1", "GONE:9": ""})
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("GONE:9", None)], problems)
+        self.assertEqual({"1"}, set(primaries))
+        self.assertIn("no InspireHEP record", problems[0])
+
+    def test_two_keys_resolving_to_one_record_are_deduplicated(self):
+        client = FakeClient({"A:1": "1", "Alias:1": "1"})
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("Alias:1", None)], problems)
+        self.assertEqual({"1"}, set(primaries))
+        self.assertIn("duplicates", problems[0])
+
+    def test_notes_are_kept_per_record(self):
+        client = FakeClient({"A:1": "1"})
+        _, notes = collect_primaries(client, [("A:1", "White Paper")], [])
+        self.assertEqual({"1": "White Paper"}, notes)
+
+    def test_every_entry_is_attempted_when_all_of_them_fail(self):
+        keys = ["A:1", "B:2", "C:3"]
+        client = FakeClient({k: str(i) for i, k in enumerate(keys)}, unreachable=keys)
+        problems = []
+        primaries, _ = collect_primaries(client, [(k, None) for k in keys], problems)
+        self.assertEqual({}, primaries)
+        self.assertEqual(3, len(problems), "the run must not abort on the first failure")
+
+
+class ConfiguredListTest(unittest.TestCase):
+    """The checked-in _data/publications.yml must stay loadable."""
+
+    def test_repository_config_parses(self):
+        try:
+            import yaml
+        except ImportError:
+            self.skipTest("PyYAML not installed")
+        from inspire_graph import load_config
+
+        config = Path(__file__).resolve().parents[2] / "_data" / "publications.yml"
+        threshold, entries = load_config(config)
+        self.assertIsInstance(threshold, int)
+        keys = [key for key, _ in entries]
+        self.assertEqual(len(keys), len(set(keys)), "duplicate key in publications.yml")
+        for key in keys:
+            self.assertTrue(key and not key.isspace())
 
 
 if __name__ == "__main__":

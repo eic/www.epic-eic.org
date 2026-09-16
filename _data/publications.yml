@@ -23,12 +23,30 @@
 #
 threshold: 5
 
-publications: []
-
-# Example of the shape, once seeded:
-#
-# publications:
-#   - key: Adkins:2024xyz         # texkey
-#   - key: 2812345                # or a bare record id
-#   - key: Zurek:2025abc
-#     note: short label override  # optional; replaces the texkey on the node
+publications:
+  - key: ePIC:2026sgq
+    # 2026 ePIC Early Science Report
+  - key: Camerlingo:2026vkp
+    # 2026 Mechanical challenges of the innermost layers of ePIC Silicon Vertex Tracker
+  - key: ePICDualRICHsubsystem:2026wbc
+    # 2026 Simulation study for particle identification with the dRICH of the ePIC experiment at th
+  - key: Pal:2026dkc
+    # 2026 The Backward Hadronic Calorimeter (nHCal) of the ePIC Experiment at EIC
+  - key: ePIC:2025pnw
+    # 2025 An overview of the imaging layers of the Barrel Imaging Calorimeter for ePIC at the Elec
+  - key: Glover:2025set
+    # 2025 EIC vertex and tracking detector
+  - key: Ciarlantini:2025jok
+    # 2025 The ePIC Silicon Vertex Tracker IB-OB: Design and thermal-mechanical simulations
+  - key: ePIC:2025vqk
+    # 2025 Synergies between a U.S.-based Electron-Ion Collider and European Research in Particle P
+  - key: Rahman:2025jkt
+    # 2025 The ePIC Simulation Campaign Workflow on the Open Science Grid
+  - key: Chatterjee:2024zrn
+    # 2024 Particle Identification with the ePIC detector at the EIC
+  - key: Klest:2024xlm
+    # 2024 Calorimetry for the ePIC Experiment
+  - key: Gonella:2024cxk
+    # 2024 Development of a Silicon Vertex and Tracking Detector for the Electron-Ion Collider
+  - key: Altamura:2024uvp
+    # 2024 Silica aerogel characterization for the ePIC dRICH detector

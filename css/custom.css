@@ -374,3 +374,12 @@ tr:nth-child(even) {background-color: #d4d4d4;}
 #pubgraph-table td small {
     color: #52514e;
 }
+
+#pubgraph .pubgraph-degraded {
+    margin: 0 0 0.5em 0;
+    padding: 0.4em 0.6em;
+    color: #6b4a00;
+    background-color: #fdf4e0;
+    border-left: 3px solid #eda100;
+    font-size: 0.85em;
+}

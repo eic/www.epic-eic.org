@@ -59,7 +59,10 @@ DISPLAY_FIELDS = (
 REFERENCE_FIELDS = DISPLAY_FIELDS + ("references",)
 
 REF_RECID_RE = re.compile(r"/literature/(\d+)/?$")
-EPIC_RE = re.compile(r"^epic$", re.IGNORECASE)
+# Matches "ePIC" and subsystem collaborations such as "ePIC Dual-RICH
+# subsystem", but not an unrelated name that merely starts with those
+# letters ("Epicurus" has no word boundary after "epic").
+EPIC_RE = re.compile(r"^epic\b", re.IGNORECASE)
 
 
 class FetchError(RuntimeError):
@@ -423,17 +426,26 @@ def load_config(path):
 
 
 def collect_primaries(client, entries, problems):
-    """``({recid: metadata}, {recid: note})`` for the configured publications."""
+    """``({recid: metadata}, {recid: note})`` for the configured publications.
+
+    A key that cannot be fetched is reported and skipped rather than aborting
+    the run: one withdrawn record, or one request that times out, should not
+    cost the other publications their place in the graph.
+    """
     primaries, notes = {}, {}
     for key, note in entries:
-        recid = client.resolve_key(key)
-        if recid is None:
-            problems.append("no InspireHEP record for key %r" % key)
+        try:
+            recid = client.resolve_key(key)
+            if recid is None:
+                problems.append("no InspireHEP record for key %r" % key)
+                continue
+            if recid in primaries:
+                problems.append("key %r duplicates record %s" % (key, recid))
+                continue
+            primaries[recid] = client.fetch_record(recid, with_references=True)
+        except FetchError as error:
+            problems.append("could not fetch %r: %s" % (key, error))
             continue
-        if recid in primaries:
-            problems.append("key %r duplicates record %s" % (key, recid))
-            continue
-        primaries[recid] = client.fetch_record(recid, with_references=True)
         if note:
             notes[recid] = note
     return primaries, notes
@@ -450,6 +462,11 @@ def collect_externals(client, recids, problems):
     return externals
 
 
+def report(problems):
+    for problem in problems:
+        print("warning: %s" % problem, file=sys.stderr)
+
+
 def parse_args(argv):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--repo", default=Path(__file__).resolve().parent.parent,
@@ -463,6 +480,8 @@ def parse_args(argv):
                         help="treat cached responses older than this as stale")
     parser.add_argument("--delay", type=float, default=1.0,
                         help="minimum seconds between API requests")
+    parser.add_argument("--retries", type=int, default=4,
+                        help="attempts per request before giving up on it")
     parser.add_argument("--fail-soft", action="store_true",
                         help="keep any existing output and exit 0 if InspireHEP "
                              "is unreachable (use in CI so a site deploy is "
@@ -483,26 +502,42 @@ def main(argv=None):
 
     cache = Cache(repo / args.cache_dir, enabled=not args.no_cache,
                   max_age_days=args.max_age_days)
-    client = Inspire(cache, delay=args.delay, verbose=args.verbose)
+    client = Inspire(cache, delay=args.delay, retries=args.retries,
+                     verbose=args.verbose)
 
     problems = []
-    try:
-        primaries, notes = collect_primaries(client, entries, problems)
-        cmap = citation_map(primaries)
-        wanted = select_externals(cmap, set(primaries), threshold)
-        externals = collect_externals(client, wanted, problems)
-    except FetchError as error:
-        if args.fail_soft and output.exists():
-            print("warning: InspireHEP unreachable (%s); keeping existing %s"
-                  % (error, args.output), file=sys.stderr)
+    primaries, notes = collect_primaries(client, entries, problems)
+    cmap = citation_map(primaries)
+    wanted = select_externals(cmap, set(primaries), threshold)
+    externals = collect_externals(client, wanted, problems)
+
+    # Nothing came back at all: InspireHEP is unreachable, or every key is bad.
+    if entries and not primaries:
+        report(problems)
+        if not args.fail_soft:
+            print("error: could not fetch any of the %d configured publications"
+                  % len(entries), file=sys.stderr)
+            return 1
+        if output.exists():
+            print("warning: could not reach InspireHEP; keeping the existing %s"
+                  % args.output, file=sys.stderr)
             return 0
-        print("error: %s" % error, file=sys.stderr)
-        return 1
+        # No previous output to fall back on.  Write an empty but valid graph
+        # so the page shows its placeholder, rather than failing the build and
+        # taking the whole site deploy down with it.
+        print("warning: could not reach InspireHEP and there is no previous %s; "
+              "writing an empty graph so the build can continue"
+              % args.output, file=sys.stderr)
 
     graph = build_graph(primaries, externals, threshold, notes)
     graph["generated"] = (
         datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     )
+    # Tell the page the data is incomplete, so an outage cannot quietly look
+    # like a collaboration that has stopped publishing.
+    if problems:
+        graph["degraded"] = True
+        graph["expected_nodes"] = len(entries)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(graph, indent=1, sort_keys=True) + "\n",
@@ -518,8 +553,7 @@ def main(argv=None):
         len(graph["links"]),
     ))
 
-    for problem in problems:
-        print("warning: %s" % problem, file=sys.stderr)
+    report(problems)
     return 0
 
 

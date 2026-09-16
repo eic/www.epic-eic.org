@@ -96,8 +96,11 @@
 
     if (!nodes.length) {
       message(
-        "No publications are configured yet. Add InspireHEP keys to " +
-          "_data/publications.yml to populate this graph."
+        data.degraded
+          ? "The publication data could not be retrieved from InspireHEP when " +
+              "this site was built. The publication list is below."
+          : "No publications are configured yet. Add InspireHEP keys to " +
+              "_data/publications.yml to populate this graph."
       );
       return;
     }
@@ -636,6 +639,30 @@
     if (data.generated) {
       wrapper.appendChild(
         el("p", "pubgraph-generated", "InspireHEP data retrieved " + formatDate(data.generated))
+      );
+    }
+    // Say so when the build could not retrieve everything, rather than
+    // presenting a partial graph as the whole picture.
+    if (data.degraded) {
+      // expected_nodes counts the CONFIGURED publications, so compare it with
+      // the primaries only -- externals are discovered, never configured.
+      var primaryCount = nodes.filter(function (node) {
+        return node.group !== "external";
+      }).length;
+      var missing = (data.expected_nodes || 0) - primaryCount;
+      wrapper.appendChild(
+        el(
+          "p",
+          "pubgraph-degraded",
+          missing > 0
+            ? missing +
+                (missing === 1 ? " publication is" : " publications are") +
+                " missing: InspireHEP could not be reached for " +
+                (missing === 1 ? "it" : "them") +
+                " when this site was built."
+            : "Some records could not be retrieved when this site was built, " +
+                "so this graph may be incomplete."
+        )
       );
     }
     return wrapper;
