@@ -2,10 +2,6 @@
 #
 # Netlify runs Jekyll for deploy previews, so keep this command consistent with
 # the GitHub Pages workflow so previews match production.
-#
-# The graph step is deliberately separated from the Jekyll build by `;` rather
-# than `&&`: if PyYAML cannot be installed or InspireHEP is unreachable, the
-# preview degrades to the placeholder instead of failing the whole deploy.
 
 [build]
   command = "bundle exec jekyll build"
