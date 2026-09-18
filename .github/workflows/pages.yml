@@ -12,8 +12,8 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
-  # Refresh the publication graph even when nobody has touched the content,
-  # so new citations show up on their own.
+  # Periodic rebuild, currently a no-op since nothing here depends on
+  # external data yet; kept for when dynamic content is added.
   schedule:
     - cron: '17 6 * * 1'
 
