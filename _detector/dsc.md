@@ -72,7 +72,8 @@ layout: default
 ---
 
 ### Backwards HCAL
-* DSL/DSTC: Daniel Brandenburg <brandenburg.89@osu.edu>
+* DSL: Daniel Brandenburg <brandenburg.89@osu.edu>
+* DSTC: David Kapukchyan <david.kapukchyan@cvut.cz>
 
 ---
 
