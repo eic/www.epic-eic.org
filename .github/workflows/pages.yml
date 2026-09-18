@@ -1,4 +1,4 @@
- Build and deploy the site to GitHub Pages.
+# Build and deploy the site to GitHub Pages.
 #
 # This replaces the classic "deploy from a branch" Pages build, which allows
 # custom build steps to be added in GitHub Actions if needed.
