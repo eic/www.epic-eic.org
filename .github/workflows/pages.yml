@@ -1,7 +1,7 @@
  Build and deploy the site to GitHub Pages.
 #
-# This replaces the classic "deploy from a branch" Pages build, which could not
-# run the InspireHEP fetch step that /public/publications.html needs.
+# This replaces the classic "deploy from a branch" Pages build, which allows
+# custom build steps to be added in GitHub Actions if needed.
 #
 # REQUIRED ONE-TIME SETUP: Settings -> Pages -> Source must be set to
 # "GitHub Actions".  Until that is done the deploy job below cannot publish.
