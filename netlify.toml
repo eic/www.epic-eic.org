@@ -8,4 +8,5 @@
   publish = "_site"
 
 [build.environment]
+  JEKYLL_ENV = "production"
   PYTHON_VERSION = "3.12"
