@@ -19,7 +19,7 @@ on:
 
 permissions:
   contents: read
-
+  pages: write
 concurrency:
   group: pages
   cancel-in-progress: false
