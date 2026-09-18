@@ -1,0 +1,16 @@
+# Netlify builds the deploy previews for pull requests.
+#
+# Netlify runs Jekyll only, so without this the publication graph never gets
+# generated on a preview and the page falls back to its placeholder while
+# production (built by .github/workflows/pages.yml) shows the real graph.
+#
+# The graph step is deliberately separated from the Jekyll build by `;` rather
+# than `&&`: if PyYAML cannot be installed or InspireHEP is unreachable, the
+# preview degrades to the placeholder instead of failing the whole deploy.
+
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"

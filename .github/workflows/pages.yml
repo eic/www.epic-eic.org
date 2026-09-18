@@ -1,0 +1,67 @@
+ Build and deploy the site to GitHub Pages.
+#
+# This replaces the classic "deploy from a branch" Pages build, which could not
+# run the InspireHEP fetch step that /public/publications.html needs.
+#
+# REQUIRED ONE-TIME SETUP: Settings -> Pages -> Source must be set to
+# "GitHub Actions".  Until that is done the deploy job below cannot publish.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  # Refresh the publication graph even when nobody has touched the content,
+  # so new citations show up on their own.
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # actions/configure-pages sets GITHUB_PAGES=true, which wakes the
+    # jekyll-github-metadata plugin that ships with the github-pages gem.
+    # The classic Pages builder also sets PAGES_REPO_NWO; a workflow has to
+    # supply it, or the plugin fails with "No repo name found" while
+    # resolving baseurl.
+    env:
+      PAGES_REPO_NWO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build the site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
