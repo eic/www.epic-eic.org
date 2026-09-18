@@ -9,4 +9,8 @@
 
 [build.environment]
   JEKYLL_ENV = "production"
+  # Same reason pages.yml sets this: JEKYLL_ENV=production wakes the
+  # jekyll-github-metadata plugin, which needs PAGES_REPO_NWO to resolve
+  # baseurl when there's no GitHub Actions context to read it from.
+  PAGES_REPO_NWO = "eic/www.epic-eic.org"
   PYTHON_VERSION = "3.12"
