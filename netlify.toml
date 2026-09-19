@@ -1,0 +1,18 @@
+# Netlify builds the deploy previews for pull requests.
+#
+# Netlify runs Jekyll for deploy previews, so keep this command consistent with
+# the GitHub Pages workflow so previews match production.
+
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  # Same reason pages.yml sets this: JEKYLL_ENV=production wakes the
+  # jekyll-github-metadata plugin, which needs PAGES_REPO_NWO to resolve
+  # baseurl when there's no GitHub Actions context to read it from.
+  PAGES_REPO_NWO = "eic/www.epic-eic.org"
+  RUBY_VERSION = "3.3"
+  BUNDLER_VERSION = "2.6.7"
+  PYTHON_VERSION = "3.12"
