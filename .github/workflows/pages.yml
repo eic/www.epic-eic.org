@@ -19,14 +19,18 @@ on:
 
 permissions:
   contents: read
-  pages: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # A job-level permissions block replaces the workflow-level one
+    # entirely, so contents: read has to be repeated here for checkout.
+    # pages: write is required (not just in deploy) because
+    # actions/configure-pages calls the Pages API to look up/enable the
+    # site; without it the step fails even though this job never deploys.
+    permissions:
+      contents: read
+      pages: write
     # actions/configure-pages sets GITHUB_PAGES=true, which wakes the
     # jekyll-github-metadata plugin that ships with the github-pages gem.
     # The classic Pages builder also sets PAGES_REPO_NWO; a workflow has to
@@ -60,6 +64,11 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    # Scoped to this job (not the whole workflow) so PR/schedule builds
+    # never wait on or block an in-progress deployment.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
