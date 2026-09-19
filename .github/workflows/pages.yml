@@ -1,7 +1,7 @@
 # Build and deploy the site to GitHub Pages.
 #
-# This replaces the classic "deploy from a branch" Pages build, which allows
-# custom build steps to be added in GitHub Actions if needed.
+# This replaces the classic "deploy from a branch" Pages build, which could not
+# run the InspireHEP fetch step that /public/publications.html needs.
 #
 # REQUIRED ONE-TIME SETUP: Settings -> Pages -> Source must be set to
 # "GitHub Actions".  Until that is done the deploy job below cannot publish.
@@ -12,8 +12,8 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
-  # Periodic rebuild, currently a no-op since nothing here depends on
-  # external data yet; kept for when dynamic content is added.
+  # Refresh the publication graph even when nobody has touched the content,
+  # so new citations show up on their own.
   schedule:
     - cron: '17 6 * * 1'
 
@@ -47,6 +47,31 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install --disable-pip-version-check PyYAML
+
+      - name: Check the publication graph logic
+        run: python3 tools/tests/test_inspire_graph.py
+
+      # Keyed on the publication list so editing it starts a fresh cache, and
+      # on the run id so every run saves an updated one.  restore-keys fall
+      # back to the most recent cache for the same list, then to any cache.
+      - name: Restore the InspireHEP cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/inspire
+          key: inspire-${{ hashFiles('_data/publications.yml') }}-${{ github.run_id }}
+          restore-keys: |
+            inspire-${{ hashFiles('_data/publications.yml') }}-
+            inspire-
+
+      # --fail-soft: an InspireHEP outage must never block a site deploy.
+      - name: Build the publication graph
+        run: python3 tools/inspire_graph.py --fail-soft --verbose
 
       - name: Build the site
         env:

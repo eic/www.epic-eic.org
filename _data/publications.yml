@@ -1,0 +1,70 @@
+################################################################################
+#                                                                              #
+# Publications shown on /public/publications.html                              #
+#                                                                              #
+################################################################################
+#
+# Each entry is an InspireHEP key -- either a texkey exactly as shown on
+# inspirehep.net (e.g. Accardi:2012qut) or a bare numeric record id
+# (e.g. 1206324).  tools/inspire_graph.py resolves both.
+#
+# The graph labels each node with the publication TITLE, wrapped to two lines
+# and cut with an ellipsis when it is still too long; the full title is always
+# in the tooltip and in the publication list.  To label a node with a short
+# name instead, add a `note` to its entry:
+#
+#     - key: Accardi:2012qut
+#       note: EIC White Paper
+#
+# List the publications of the ePIC collaboration and of ePIC collaborators
+# here.  The graph tells the two apart on its own, from the `collaborations`
+# field of the InspireHEP record -- there is nothing to mark up by hand.
+#
+# Do NOT list the EIC White Paper or the EIC Yellow Report.  The graph reaches
+# one step out from this list in BOTH directions, automatically:
+#
+#   * works this list cites  -- pulled in when MORE than `threshold` of the
+#     publications below cite them; that is how the White Paper and the Yellow
+#     Report are meant to show up, and
+#   * works that cite this list -- pulled in when they cite MORE than
+#     `threshold` of the publications below, which is the literature building
+#     on ePIC results.
+#
+# Both comparisons are strictly greater, so a threshold of 3 means 4 or more.
+#
+# Tuned down from 5: across the 13 publications below, only a single work
+# cleared that bar, leaving the graph a lone hub.  Retune as the list grows.
+#
+# To regenerate the list from InspireHEP:
+#
+#     python3 tools/seed_publications.py > _data/publications.yml
+#
+threshold: 3
+
+publications:
+  - key: ePIC:2026sgq
+    # 2026 ePIC Early Science Report
+  - key: Camerlingo:2026vkp
+    # 2026 Mechanical challenges of the innermost layers of ePIC Silicon Vertex Tracker
+  - key: ePICDualRICHsubsystem:2026wbc
+    # 2026 Simulation study for particle identification with the dRICH of the ePIC experiment at th
+  - key: Pal:2026dkc
+    # 2026 The Backward Hadronic Calorimeter (nHCal) of the ePIC Experiment at EIC
+  - key: ePIC:2025pnw
+    # 2025 An overview of the imaging layers of the Barrel Imaging Calorimeter for ePIC at the Elec
+  - key: Glover:2025set
+    # 2025 EIC vertex and tracking detector
+  - key: Ciarlantini:2025jok
+    # 2025 The ePIC Silicon Vertex Tracker IB-OB: Design and thermal-mechanical simulations
+  - key: ePIC:2025vqk
+    # 2025 Synergies between a U.S.-based Electron-Ion Collider and European Research in Particle P
+  - key: Rahman:2025jkt
+    # 2025 The ePIC Simulation Campaign Workflow on the Open Science Grid
+  - key: Chatterjee:2024zrn
+    # 2024 Particle Identification with the ePIC detector at the EIC
+  - key: Klest:2024xlm
+    # 2024 Calorimetry for the ePIC Experiment
+  - key: Gonella:2024cxk
+    # 2024 Development of a Silicon Vertex and Tracking Detector for the Electron-Ion Collider
+  - key: Altamura:2024uvp
+    # 2024 Silica aerogel characterization for the ePIC dRICH detector

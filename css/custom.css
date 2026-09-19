@@ -133,3 +133,306 @@ tr:nth-child(even) {background-color: #d4d4d4;}
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+/* ---------------------------- */
+/* PUBLICATION GRAPH (/public/publications.html)                             */
+/* Everything is scoped under #pubgraph / #pubgraph-table so the global      */
+/* table and text rules above are left alone.                               */
+
+#pubgraph {
+    --pubgraph-surface: #ffffff;
+    --pubgraph-ink: #0b0b0b;
+    --pubgraph-ink-soft: #52514e;
+    --pubgraph-edge: #b4b3ad;
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+#pubgraph .pubgraph-status {
+    padding: 2em 1em;
+    text-align: center;
+    color: var(--pubgraph-ink-soft);
+    background-color: #f5f5f3;
+    border: 1px solid #e2e1dd;
+    border-radius: 6px;
+}
+
+/* Filters sit in one row above everything they scope -- which is both the
+   publication list and the graph, so the row lives outside #pubgraph. */
+#pubgraph-controls {
+    --pubgraph-ink-soft: #52514e;
+    margin-bottom: 1em;
+}
+
+#pubgraph-controls:empty {
+    margin-bottom: 0;
+}
+
+#pubgraph-controls .pubgraph-controls,
+#pubgraph .pubgraph-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75em;
+    margin-bottom: 0.5em;
+}
+
+#pubgraph-controls .pubgraph-search,
+#pubgraph .pubgraph-search {
+    width: auto;
+    min-width: 18em;
+    flex: 0 1 22em;
+}
+
+#pubgraph-controls .pubgraph-toggle,
+#pubgraph .pubgraph-toggle {
+    margin: 0 0 0 0.25em;
+    font-weight: normal;
+    color: var(--pubgraph-ink-soft);
+}
+
+#pubgraph-controls .pubgraph-count,
+#pubgraph .pubgraph-count {
+    margin-left: auto;
+    color: var(--pubgraph-ink-soft);
+    font-size: 0.9em;
+}
+
+#pubgraph .pubgraph-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    margin-bottom: 0.5em;
+    color: var(--pubgraph-ink-soft);
+    font-size: 0.9em;
+}
+
+#pubgraph-controls .pubgraph-key,
+#pubgraph .pubgraph-key,
+#pubgraph-table .pubgraph-swatch {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.45em;
+    border-radius: 50%;
+    vertical-align: baseline;
+}
+
+/* Secondary encoding: the external class is also the only ringed one, so it
+   stays identifiable in greyscale and under colour-vision deficiency. */
+#pubgraph .pubgraph-key-cited,
+#pubgraph .pubgraph-key-citing,
+#pubgraph-table tr .pubgraph-swatch.is-cited,
+#pubgraph-table tr .pubgraph-swatch.is-citing {
+    box-shadow: 0 0 0 2px var(--pubgraph-surface), 0 0 0 3px currentColor;
+}
+
+#pubgraph .pubgraph-generated {
+    margin: 0 0 0.5em 0;
+    color: var(--pubgraph-ink-soft);
+    font-size: 0.8em;
+}
+
+#pubgraph .pubgraph-figure {
+    position: relative;
+    border: 1px solid #e2e1dd;
+    border-radius: 6px;
+    background-color: var(--pubgraph-surface);
+}
+
+#pubgraph .pubgraph-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none;
+    cursor: grab;
+}
+
+#pubgraph .pubgraph-svg:active {
+    cursor: grabbing;
+}
+
+/* Edges: hairline, recessive, solid. */
+#pubgraph .pubgraph-link {
+    stroke: var(--pubgraph-edge);
+    stroke-width: 1;
+    opacity: 0.55;
+    transition: opacity 0.15s ease;
+}
+
+#pubgraph .pubgraph-arrowhead {
+    fill: var(--pubgraph-edge);
+}
+
+#pubgraph .pubgraph-link.is-active {
+    stroke: var(--pubgraph-ink-soft);
+    stroke-width: 2;
+    opacity: 1;
+}
+
+#pubgraph .pubgraph-link.is-dimmed {
+    opacity: 0.12;
+}
+
+#pubgraph .pubgraph-link.is-hidden,
+#pubgraph .pubgraph-node.is-hidden {
+    display: none;
+}
+
+#pubgraph .pubgraph-hit {
+    fill: transparent;
+}
+
+#pubgraph .pubgraph-node {
+    cursor: pointer;
+}
+
+/* 2px ring in the surface colour, so nodes stay legible where they overlap
+   each other and the edges. */
+#pubgraph .pubgraph-dot {
+    stroke: var(--pubgraph-surface);
+    stroke-width: 2;
+    transition: opacity 0.15s ease;
+}
+
+/* The rim doubles as the non-colour cue for the two discovered classes, so
+   they survive greyscale, colour-vision deficiency and forced-colors.  The
+   dash pattern separates "cited by" from "cites". */
+#pubgraph .pubgraph-dot-cited {
+    stroke: #0b6a4a;
+    stroke-width: 1.5;
+    stroke-dasharray: 3 2;
+}
+
+#pubgraph .pubgraph-dot-citing {
+    stroke: #2a1f6b;
+    stroke-width: 1.5;
+    stroke-dasharray: 1 2;
+}
+
+#pubgraph .pubgraph-node.is-dimmed {
+    opacity: 0.18;
+}
+
+#pubgraph .pubgraph-node.is-active .pubgraph-dot {
+    stroke: var(--pubgraph-ink);
+    stroke-width: 2;
+    stroke-dasharray: none;
+}
+
+#pubgraph .pubgraph-node:focus {
+    outline: none;
+}
+
+#pubgraph .pubgraph-node:focus .pubgraph-dot {
+    stroke: var(--pubgraph-ink);
+    stroke-width: 3;
+    stroke-dasharray: none;
+}
+
+/* Labels wear text ink, never the series colour. */
+#pubgraph .pubgraph-label {
+    font-size: 11px;
+    fill: var(--pubgraph-ink);
+    paint-order: stroke;
+    stroke: var(--pubgraph-surface);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+#pubgraph .pubgraph-label.is-persistent,
+#pubgraph .pubgraph-label.is-shown,
+#pubgraph .pubgraph-node:hover .pubgraph-label,
+#pubgraph .pubgraph-node:focus .pubgraph-label {
+    opacity: 1;
+}
+
+#pubgraph .pubgraph-node.is-dimmed .pubgraph-label {
+    opacity: 0;
+}
+
+/* Tooltip: values lead, labels follow. */
+#pubgraph .pubgraph-tooltip {
+    position: absolute;
+    z-index: 10;
+    max-width: 24em;
+    padding: 0.6em 0.75em;
+    background-color: var(--pubgraph-surface);
+    border: 1px solid #cfcec9;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+    font-size: 0.85em;
+    line-height: 1.35;
+    pointer-events: none;
+}
+
+#pubgraph .pubgraph-tip-title {
+    font-weight: 600;
+    color: var(--pubgraph-ink);
+}
+
+#pubgraph .pubgraph-tip-meta,
+#pubgraph .pubgraph-tip-count {
+    color: var(--pubgraph-ink-soft);
+}
+
+#pubgraph .pubgraph-tip-stats {
+    margin-top: 0.35em;
+}
+
+/* A short stroke keys the class, not a filled box at tooltip density. */
+#pubgraph .pubgraph-tip-key {
+    display: inline-block;
+    width: 1.1em;
+    height: 2px;
+    margin-right: 0.45em;
+    vertical-align: middle;
+}
+
+#pubgraph .pubgraph-tip-group {
+    color: var(--pubgraph-ink-soft);
+}
+
+#pubgraph-table td small {
+    color: #52514e;
+}
+
+#pubgraph-table th[data-sort-key] {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+#pubgraph-table th[data-sort-key]::after {
+    display: inline-block;
+    width: 1em;
+    margin-left: 0.2em;
+    content: "";
+    opacity: 0.4;
+}
+
+#pubgraph-table th[data-sort-key][aria-sort="ascending"]::after {
+    content: "\25B2";
+    opacity: 1;
+}
+
+#pubgraph-table th[data-sort-key][aria-sort="descending"]::after {
+    content: "\25BC";
+    opacity: 1;
+}
+
+#pubgraph-table th[data-sort-key]:focus {
+    outline: 2px solid #0b0b0b;
+    outline-offset: -2px;
+}
+
+#pubgraph .pubgraph-degraded {
+    margin: 0 0 0.5em 0;
+    padding: 0.4em 0.6em;
+    color: #6b4a00;
+    background-color: #fdf4e0;
+    border-left: 3px solid #eda100;
+    font-size: 0.85em;
+}
