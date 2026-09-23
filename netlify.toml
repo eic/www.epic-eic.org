@@ -1,10 +1,16 @@
 # Netlify builds the deploy previews for pull requests.
 #
 # Netlify runs Jekyll for deploy previews, so keep this command consistent with
-# the GitHub Pages workflow so previews match production.
+# the GitHub Pages workflow so previews match production -- including running
+# the InspireHEP fetch step that /public/publications.html needs, which Netlify
+# has no other way to trigger.
+#
+# The graph step is deliberately separated from the Jekyll build by `;` rather
+# than `&&`: if PyYAML cannot be installed or InspireHEP is unreachable, the
+# preview degrades to the placeholder instead of failing the whole deploy.
 
 [build]
-  command = "bundle exec jekyll build"
+  command = "(pip install PyYAML && python3 tools/inspire_graph.py --fail-soft) ; bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]

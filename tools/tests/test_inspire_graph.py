@@ -1,0 +1,410 @@
+"""Tests for the pure graph logic in tools/inspire_graph.py.
+
+Runs entirely from committed fixtures -- no network, so it works anywhere:
+
+    python3 -m unittest discover -s tools/tests -t .
+"""
+
+import json
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from inspire_graph import (  # noqa: E402
+    FetchError,
+    build_graph,
+    citation_map,
+    cited_recids,
+    classify,
+    citer_map,
+    collect_primaries,
+    external_counts,
+    make_node,
+    publication_year,
+    select_citing,
+    select_externals,
+)
+
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
+
+
+def fixture(name):
+    with open(FIXTURES / ("%s.json" % name), encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def citing_record(*recids):
+    """A minimal record whose reference list points at ``recids``."""
+    return {
+        "references": [
+            {"record": {"$ref": "https://inspirehep.net/api/literature/%s" % r}}
+            for r in recids
+        ]
+    }
+
+
+class CitedRecidsTest(unittest.TestCase):
+    def test_parses_recids_out_of_ref_urls(self):
+        self.assertEqual(
+            cited_recids(fixture("literature_collaboration")),
+            {"1206324", "1958350", "2812345"},
+        )
+
+    def test_reference_listed_twice_counts_once(self):
+        record = fixture("literature_collaboration")
+        listed = [
+            r for r in record["references"]
+            if (r.get("record") or {}).get("$ref", "").endswith("1206324")
+        ]
+        self.assertEqual(2, len(listed), "fixture should list 1206324 twice")
+        self.assertEqual(1, sum(1 for r in cited_recids(record) if r == "1206324"))
+
+    def test_reference_without_record_ref_is_skipped(self):
+        record = fixture("literature_collaboration")
+        unmatched = [r for r in record["references"] if not r.get("record")]
+        self.assertEqual(1, len(unmatched), "fixture should hold one unmatched reference")
+        # 5 reference entries -> 3 distinct recids: one duplicate and one
+        # unmatched preprint both drop out.
+        self.assertEqual(5, len(record["references"]))
+        self.assertEqual(3, len(cited_recids(record)))
+
+    def test_missing_references_key(self):
+        self.assertEqual(set(), cited_recids({}))
+
+
+class CitationMapTest(unittest.TestCase):
+    def test_drops_self_citations(self):
+        # The fixture references its own recid, 2812345.
+        cmap = citation_map({"2812345": fixture("literature_collaboration")})
+        self.assertNotIn("2812345", cmap["2812345"])
+        self.assertEqual({"1206324", "1958350"}, cmap["2812345"])
+
+
+class ThresholdTest(unittest.TestCase):
+    """"More than 5" means 6 citing publications, not 5."""
+
+    def _cmap(self, n_citing):
+        primaries = {
+            str(9000 + i): citing_record("1206324") for i in range(n_citing)
+        }
+        return citation_map(primaries), set(primaries)
+
+    def test_exactly_at_threshold_is_excluded(self):
+        cmap, ids = self._cmap(5)
+        self.assertEqual(5, external_counts(cmap, ids)["1206324"])
+        self.assertEqual(set(), select_externals(cmap, ids, 5))
+
+    def test_one_above_threshold_is_included(self):
+        cmap, ids = self._cmap(6)
+        self.assertEqual(6, external_counts(cmap, ids)["1206324"])
+        self.assertEqual({"1206324"}, select_externals(cmap, ids, 5))
+
+    def test_duplicate_reference_does_not_inflate_the_count(self):
+        primaries = {"9000": citing_record("1206324", "1206324", "1206324")}
+        cmap = citation_map(primaries)
+        self.assertEqual(1, external_counts(cmap, set(primaries))["1206324"])
+
+    def test_primaries_are_never_counted_as_external(self):
+        primaries = {"9000": citing_record("9001"), "9001": {}}
+        cmap = citation_map(primaries)
+        self.assertEqual({}, external_counts(cmap, set(primaries)))
+
+
+class ClassifyTest(unittest.TestCase):
+    def test_collaboration_paper(self):
+        self.assertEqual("collaboration", classify(fixture("literature_collaboration"), True))
+
+    def test_collaborator_paper_has_no_epic_collaboration_tag(self):
+        self.assertEqual("collaborator", classify(fixture("literature_collaborator"), True))
+
+    def test_collaboration_match_is_case_insensitive(self):
+        self.assertEqual("collaboration", classify({"collaborations": [{"value": "EPIC"}]}, True))
+
+    def test_other_collaborations_do_not_match(self):
+        self.assertEqual("collaborator", classify({"collaborations": [{"value": "STAR"}]}, True))
+
+    def test_epic_subsystem_collaborations_count_as_collaboration_papers(self):
+        for value in ["ePIC Dual-RICH subsystem", "ePIC dRICH", "EPIC Barrel Imaging Calorimeter"]:
+            self.assertEqual(
+                "collaboration",
+                classify({"collaborations": [{"value": value}]}, True),
+                value,
+            )
+
+    def test_a_name_merely_starting_with_those_letters_does_not_match(self):
+        for value in ["Epicurus", "EPICS", "Epically"]:
+            self.assertEqual(
+                "collaborator",
+                classify({"collaborations": [{"value": value}]}, True),
+                value,
+            )
+
+    def test_non_primary_keeps_the_group_it_was_discovered_as(self):
+        record = fixture("literature_collaboration")
+        self.assertEqual("cited", classify(record, False))
+        self.assertEqual("cited", classify(record, False, "cited"))
+        self.assertEqual("citing", classify(record, False, "citing"))
+
+
+class MakeNodeTest(unittest.TestCase):
+    def test_reads_display_metadata(self):
+        node = make_node("2812345", fixture("literature_collaboration"), "collaboration", 3)
+        self.assertEqual("Adkins:2024xyz", node["texkey"])
+        self.assertEqual("Measurement of something at the ePIC detector", node["title"])
+        self.assertEqual(2024, node["year"])
+        self.assertEqual(17, node["citations"])
+        self.assertEqual("2406.01234", node["arxiv"])
+        self.assertEqual("ePIC", node["collaboration"])
+        self.assertEqual("ePIC Collaboration", node["authors"])
+        self.assertEqual("https://inspirehep.net/literature/2812345", node["url"])
+        self.assertEqual(3, node["in_degree"])
+
+    def test_byline_falls_back_to_the_texkey(self):
+        node = make_node("2900001", fixture("literature_collaborator"), "collaborator", 0)
+        self.assertEqual("Zurek et al.", node["authors"])
+
+    def test_note_overrides_the_label(self):
+        node = make_node("1206324", fixture("literature_external"), "cited", 6, note="EIC White Paper")
+        self.assertEqual("EIC White Paper", node["label"])
+
+    def test_label_defaults_to_the_title(self):
+        # The texkey is an InspireHEP implementation detail; the title is what
+        # a reader recognises beside a node.
+        node = make_node("1206324", fixture("literature_external"), "cited", 6)
+        self.assertEqual("Electron Ion Collider: The Next QCD Frontier", node["label"])
+
+    def test_label_falls_back_to_the_texkey_without_a_title(self):
+        node = make_node("1", {"texkeys": ["Someone:2024abc"]}, "cited", 0)
+        self.assertEqual("Someone:2024abc", node["label"])
+
+    def test_label_falls_back_to_the_recid_with_nothing_else(self):
+        self.assertEqual("1", make_node("1", {}, "cited", 0)["label"])
+
+    def test_tolerates_an_empty_record(self):
+        node = make_node("1", {}, "cited", 0)
+        self.assertEqual("(untitled)", node["title"])
+        self.assertIsNone(node["year"])
+        self.assertIsNone(node["arxiv"])
+        self.assertEqual("1", node["label"])
+
+
+class PublicationYearTest(unittest.TestCase):
+    """Conference papers often leave earliest_date blank; the Year column
+    should not go blank along with it."""
+
+    def test_prefers_earliest_date(self):
+        metadata = {
+            "earliest_date": "2024-03-01",
+            "preprint_date": "2023-11-01",
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2024, publication_year(metadata))
+
+    def test_falls_back_to_preprint_date(self):
+        metadata = {
+            "preprint_date": "2023-11-01",
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2023, publication_year(metadata))
+
+    def test_falls_back_to_imprint_date(self):
+        metadata = {
+            "imprints": [{"date": "2022-01-01"}],
+            "publication_info": [{"year": 2021}],
+        }
+        self.assertEqual(2022, publication_year(metadata))
+
+    def test_falls_back_to_publication_info_year(self):
+        self.assertEqual(2021, publication_year({"publication_info": [{"year": 2021}]}))
+
+    def test_publication_info_year_as_string(self):
+        self.assertEqual(2021, publication_year({"publication_info": [{"year": "2021"}]}))
+
+    def test_no_date_anywhere_is_none(self):
+        self.assertIsNone(publication_year({}))
+        self.assertIsNone(publication_year({"earliest_date": "unknown"}))
+
+
+class CiterMapTest(unittest.TestCase):
+    """The mirror of the cited side: works that CITE the publications."""
+
+    def test_inverts_citations_per_citer(self):
+        citers = {"9000": {"5555", "6666"}, "9001": {"5555"}}
+        self.assertEqual({"5555": {"9000", "9001"}, "6666": {"9000"}},
+                         citer_map(citers))
+
+    def test_a_record_citing_itself_is_dropped(self):
+        self.assertEqual({}, citer_map({"9000": {"9000"}}))
+
+    def test_threshold_is_strictly_greater(self):
+        five = citer_map({str(9000 + i): {"5555"} for i in range(5)})
+        six = citer_map({str(9000 + i): {"5555"} for i in range(6)})
+        ids = {str(9000 + i) for i in range(6)}
+        self.assertEqual(set(), select_citing(five, ids, 5))
+        self.assertEqual({"5555"}, select_citing(six, ids, 5))
+
+    def test_a_primary_is_never_selected_as_a_citing_node(self):
+        cmap = citer_map({str(9000 + i): {"9999"} for i in range(6)})
+        self.assertEqual(set(), select_citing(cmap, {"9999"} | {str(9000 + i) for i in range(6)}, 5))
+
+
+class BuildGraphTest(unittest.TestCase):
+    def setUp(self):
+        # Six primaries all citing the White Paper, so it clears threshold 5.
+        self.primaries = {
+            str(9000 + i): citing_record("1206324") for i in range(6)
+        }
+        # One of them also cites another primary, and an under-threshold record.
+        self.primaries["9000"] = citing_record("1206324", "9001", "7777777")
+        self.cited = {"1206324": fixture("literature_external")}
+        # One outside record cites every primary, so it clears the bar too.
+        self.cmap_citing = {"4444": set(self.primaries)}
+        self.citing = {"4444": fixture("literature_collaborator")}
+
+    def graph(self, **kw):
+        kw.setdefault("primaries", self.primaries)
+        kw.setdefault("cited", self.cited)
+        kw.setdefault("citing", self.citing)
+        kw.setdefault("cmap_citing", self.cmap_citing)
+        return build_graph(kw["primaries"], kw["cited"], kw["citing"],
+                           kw["cmap_citing"], 5)
+
+    def test_node_groups_and_counts(self):
+        groups = {}
+        for node in self.graph()["nodes"]:
+            groups[node["group"]] = groups.get(node["group"], 0) + 1
+        self.assertEqual({"collaborator": 6, "cited": 1, "citing": 1}, groups)
+
+    def test_degrees_match_the_link_counts(self):
+        graph = self.graph()
+        into, outof = {}, {}
+        for link in graph["links"]:
+            into[link["target"]] = into.get(link["target"], 0) + 1
+            outof[link["source"]] = outof.get(link["source"], 0) + 1
+        for node in graph["nodes"]:
+            self.assertEqual(into.get(node["id"], 0), node["in_degree"], node["id"])
+            self.assertEqual(outof.get(node["id"], 0), node["out_degree"], node["id"])
+
+    def test_a_cited_node_only_has_incoming_edges(self):
+        graph = self.graph()
+        cited = [n for n in graph["nodes"] if n["group"] == "cited"][0]
+        self.assertEqual(0, cited["out_degree"])
+        self.assertGreater(cited["in_degree"], 0)
+
+    def test_a_citing_node_only_has_outgoing_edges(self):
+        graph = self.graph()
+        citer = [n for n in graph["nodes"] if n["group"] == "citing"][0]
+        self.assertEqual(0, citer["in_degree"])
+        self.assertEqual(6, citer["out_degree"])
+
+    def test_citing_edges_point_at_the_publications(self):
+        links = self.graph()["links"]
+        self.assertIn({"source": "4444", "target": "9000"}, links)
+
+    def test_under_threshold_record_gets_no_node_and_no_edge(self):
+        graph = self.graph()
+        self.assertNotIn("7777777", [n["id"] for n in graph["nodes"]])
+        self.assertNotIn("7777777", [l["target"] for l in graph["links"]])
+
+    def test_primary_to_primary_edges_are_kept(self):
+        self.assertIn({"source": "9000", "target": "9001"}, self.graph()["links"])
+
+    def test_output_is_stable_across_runs(self):
+        first = self.graph()
+        second = self.graph(primaries=dict(reversed(list(self.primaries.items()))))
+        self.assertEqual(json.dumps(first, sort_keys=True), json.dumps(second, sort_keys=True))
+
+    def test_empty_configuration_is_a_valid_graph(self):
+        graph = build_graph({}, {}, {}, {}, 5)
+        self.assertEqual([], graph["nodes"])
+        self.assertEqual([], graph["links"])
+
+
+class FakeClient:
+    """Stands in for Inspire: resolves texkeys from a table, fails on demand."""
+
+    def __init__(self, table, unreachable=()):
+        self.table = table            # texkey -> recid ("" means no such record)
+        self.unreachable = set(unreachable)
+
+    def resolve_key(self, key):
+        if key in self.unreachable:
+            raise FetchError("simulated outage for %s" % key)
+        return self.table.get(key) or None
+
+    def fetch_record(self, recid, with_references=False):
+        return citing_record("1206324")
+
+
+class CollectPrimariesTest(unittest.TestCase):
+    """One bad record must not cost the others their place in the graph."""
+
+    def test_unreachable_key_is_reported_and_the_rest_survive(self):
+        client = FakeClient({"A:1": "1", "B:2": "2", "C:3": "3"}, unreachable=["B:2"])
+        problems = []
+        primaries, _ = collect_primaries(
+            client, [("A:1", None), ("B:2", None), ("C:3", None)], problems
+        )
+        self.assertEqual({"1", "3"}, set(primaries))
+        self.assertEqual(1, len(problems))
+        self.assertIn("B:2", problems[0])
+
+    def test_run_continues_past_a_failure_in_the_first_entry(self):
+        client = FakeClient({"A:1": "1", "B:2": "2"}, unreachable=["A:1"])
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("B:2", None)], problems)
+        self.assertEqual({"2"}, set(primaries))
+
+    def test_key_with_no_record_is_reported_and_skipped(self):
+        client = FakeClient({"A:1": "1", "GONE:9": ""})
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("GONE:9", None)], problems)
+        self.assertEqual({"1"}, set(primaries))
+        self.assertIn("no InspireHEP record", problems[0])
+
+    def test_two_keys_resolving_to_one_record_are_deduplicated(self):
+        client = FakeClient({"A:1": "1", "Alias:1": "1"})
+        problems = []
+        primaries, _ = collect_primaries(client, [("A:1", None), ("Alias:1", None)], problems)
+        self.assertEqual({"1"}, set(primaries))
+        self.assertIn("duplicates", problems[0])
+
+    def test_notes_are_kept_per_record(self):
+        client = FakeClient({"A:1": "1"})
+        _, notes = collect_primaries(client, [("A:1", "White Paper")], [])
+        self.assertEqual({"1": "White Paper"}, notes)
+
+    def test_every_entry_is_attempted_when_all_of_them_fail(self):
+        keys = ["A:1", "B:2", "C:3"]
+        client = FakeClient({k: str(i) for i, k in enumerate(keys)}, unreachable=keys)
+        problems = []
+        primaries, _ = collect_primaries(client, [(k, None) for k in keys], problems)
+        self.assertEqual({}, primaries)
+        self.assertEqual(3, len(problems), "the run must not abort on the first failure")
+
+
+class ConfiguredListTest(unittest.TestCase):
+    """The checked-in _data/publications.yml must stay loadable."""
+
+    def test_repository_config_parses(self):
+        try:
+            import yaml
+        except ImportError:
+            self.skipTest("PyYAML not installed")
+        from inspire_graph import load_config
+
+        config = Path(__file__).resolve().parents[2] / "_data" / "publications.yml"
+        threshold, entries = load_config(config)
+        self.assertIsInstance(threshold, int)
+        keys = [key for key, _ in entries]
+        self.assertEqual(len(keys), len(set(keys)), "duplicate key in publications.yml")
+        for key in keys:
+            self.assertTrue(key and not key.isspace())
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -28,6 +28,9 @@
     - name: conference_talks
       full: Conference/Talks
 
+    - name: publications
+      full: Publications
+
     - name: press
       full: Media/Press
 

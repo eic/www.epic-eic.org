@@ -2,6 +2,7 @@ name: The ePIC Collaboration Website
 title: The ePIC Collaboration Website
 description: The ePIC Collaboration Website
 url: https://epic.github.io
+baseurl: ""
 #
 excerpt_separator: <!--more-->
 timezone: America/New_York
@@ -12,12 +13,12 @@ future: true
 exclude: [vendor]
 
 ##################################################################################
-# Important if we are not serving from the top folder - baseurl: /web            #
-# In that case, please make sure you use the "relative_path" directive           #
-# everywhere you include various site URLs in your pages.                        #
-#                                                                                #
-# Currently serving from the top folder i.e.                                     #
-# in this case this does not apply until further notice.                         #
+# The site is served from the top folder (custom domain via CNAME), so          #
+# baseurl above must stay "".  Leaving it unset instead of "" would let         #
+# jekyll-github-metadata (bundled in the github-pages gem) try to fill it in    #
+# by calling the GitHub Pages API; without a token that call is unauthenticated #
+# and falls back to https://<owner>.github.io/<repo>, setting baseurl to        #
+# "/www.epic-eic.org" and breaking every relative_url link on the site.         #
 ##################################################################################
 
 # Custom helper variables:
