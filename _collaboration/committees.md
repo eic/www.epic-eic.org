@@ -16,8 +16,8 @@ The ePIC Charter defines a set of five Standing Committees that are listed below
 * __Mailing List__ for Collaboration-level conference material approval: _epic-talks-l@lists.bnl.gov_
 * __Contact Email__: _epic-ctc-l@lists.bnl.gov_
 * __Committee Members__ 
-   * Brian Page (chair)
-   * Daniel Brandenburg (vice-chair)
+   * Daniel Brandenburg (chair)
+   * Mariangela Bondi (vice-chair)
    * Fernando Flor
    * Charles Joseph Naim 
    * Sebouh Paul 
@@ -42,6 +42,8 @@ The ePIC Charter defines a set of five Standing Committees that are listed below
   * Iris Ponce Pinto
   * Maya Shimomura
   * Allison Zec
+  * Niseem Abdelrahman
+  * Chiara Bonini
 
 * __Representation__ : Executive Board member: Susanna Costanza
 * __Election__: 2/27
@@ -53,8 +55,8 @@ The ePIC Charter defines a set of five Standing Committees that are listed below
 * __Mission Statement__: The ePIC membership committee (eMC) is responsible for the development of the Membership policy and oversight of its fair implementation. The Membership Policy defines the process for establishing, and maintaining "Good Standing" status for Collaboration members, and the primary requirements for the authorship within ePIC. The committee will assist the Council in developing and enforcing, upon adoption of, the ePIC Membership policy.
 * __Contact Email__: _epic-cc-membership-committee-l@lists.bnl.gov_
 * __Committee Members__ 
-   * Eric Lancon (chair)
-   * Carlos Munoz Camacho (vice-chair)
+   * Carlos Munoz Camacho (chair)
+   * Wouter Deconinck (vice-chair)
    * Pietro Antonioli
    * Friederike Bock
    * Helen Caines
