@@ -38,10 +38,6 @@ The ePIC Charter defines a set of five Standing Committees that are listed below
   * Susanna Costanza (chair) <susanna.costanza@unipv.it>
   * Francesco Bossù (vice-chair)
   * Wouter Deconinck
-  * Narbe Kalantarians
-  * Iris Ponce Pinto
-  * Maya Shimomura
-  * Allison Zec
   * Niseem Abdelrahman
   * Chiara Bonini
 
