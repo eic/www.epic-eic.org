@@ -10,7 +10,7 @@ This page provides information on travel support opportunities available to memb
 
 {{ site.hr }}
 
-##### Currently Available Travel Support Programs
+##### Available Travel Support Programs
 
 ###### BNL Travel Support ######
 
