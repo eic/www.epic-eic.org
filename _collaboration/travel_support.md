@@ -13,6 +13,9 @@ This page provides information on travel support opportunities available to memb
 ##### Currently Available Travel Support Programs
 
 ###### BNL Travel Support ######
+
+**BNL travel support is currently unavailable due to a lack of funding.**
+<!--
 Brookhaven National Laboratory offers travel support for ePIC-related trips
 to (i) BNL for meetings, reviews, and detector-related work, as well as (ii) travel to ePIC collaboration meetings.
 
@@ -26,3 +29,4 @@ why financial support is needed. Submit both documents to Rachel Inguanta at <ir
 BNL will review
 your request and notify you in a timely manner regarding the availability and level of support, which may vary
 as outlined in the form. 
+-->
